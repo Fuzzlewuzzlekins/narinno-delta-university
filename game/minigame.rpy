@@ -1,3 +1,5 @@
+image dummy f_idle = "sprites/dummy_front_idle.png"
+
 init python:
 
     class MinigameDisplayable(renpy.Displayable):
