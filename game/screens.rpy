@@ -162,6 +162,20 @@ style say_dialogue:
 
     adjust_spacing False
 
+## Trying some custom multiple_say stuff here...
+style multiple2_namebox:
+    xpos gui.multiple2_name_xpos
+style multiple2_say_window:
+    xfill False
+    xsize 0.5
+style block1_multiple2_say_window:
+    xalign 0.0
+style block2_multiple2_say_window:
+    xalign 1.0
+style multiple2_say_dialogue:
+    xpos gui.multiple2_dialogue_xpos
+    xsize gui.multiple2_dialogue_width
+
 ## Input screen ################################################################
 ##
 ## This screen is used to display renpy.input. The prompt parameter is used to
