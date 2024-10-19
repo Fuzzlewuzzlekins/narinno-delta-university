@@ -22,17 +22,19 @@ image ash = Placeholder("boy")
 image blake = Placeholder("boy")
 image fyorra = Placeholder("girl")
 image karalun = Placeholder("girl")
-image kim = Placeholder("girl")
+image kim = "sprites/kim_temp.png"
 image luziim = Placeholder("girl")
-image nakoa = Placeholder("boy")
+image nakoa = "sprites/nakoa_temp.png"
 image nanneyo = Placeholder("girl")
 image noah = Placeholder("boy")
 image nyarokhu = Placeholder("boy")
 image rohal = Placeholder("boy")
-image tansei = Placeholder("girl")
+image tansei = "sprites/tansei_temp.png"
 
 define e = Character("Emma", kind=c_base)
-image emma = Placeholder("girl")
+# TEMPORARY: use Kim for Emma for photo op
+# image emma = Placeholder("girl")
+image emma = "sprites/kim_temp.png"
 
 # Define transforms and transitions here.
 

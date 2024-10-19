@@ -114,6 +114,8 @@ label act_1:
 
     "And the sooner the bubble popped, ideally on her own terms, the better."
 
+label testytest:
+
     # Background: the monorail station elsewhere in the starport.
 
     show bg starport_station with dissolve
@@ -127,7 +129,6 @@ label act_1:
     "She squinted in frustration as she scanned the map again."
 
     "There was no stop name that matched the university. What cross street did she need, then?"
-    
 
     "???" "\"Um, excuse me?\""
 
@@ -249,8 +250,6 @@ label act_1:
     t "Are very, {i}very{/i} lucky we were actually related."
 
     ki "Y-yes! Point taken! Won't assume again."
-
-label testytest:
     
     t "I don't have to ask you two if {i}you're{/i} related to make a point?"
 
