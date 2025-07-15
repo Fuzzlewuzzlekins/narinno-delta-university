@@ -166,6 +166,6 @@ label start:
     # All actual scripts of the game will be handled in separate files, 
     # one per act/chapter(?). Start by jumping to act_1.
 
-    #jump act_1
-    #jump test_scene
-    jump testytest
+    jump act_1
+    # jump test_scene
+    # jump testytest

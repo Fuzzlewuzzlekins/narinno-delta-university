@@ -6,23 +6,30 @@ label act_1:
     # Background: interior of a vehicle with vertically arranged rows of seats, 
     # optionally a window or two showing space. Sound: a faint humming drone.
 
-    scene bg shuttle
+    scene bg shuttle with dissolve
 
     "The shuttle's motion was smooth and comfortable."
 
-    "Still, Kim could feel the faint, constant tremor as it moved, plummeting from the orbital platform to the planet's surface, thousands of kilometers below."
+    "Still, Kim could feel the faint, constant tremor as it moved, plummeting from the 
+    orbital platform to the planet's surface, thousands of kilometers below."
 
-    "It was a controlled drop down a vacuum tube along a sturdy carbon nanofiber cable, connecting the orbital and surface halves of the starport. Standard fare."
+    "It was a controlled drop down a vacuum tube along a sturdy carbon nanofiber cable, 
+    connecting the orbital and surface halves of the starport. Standard fare."
 
-    "She had no reason to fear for her safety, especially after the riskiest parts of an interstellar voyage—the wormhole jump in particular was notorious for inducing nausea—were long past."
+    "She had no reason to fear for her safety, especially after the riskiest parts of 
+    an interstellar voyage—the wormhole jump in particular was notorious for inducing 
+    nausea—were long past."
 
-    "Even disembarking from the interstellar ship and transferring to the surface-bound shuttle had gone without a hitch."
+    "Even disembarking from the interstellar ship and transferring to the surface-bound 
+    shuttle had gone without a hitch."
 
     "The fear simmering inside her was less concrete than that. Less rational."
 
     "But it was a fear all the same."
 
-    "A crowd of humanity, fellow denizens of Earth, shared the shuttle with her, just as they had shared the ship with her. The continuity was comfortable, but comfort did little to prepare her right now."
+    "A crowd of humanity, fellow denizens of Earth, shared the shuttle with her, just as 
+    they had shared the ship with her. The continuity was comfortable, but comfort did 
+    little to prepare her right now."
 
     "She closed her eyes instead."
 
@@ -30,7 +37,8 @@ label act_1:
 
     "She had to be ready for the reality of what was coming."
 
-    "She had to imagine nonhuman company. Just like the celebrities she'd seen on screens, except in front of her, in flesh and blood."
+    "She had to imagine nonhuman company. Just like the celebrities she'd seen on 
+    screens, except in front of her, in flesh and blood."
 
     # Effect: eyes open to the shuttle interior again.
 
@@ -38,15 +46,18 @@ label act_1:
 
     "{i}They're just people. Don't look at them funny. Just move on.{/i}"
 
-    # Sound: the drone shifts in pitch. Background: the shuttle window, if applicable, begins to brighten to daylight.
+    # Sound: the drone shifts in pitch. Background: the shuttle window, if applicable, 
+    # begins to brighten to daylight.
 
-    "A shift in her own weight in her seat told her that the shuttle had begun to decelerate."
+    "A shift in her own weight in her seat told her that the shuttle had begun to 
+    decelerate."
 
     "Kim took a measured breath in and out."
 
     "{i}They're just people.{/i}"
 
-    "She repeated it like a mantra. Better that than let worries and details start spinning in her head again."
+    "She repeated it like a mantra. Better that than let worries and details start 
+    spinning in her head again."
 
     "The shuttle slowed."
 
@@ -54,25 +65,36 @@ label act_1:
 
     "And gradually, painfully so, it came to a complete stop."
 
-    # Sound: an airplane-like bing noise, followed by a ruckus of seatbelts and shuffling.
+    # Sound: an airplane-like bing noise, followed by a ruckus of seatbelts and 
+    # shuffling.
 
     "The crowd around Kim mobilized, eager to exit the stuffy shuttle."
 
-    "Kim couldn't say the same. She drew her legs in, all too happy to let the crowd thin for a few minutes before she even attempted to dig for her carry-on luggage beneath her seat."
+    "Kim couldn't say the same. She drew her legs in, all too happy to let the crowd 
+    thin for a few minutes before she even attempted to dig for her carry-on luggage 
+    beneath her seat."
 
-    "But what kind of attitude was that? She couldn't hide from the fact that she'd finally landed on another planet any longer."
+    "But what kind of attitude was that? She couldn't hide from the fact that she'd 
+    finally landed on another planet any longer."
 
-    "She steeled herself, and she made for the shuttle doors to step out into the light."
+    "She steeled herself, and she made for the shuttle doors to step out into the 
+    light."
 
-    # Art (layered, motion graphic): Kim steps out of the doors and looks around, more or less facing the camera. A small suitcase is in one hand, and her eyes are wide in awe. Zoom out to reveal the starport gate: a great vaulting room lined with windows, restaurants, and a mixed-species crowd. Where we might expect to see screens in a real airport, there are holograms instead. Sound: the music swells.
+    # Art (layered, motion graphic): Kim steps out of the doors and looks around, more 
+    # or less facing the camera. A small suitcase is in one hand, and her eyes are wide 
+    # in awe. Zoom out to reveal the starport gate: a great vaulting room lined with 
+    # windows, restaurants, and a mixed-species crowd. Where we might expect to see 
+    # screens in a real airport, there are holograms instead. Sound: the music swells.
 
     "The gate yawned around her like a greenhouse."
 
     "Kimmings International Starport."
 
-    "Just as one would expect of an interstellar transport nexus, the building swelled with colorful lifeforms."
+    "Just as one would expect of an interstellar transport nexus, the building swelled 
+    with colorful lifeforms."
 
-    "She'd told herself not to stare, but Kim couldn't stop her eyes from darting around, focusing on one stranger after another."
+    "She'd told herself not to stare, but Kim couldn't stop her eyes from darting 
+    around, focusing on one stranger after another."
 
     # Art: an onka closeup slides in and covers part of the frame.
 
@@ -80,7 +102,8 @@ label act_1:
 
     # Art: a dubina closeup appears as well, obscuring a different part of the frame.
 
-    "Blue and teal and violet plumage, borne by what might as well have been dinosaurs brought back to life."
+    "Blue and teal and violet plumage, borne by what might as well have been dinosaurs 
+    brought back to life."
 
     # Art: a jorgoan closeup joins the collage.
 
@@ -88,19 +111,24 @@ label act_1:
 
     # Art: a zanduul closeup completes the overlay.
 
-    "And one slithering form down the hall—Kim had to do a double take—with the fur and ears of a rodent but the sinuous motions of a cobra."
+    "And one slithering form down the hall—Kim had to do a double take—with the fur and 
+    ears of a rodent but the sinuous motions of a cobra."
 
-    # Art: shudders for a moment before suddenly disappearing. Sound: the music comes to a stop as ambient sound effects come back into focus. Background: the gate from Kim's POV this time, blurred and indistinct now.
+    # Art: shudders for a moment before suddenly disappearing. Sound: the music comes to 
+    # a stop as ambient sound effects come back into focus. Background: the gate from 
+    # Kim's POV this time, blurred and indistinct now.
     
-    show bg starport_gate
+    show bg starport_gate with dissolve
 
     "Kim suddenly remembered that she was standing in the doorway."
 
-    "She hurried forward, joining the flow of the crowd from the gate to the baggage claim."
+    "She hurried forward, joining the flow of the crowd from the gate to the baggage 
+    claim."
 
     "{i}Don't look at them funny. Just move on.{/i}"
 
-    "As long as she kept moving, she wouldn't stare. She just had to pick up her luggage, then head to the monorail station."
+    "As long as she kept moving, she wouldn't stare. She just had to pick up her 
+    luggage, then head to the monorail station."
 
     "Pick up her luggage. Head to the monorail station."
 
@@ -110,7 +138,8 @@ label act_1:
 
     "This was all part of the plan. All according to schedule."
 
-    "She had applied almost exclusively to offworld colleges for a reason. She knew perfectly well that she'd grown up in a bubble of humanity."
+    "She had applied almost exclusively to offworld colleges for a reason. She knew 
+    perfectly well that she'd grown up in a bubble of humanity."
 
     "And the sooner the bubble popped, ideally on her own terms, the better."
 
@@ -122,23 +151,28 @@ label testytest:
 
     "Eventually she and her two suitcases made it to the starport's monorail station."
 
-    "There was a map vector on the wall, listing the line's stops. Kim scanned it for her destination."
+    "There was a map vector on the wall, listing the line's stops. Kim scanned it for 
+    her destination."
 
-    "Narinno Delta University: Kimmings. NDU Kimmings. NDU campus. Or some similar permutation or combination..."
+    "Narinno Delta University: Kimmings. NDU Kimmings. NDU campus. Or some similar 
+    permutation or combination..."
 
     "She squinted in frustration as she scanned the map again."
 
-    "There was no stop name that matched the university. What cross street did she need, then?"
+    "There was no stop name that matched the university. What cross street did she need, 
+    then?"
 
     "???" "\"Um, excuse me?\""
 
-    "There was a voice nearby. Not directed at her, but close enough to catch her attention."
+    "There was a voice nearby. Not directed at her, but close enough to catch her 
+    attention."
 
     # Sprite: a human girl (Emma) appears, looking confused.
 
     show emma at right with dissolveinright
 
-    "There was a suitcase-burdened stranger standing in front of the ticket kiosk but not looking at the screen, one hand raised in an attempt to get someone's attention."
+    "There was a suitcase-burdened stranger standing in front of the ticket kiosk but 
+    not looking at the screen, one hand raised in an attempt to get someone's attention."
 
     # Sprite: Tansei and Nakoa slide on screen.
 
@@ -148,7 +182,8 @@ label testytest:
 
     "Kim followed the stranger's gaze to a pair of—"
 
-    "...uh, feline folk. {i}Onkai,{/i} Kim corrected in her head. A pair of onkai who had just perked up. One of them stood and approached the kiosk."
+    "...uh, feline folk. {i}Onkai,{/i} Kim corrected in her head. A pair of onkai who 
+    had just perked up. One of them stood and approached the kiosk."
 
     # Sprite: Tansei scoots closer to Emma.
 
@@ -170,7 +205,9 @@ label testytest:
 
     show emma at offscreenright with dissolveoutright
 
-    "This seemed to be important information. As the first stranger nodded in thanks and turned back to the kiosk, Kim hefted her bags in her hands and trotted towards the interaction."
+    "This seemed to be important information. As the first stranger nodded in thanks and 
+    turned back to the kiosk, Kim hefted her bags in her hands and trotted towards the 
+    interaction."
 
     show nakoa at leftish_2
     show tansei at rightish_2
@@ -197,11 +234,15 @@ label testytest:
 
     ki "You'd think they'd label it or something, right?"
 
-    "Onka 2" "\"Yeah, seriously. You're like the fifth or sixth people we've seen get confused, and we've only been here for ten minutes.\""
+    "Onka 2" "\"Yeah, seriously. You're like the fifth or sixth people we've seen get 
+    confused, and we've only been here for ten minutes.\""
 
-    "The person—the onka—jerked a thumb towards the small crowd of other strangers waiting further down the platform. There were a dozen or so in total, virtually all young adults at a glance."
+    "The person—the onka—jerked a thumb towards the small crowd of other strangers 
+    waiting further down the platform. There were a dozen or so in total, virtually 
+    all young adults at a glance."
 
-    "Human" "\"Yeah, they should fix that, huh? Put a sticker on the wall, or something.\""
+    "Human" "\"Yeah, they should fix that, huh? Put a sticker on the wall, or 
+    something.\""
 
     "Onka 1" "\"Would be nice.\""
 
@@ -209,11 +250,14 @@ label testytest:
 
     "The taller of the onka pair gestured back towards the station benches."
 
-    "Onka 1" "\"Oh, please, do sit with us. Don't mean to keep you all standing around.\""
+    "Onka 1" "\"Oh, please, do sit with us. Don't mean to keep you all standing 
+    around.\""
 
-    "With a few nods of agreement, the group moved back to the onkai's original seat. The bench was plenty long enough for the four of them."
+    "With a few nods of agreement, the group moved back to the onkai's original seat. 
+    The bench was plenty long enough for the four of them."
 
-    "The seat was cold and hard, not meant for prolonged relaxation, but it presumably wouldn't be for long."
+    "The seat was cold and hard, not meant for prolonged relaxation, but it presumably 
+    wouldn't be for long."
 
     ki "So, we're all headed up to campus, huh?"
 
@@ -225,7 +269,8 @@ label testytest:
 
     # [Sprite: Kim's face close-up (if used) is suddenly flustered and sweating bullets.]
 
-    ki "I-I-I mean, no, omigod, that came out wrong. I'm so sorry. You don't all look alike, I swear—"
+    ki "I-I-I mean, no, omigod, that came out wrong. I'm so sorry. You don't all look 
+    alike, I swear—"
 
     # [Sprite: Nakoa and Tansei laugh.]
 
@@ -277,7 +322,8 @@ label testytest:
 
     # [Sound: thrum of a monorail approaching, then slowing to a stop.]
 
-    "Kim turned in place. It looked indeed as if their monorail was just rounding the corner."
+    "Kim turned in place. It looked indeed as if their monorail was just rounding the 
+    corner."
 
     # [Sound: a hiss of the doors opening. Sprite: the three disappear.]
 
@@ -286,15 +332,20 @@ label testytest:
     hide emma
     with fadeoutright
 
-    "The train eased to a stop and swung its doors open. As one, the small crowd waiting on the platform mobilized, collecting its assembled luggage and making for the open doors."
+    "The train eased to a stop and swung its doors open. As one, the small crowd waiting 
+    on the platform mobilized, collecting its assembled luggage and making for the open 
+    doors."
 
-    "Kim noticed with mild surprise that the onka siblings were traveling light, sharing only two bags between the two of them."
+    "Kim noticed with mild surprise that the onka siblings were traveling light, sharing 
+    only two bags between the two of them."
 
-    # [Background: monorail interior. Looks like the inside of a light rail or subway car, clean and well lit.]
+    # [Background: monorail interior. Looks like the inside of a light rail or subway 
+    # car, clean and well lit.]
 
     show bg monorail with dissolve
 
-    "The monorail interior was decently well kept, and more seats were available than she expected. Sitting with her new acquaintances seemed as good an idea as any."
+    "The monorail interior was decently well kept, and more seats were available than 
+    she expected. Sitting with her new acquaintances seemed as good an idea as any."
 
     # [Sprite: the three others appear again.]
 
@@ -311,17 +362,20 @@ label testytest:
 
     # [Sound: a swoosh/click of the doors closing, then a droning hum kicks in.]
 
-    ki "Okay, just checking! It just looked like you two were packed light. Lighter than me, at least."
+    ki "Okay, just checking! It just looked like you two were packed light. Lighter than 
+    me, at least."
 
     t "Oh, I'm not an incoming freshman. I'm a junior. Class of '38."
 
-    t "Figured it couldn't hurt to come into town a few days early, be a chaperone, show you around town, help with a bit of move-in shopping—"
+    t "Figured it couldn't hurt to come into town a few days early, be a chaperone, show 
+    you around town, help with a bit of move-in shopping—"
 
     nk "You talking to me, or to everyone?"
 
     t "Well, I was only planning on it being you,{nw}"
     # [Sprite: Tansei turns mid-sentence.]
-    t "Well, I was only planning on it being you,{fast} but you're welcome to come along! I'm happy to show everyone around, play tour guide for a few days."
+    t "Well, I was only planning on it being you,{fast} but you're welcome to come 
+    along! I'm happy to show everyone around, play tour guide for a few days."
 
     e "Oh, that would be great! Thank you!"
 
@@ -342,9 +396,11 @@ label testytest:
 
     nk "Tachil. Small town on the Sforollan coast, back on Tandoro."
 
-    nk "Not really well known, but the cute hometown vibes? Love it. I'm biased; deal with it."
+    nk "Not really well known, but the cute hometown vibes? Love it. I'm biased; deal 
+    with it."
 
-    nk "Still proud of our food. If you ever see a Sforollan restaurant, you can't go wrong with the seafood casseroles."
+    nk "Still proud of our food. If you ever see a Sforollan restaurant, you can't go 
+    wrong with the seafood casseroles."
 
     t "Are you done being a travel agent?"
 
@@ -352,7 +408,8 @@ label testytest:
 
     # [Sprite: Nakoa and Tansei share a quiet laugh.]
 
-    "Kim wasn't sure how seriously to take that, but the way Tansei tousled Nakoa's fur was playful, and genuinely affectionate as far as she could tell."
+    "Kim wasn't sure how seriously to take that, but the way Tansei tousled Nakoa's fur 
+    was playful, and genuinely affectionate as far as she could tell."
 
     t "Anyway, enough of us. Who's next?"
 
@@ -362,7 +419,8 @@ label testytest:
 
     ki "Oh! You're from Narinno Gamma?"
 
-    e "Yeah, born and raised. Technically born in Pyredell and then moved to Camp Vessik, but they're both in Verdenia, so..."
+    e "Yeah, born and raised. Technically born in Pyredell and then moved to Camp 
+    Vessik, but they're both in Verdenia, so..."
 
     e "...Is that exciting? I didn't think the colonies were all that interesting."
 
@@ -370,11 +428,13 @@ label testytest:
 
     ki "Totally my own fault for assuming! Ha ha."
 
-    ki "I guess that gives you a leg up here on Narinno Delta, already being used to living on a colony and all."
+    ki "I guess that gives you a leg up here on Narinno Delta, already being used to 
+    living on a colony and all."
 
     e "What do you mean by that?"
 
-    ki "Well, the colonies are more diverse, right? You're already used to living around—"
+    ki "Well, the colonies are more diverse, right? You're already used to living 
+    around—"
 
     "Her eyes darted over to the siblings."
 
@@ -386,33 +446,43 @@ label testytest:
 
     ki "I-I..."
 
-    ki "Look, I... I'm from Kyoto. Japan. And I dunno about the other countries on Earth, but it's a human bubble back home for me."
+    ki "Look, I... I'm from Kyoto. Japan. And I dunno about the other countries on 
+    Earth, but it's a human bubble back home for me."
 
-    ki "I hardly even see {i}uchuujin{/i} weaving through the streets in the distance, let alone in the same room as me."
+    ki "I hardly even see {i}uchuujin{/i} weaving through the streets in the distance, 
+    let alone in the same room as me."
 
-    ki "You, sitting right there, are the closest I've physically gotten to onkai in my life. And I know that sounds bad! I know everything I'm saying is—"
+    ki "You, sitting right there, are the closest I've physically gotten to onkai in my 
+    life. And I know that sounds bad! I know everything I'm saying is—"
 
     "She was stammering again. She hated how easily she stammered."
 
-    "Kim clamped her mouth closed, tented her hands in front of her face, and took a long breath in and out through her nose before daring to speak again."
+    "Kim clamped her mouth closed, tented her hands in front of her face, and took a 
+    long breath in and out through her nose before daring to speak again."
 
-    ki "I knew I had to pop the bubble. I want to be more worldly; that's why I'm here. Please forgive my missteps along the way."
+    ki "I knew I had to pop the bubble. I want to be more worldly; that's why I'm here. 
+    Please forgive my missteps along the way."
 
-    nk "Hey, whoa, chill. Your heart sounds like it's in the right place. No need to overthink it all."
+    nk "Hey, whoa, chill. Your heart sounds like it's in the right place. No need to 
+    overthink it all."
 
-    e "Yeah, just be yourself and treat everyone with the same respect, and you'll be fine."
+    e "Yeah, just be yourself and treat everyone with the same respect, and you'll be 
+    fine."
 
     t "Exactly. It's an admirable step you're taking, if you ask me."
 
-    "Kim blushed and ducked her head. These strangers she'd almost certainly just offended were too kind."
+    "Kim blushed and ducked her head. These strangers she'd almost certainly just 
+    offended were too kind."
 
     nk "Japan, huh? Video game capital of the galaxy?"
 
     ki "Huh?"
 
-    nk "Yeah! Trendsetters back in Earth's early digital age, right? Revolutionary stuff."
+    nk "Yeah! Trendsetters back in Earth's early digital age, right? Revolutionary 
+    stuff."
 
-    nk "Not strictly as early as Chorra's innovations, but hella impressive for pre-contact time."
+    nk "Not strictly as early as Chorra's innovations, but hella impressive for 
+    pre-contact time."
 
     ki "Ah, well, if you say so."
 
@@ -420,7 +490,8 @@ label testytest:
 
     ki "Sure, go for it."
 
-    t "You said a word, earlier, that I hadn't heard before. What was it? {i}Uchuujin{/i}?"
+    t "You said a word, earlier, that I hadn't heard before. What was it? 
+    {i}Uchuujin{/i}?"
 
     ki "Oh! Yeah, uh..."
 
@@ -428,7 +499,8 @@ label testytest:
 
     "What was the Standard word for {i}uchuujin{/i}? Had she truly not learned one?"
 
-    ki "It's Japanese for, um... I'm not sure what the best translation is in Standard. Someone not from Earth. Non-Terran."
+    ki "It's Japanese for, um... I'm not sure what the best translation is in Standard. 
+    Someone not from Earth. Non-Terran."
 
     t "Extraterrestrial?"
 
@@ -438,19 +510,24 @@ label testytest:
 
     # [Sprite: Tansei chuckles.]
 
-    t "Forgive me, I get really curious about new words. I'm a linguistics major. I've always loved languages, all kinds of them."
+    t "Forgive me, I get really curious about new words. I'm a linguistics major. I've 
+    always loved languages, all kinds of them."
 
     ki "Oooh, that's awesome! How many languages do you speak?"
 
-    t "Oof, that depends on how you define 'speak.' I'm fluent in Sforollan and Standard, obviously, but..."
+    t "Oof, that depends on how you define 'speak.' I'm fluent in Sforollan and 
+    Standard, obviously, but..."
 
-    t "Aside from that, let's see. I've studied quite a bit of Sayaro, a fair bit of Elonen, bits and pieces of… uh, way too many random languages that caught my eye at some point or another. Nothing I can really say I'm fluent in."
+    t "Aside from that, let's see. I've studied quite a bit of Sayaro, a fair bit of 
+    Elonen, bits and pieces of… uh, way too many random languages that caught my eye at 
+    some point or another. Nothing I can really say I'm fluent in."
 
     ki "Hey, that's amazing! You should be proud."
 
     ki "Ooh, and while we're talking about languages... you said your name was Tansei?"
 
-    ki "That's a word in Japanese! It means 'diligence.' If you wanna hang onto that as a cool bit of trivia."
+    ki "That's a word in Japanese! It means 'diligence.' If you wanna hang onto that as 
+    a cool bit of trivia."
 
     t "Oh, is that right? Funny how that works. I'm flattered."
 
@@ -462,7 +539,8 @@ label testytest:
 
     ki "I'm... sorry?"
 
-    nk "Yeah, your native tongue with a thousand years of history'd better make my name a word. To respect me. Right now."
+    nk "Yeah, your native tongue with a thousand years of history'd better make my name 
+    a word. To respect me. Right now."
 
     # [Sprite: Tansei and Emma are visibly amused.]
 
@@ -472,26 +550,36 @@ label testytest:
 
     t "Everyone got your luggage?"
 
-    "Kim checked around herself. Her carry-on was still on the seat next to her, and her larger suitcase was still tucked under her seat, behind her feet."
+    "Kim checked around herself. Her carry-on was still on the seat next to her, and her 
+    larger suitcase was still tucked under her seat, behind her feet."
 
-    "She readied both in her hands and adjusted her weight in her seat, ready to stand once the monorail came to its next stop."
+    "She readied both in her hands and adjusted her weight in her seat, ready to stand 
+    once the monorail came to its next stop."
 
-    # [Sound: the droning hum of the monorail dies down; then a click and swish as the monorail doors open. Sprite: the characters disappear. 
+    # [Sound: the droning hum of the monorail dies down; then a click and swish as the 
+    # monorail doors open. Sprite: the characters disappear. 
 
     hide nakoa
     hide tansei
     hide emma
     with fadeoutleft
 
-    # Background/Art: a half-bird's-eye view of the campus as seen from the vantage point of the elevated monorail stop. Amidst a tree-lined neighborhood, the campus stands out with its swaths of red brick buildings and green fields.]
+    # Background/Art: a half-bird's-eye view of the campus as seen from the vantage 
+    # point of the elevated monorail stop. Amidst a tree-lined neighborhood, the campus 
+    # stands out with its swaths of red brick buildings and green fields.]
 
     show bg school_station with dissolve
 
-    "Tansei was right: the nondescript proper name of \"Vaniman\" didn't do this station justice."
+    "Tansei was right: the nondescript proper name of \"Vaniman\" didn't do this station 
+    justice."
 
-    "As if it had been planned this way from the city's construction, the monorail platform boasted a panoramic view of what could be none other than the Narinno Delta University: Kimmings campus, front and center."
+    "As if it had been planned this way from the city's construction, the monorail 
+    platform boasted a panoramic view of what could be none other than the Narinno Delta 
+    University: Kimmings campus, front and center."
 
-    "A patchwork quilt of green fields and red brick, a beacon shining amidst the carpet of residences hugging its borders. Not that the surrounding tree-studded neighborhood looked remotely unpleasant, either."
+    "A patchwork quilt of green fields and red brick, a beacon shining amidst the carpet 
+    of residences hugging its borders. Not that the surrounding tree-studded 
+    neighborhood looked remotely unpleasant, either."
 
     nk "Oh, man, this view is something else."
 
@@ -501,15 +589,18 @@ label testytest:
 
     ki "Ha! Yeah, a shame."
 
-    "Alas, they couldn't ogle the nice view forever. They actually had to arrive on campus and check in as new students before day's end, whatever that entailed."
+    "Alas, they couldn't ogle the nice view forever. They actually had to arrive on 
+    campus and check in as new students before day's end, whatever that entailed."
 
     "...So why wasn't Kim moving?"
 
-    "She'd stopped walking to take in the view. Now her legs apparently hadn't received any neural message to continue."
+    "She'd stopped walking to take in the view. Now her legs apparently hadn't received 
+    any neural message to continue."
 
     # TODO: add minigame tutorial here
 
-    "Something uncomfortable stewed inside her. Nothing nearly so debilitating as anxiety or dread, but a faint resistance. Trepidation."
+    "Something uncomfortable stewed inside her. Nothing nearly so debilitating as 
+    anxiety or dread, but a faint resistance. Trepidation."
 
     nk "You coming?"
 
@@ -519,17 +610,26 @@ label testytest:
 
     # [Art: the perspective of the view parallaxes downwards somewhat.]
 
-    "Once her feet and luggage were in place, the magrail device did the rest. She could feel trepidation, but at this point there was no stopping her from moving forward."
+    "Once her feet and luggage were in place, the magrail device did the rest. She could 
+    feel trepidation, but at this point there was no stopping her from moving forward."
 
-    "Kim was a legal adult now. There was no better time of one's life to grapple with trepidation, to take a plunge into the unknown."
+    "Kim was a legal adult now. There was no better time of one's life to grapple with 
+    trepidation, to take a plunge into the unknown."
 
-    # [Background: the campus main entrance. A stonework sign reading "Narinno Delta University: Kimmings" is prominent in the foreground. In the background is a roundabout with some buildings visible.]
+    # [Background: the campus main entrance. A stonework sign reading "Narinno Delta 
+    # University: Kimmings" is prominent in the foreground. In the background is a roundabout with some buildings visible.]
 
     show bg school_exterior with dissolve
 
-    "The apparent main entrance to campus was clearly marked, but Kim's eyes only lingered on the school sign for a moment; the bustle up ahead was much more eye-catching."
+    "The apparent main entrance to campus was clearly marked, but Kim's eyes only 
+    lingered on the school sign for a moment; the bustle up ahead was much more eye-catching."
 
-    "One of the campus buildings had its doors propped open, a welcome banner strung across the facade, and a light but constant flow of individuals in and out of the doorway. The paved dropoff loop was never empty of vehicles for longer than a few seconds, either."
+    "One of the campus buildings had its doors propped open, a welcome banner strung 
+    across the facade, and a light but constant flow of individuals in and out of the 
+    doorway."
+    
+    "The paved dropoff loop was never empty of vehicles for longer than a few seconds, 
+    either."
 
     # [Sprite: Tansei, Nakoa, and Emma reappear.]
 
@@ -540,7 +640,8 @@ label testytest:
 
     t "Looks like that there's your check-in. Everett Hall."
 
-    t "If I remember correctly, they should be pretty quick about getting your name down and sending you on your way."
+    t "If I remember correctly, they should be pretty quick about getting your name down 
+    and sending you on your way."
 
     t "You want me to come in with you, or should I wait out here with the luggage?"
 
@@ -562,47 +663,60 @@ label testytest:
 
     "Freed of the bulk of their luggage, the three freshmen trotted up the street."
 
-    # [Background: the spacious interior of Everett Hall. Tables and queues of students are visible.]
+    # [Background: the spacious interior of Everett Hall. Tables and queues of students 
+    # are visible.]
 
     show bg orientation_signin with dissolve
 
-    "The inside of the building, whatever its usual purpose, was currently set up with temporary tables, apparently labeled by letter range."
+    "The inside of the building, whatever its usual purpose, was currently set up with 
+    temporary tables, apparently labeled by letter range."
 
     e "Think it's sorted by last name?"
 
-    nk "Sure looks like it. Wanna regroup here when we're done? Or just meet Tani outside?"
+    nk "Sure looks like it. Wanna regroup here when we're done? Or just meet Tani 
+    outside?"
 
     ki "Outside sounds fine to me. See you there!"
 
-    "They nodded and peeled off to go their separate ways. Kim squinted along the row of tables and quickly located the one designated to handle \"S.\""
+    "They nodded and peeled off to go their separate ways. Kim squinted along the row of 
+    tables and quickly located the one designated to handle \"S.\""
 
-    "There was only one other new student queued up at this table in front of her, so the wait was short. Within a couple of minutes, she stepped up to take her turn."
+    "There was only one other new student queued up at this table in front of her, so 
+    the wait was short. Within a couple of minutes, she stepped up to take her turn."
 
-    # [Sprite: Nanneyo appears. A "Hello, my name is Nanneyo (she/her)" sticker is visible on her shirt.]
+    # [Sprite: Nanneyo appears. A "Hello, my name is Nanneyo (she/her)" sticker is 
+    # visible on her shirt.]
 
     show nanneyo at center with dissolveinbottom
 
     "Volunteer" "\"Heyas! Welcome to NDU, can I get your name?\""
 
-    "Kim's mental processes stalled for a moment, caught off guard by the perky greeting from such an inhuman face."
+    "Kim's mental processes stalled for a moment, caught off guard by the perky greeting 
+    from such an inhuman face."
 
-    "The feathered visage of a {i}dubina{/i}, native to the planet Chorra, with distinctive and unique eye and ear structures—and yet with quite possibly the sunniest smile Kim had ever seen on a stranger."
+    "The feathered visage of a {i}dubina{/i}, native to the planet Chorra, with 
+    distinctive and unique eye and ear structures—and yet with quite possibly the 
+    sunniest smile Kim had ever seen on a stranger."
 
     ki "Uh, Sorakawa. Kimiko."
 
     "Volunteer" "\"Sorakawa, Sorakawa... ah, Kimiko, here we are!\""
 
-    "Volunteer" "\"Now that is a pretty name. Is that what you go by? Or do you prefer something else?\""
+    "Volunteer" "\"Now that is a pretty name. Is that what you go by? Or do you prefer 
+    something else?\""
 
     ki "Uh, I answer to it fine, but I like to go by Kim, for short."
 
     "Volunteer" "\"Kim? Oh, that's cute! I love it even better!\""
 
-    "Volunteer" "\"So, Kim, I've got you listed here for Takhu Hall, room 204. That's a double.\""
+    "Volunteer" "\"So, Kim, I've got you listed here for Takhu Hall, room 204. That's a 
+    double.\""
 
-    "Volunteer" "\"So let's get you scanned into our system and get you all squared away!\""
+    "Volunteer" "\"So let's get you scanned into our system and get you all squared 
+    away!\""
 
-    "The dubina nudged a palm reader and a box of hand wipes across the table. Kim plucked a wipe and began to clean her hands."
+    "The dubina nudged a palm reader and a box of hand wipes across the table. Kim 
+    plucked a wipe and began to clean her hands."
 
     ki "Do you know if my roommate's moved in yet?"
 
@@ -610,19 +724,24 @@ label testytest:
 
     "Volunteer" "\"Ooh, no, not off the top of my head. Lemme see.\""
 
-    "She fiddled with her spreadsheet for a few seconds, though Kim couldn't make out anything from this angle."
+    "She fiddled with her spreadsheet for a few seconds, though Kim couldn't make out 
+    anything from this angle."
 
-    "Volunteer" "\"Oh, here we go. Takhu 204. Don't have an arrival marked yet, but you should be rooming with an 'Oshan, Luziim' whenever they get in.\""
+    "Volunteer" "\"Oh, here we go. Takhu 204. Don't have an arrival marked yet, but you 
+    should be rooming with an 'Oshan, Luziim' whenever they get in.\""
 
     # [Sprite: Nanneyo brightens up.]
 
-    "Volunteer" "\"...Oh, yes! Go ahead and put your hand on the scanner right there. Either hand is fine, whichever you'd rather use for door access.\""
+    "Volunteer" "\"...Oh, yes! Go ahead and put your hand on the scanner right there. 
+    Either hand is fine, whichever you'd rather use for door access.\""
 
     ki "Either one?"
 
-    "Volunteer" "\"Yeah, it doesn't matter. Some people like their dominant hand. Some people like their off hand, so they can save their dominant hand to carry stuff.\""
+    "Volunteer" "\"Yeah, it doesn't matter. Some people like their dominant hand. Some 
+    people like their off hand, so they can save their dominant hand to carry stuff.\""
 
-    "After a moment's recollection over how she usually opened doors back home, Kim pressed her right, dominant hand to the scanner."
+    "After a moment's recollection over how she usually opened doors back home, Kim 
+    pressed her right, dominant hand to the scanner."
 
     "With a flash and a blip, the reader did its work."
 
@@ -634,17 +753,22 @@ label testytest:
 
     "Volunteer" "\"Ha, I getcha.\""
 
-    "Volunteer" "\"But hey, if you do have trouble with your roommate for any reason during the year, bring it up to Student Services.\""
+    "Volunteer" "\"But hey, if you do have trouble with your roommate for any reason 
+    during the year, bring it up to Student Services.\""
 
-    "Volunteer" "\"They take reports of disruptive or incompatible behavior pretty seriously. I mean it, if you ever feel unsafe or whatever, they'll hear you out.\""
+    "Volunteer" "\"They take reports of disruptive or incompatible behavior pretty 
+    seriously. I mean it, if you ever feel unsafe or whatever, they'll hear you out.\""
 
     ki "Well, thank you. That's good to know."
 
-    "The volunteer smiled, rapped together a small stack of papers, and handed it across the table."
+    "The volunteer smiled, rapped together a small stack of papers, and handed it across 
+    the table."
 
-    "Volunteer" "\"In here we've got lots of helpful notes for you: a copy of the orientation schedule, dorm policies, campus map, all that good stuff.\""
+    "Volunteer" "\"In here we've got lots of helpful notes for you: a copy of the 
+    orientation schedule, dorm policies, campus map, all that good stuff.\""
 
-    "Volunteer" "\"Please don't hesitate to come back and ask us if you have any questions or issues, okay? We'll be open until at least 8 tonight!\""
+    "Volunteer" "\"Please don't hesitate to come back and ask us if you have any 
+    questions or issues, okay? We'll be open until at least 8 tonight!\""
 
     ki "Oh, awesome! Thank you so much, uh—"
 
@@ -654,88 +778,120 @@ label testytest:
 
     "The dubina's face lit up, hopefully in pleasant surprise."
 
-    nn "Hey, you're welcome! Have a good move-in, and maybe we'll see each other around!"
+    nn "Hey, you're welcome! Have a good move-in, and maybe we'll see each other 
+    around!"
 
     "Kim returned the smile as she turned back towards the front door."
 
     hide nanneyo with fadeoutright
 
-    "Four students met already, three of them {i}uchuujin{/i}, and all had gone pleasantly."
+    "Four students met already, three of them {i}uchuujin{/i}, and all had gone 
+    pleasantly."
 
     "She liked to think this was a good portent of the times to come."
 
     # POV: Nanneyo
-    # [Background: the same Takhu Hall as before.]
+    # [Background: the same Everett Hall as before.]
 
     scene bg orientation_signin with fade
 
     "It felt good to be of service to the new students."
 
-    "Some of them came in with bright smiles, eager to leap into their future. Others required a little nudging, but that was all the more satisfying."
+    "Some of them came in with bright smiles, eager to leap into their future. Others 
+    required a little nudging, but that was all the more satisfying."
 
     "Still, a long day was a long day."
 
-    "Thankfully not all of the volunteer team was actually expected to stick around for the straggler shift up till 8 o'clock."
+    "Thankfully not all of the volunteer team was actually expected to stick around for 
+    the straggler shift up till 8 o'clock."
 
-    "Aside from a couple of volunteers who had beaten Nanneyo to signing up for that shift, the rest of the team, herself included, was free to go at 5."
+    "Aside from a couple of volunteers who had beaten Nanneyo to signing up for that 
+    shift, the rest of the team, herself included, was free to go at 5."
 
-    "She was secretly grateful, as her own move-in this year was still a work in progress." 
+    "She was secretly grateful, as her own move-in this year was still a work in 
+    progress." 
 
-    "When the clock reached 5 P.M., she wasted no time in gathering her things and waving a cheery goodbye and good luck to the others."
+    "When the clock reached 5 P.M., she wasted no time in gathering her things and 
+    waving a cheery goodbye and good luck to the others."
 
     # [Background: a residential neighborhood on Khamerra Street.]
 
     show bg khamerra_street with dissolve
 
-    "Campus residences were conditionally open early for the non-freshman orientation volunteers, such as herself. It would've been a nice perk, if she'd chosen to remain in the school housing system."
+    "Campus residences were conditionally open early for the non-freshman orientation 
+    volunteers, such as herself. It would've been a nice perk, if she'd chosen to remain 
+    in the school housing system."
 
-    "Instead, some discussion over the summer among her family had left her with the idea to rent her own apartment, a short walk from campus."
+    "Instead, some discussion over the summer among her family had left her with the 
+    idea to rent her own apartment, a short walk from campus."
 
-    "The notion of such independence was exciting, for one, and she liked the prospect of hosting parties or sleepovers for at least a few of her friends."
+    "The notion of such independence was exciting, for one, and she liked the prospect 
+    of hosting parties or sleepovers for at least a few of her friends."
 
     "But the walk itself along Khamerra Street was a perk of its own."
 
-    "Narinno Delta was a terraformed paradise. The blend of trees and shrubs lining the neighborhood was as much a science as an art, an expertly crafted cocktail of interplanetary life."
+    "Narinno Delta was a terraformed paradise. The blend of trees and shrubs lining the 
+    neighborhood was as much a science as an art, an expertly crafted cocktail of 
+    interplanetary life."
 
-    "The Chorran trees stood out from the others with their blue foliage, reminding her pleasantly of home, but the true beauty of the scene lay in their marriage with all the rest."
+    "The Chorran trees stood out from the others with their blue foliage, reminding her 
+    pleasantly of home, but the true beauty of the scene lay in their marriage with all 
+    the rest."
 
-    "Determining how to combine such diverse, disparate species safely was no easy feat, she was sure. But the ecoplanners made it look easy."
+    "Determining how to combine such diverse, disparate species safely was no easy feat, 
+    she was sure. But the ecoplanners made it look easy."
 
     "The work had to be put in, but it was worth it."
 
-    "She wanted to help. She'd signed up for both an introductory botany class and an exobiology class this term."
+    "She wanted to help. She'd signed up for both an introductory botany class and an 
+    exobiology class this term."
 
-    "But there were a few days yet before the term began; for now, it was best to focus on settling in."
+    "But there were a few days yet before the term began; for now, it was best to focus 
+    on settling in."
 
     # [Background: the facade of Nanneyo's apartment, further down Khamerra Street.]
 
     show bg nanneyo_exterior with dissolve
 
-    "She'd arrived at her apartment building, a cozy adobe edifice with pale blue stucco walls, trimmed with railings and windowsills of wrought iron."
+    "She'd arrived at her apartment building, a cozy adobe edifice with pale blue stucco 
+    walls, trimmed with railings and windowsills of wrought iron."
 
     "She let herself quietly into her one-bedroom unit on the ground floor."
 
-    # [Background: a bare living room interior populated with only boxes. Ash's hibernator stands amidst them.]
+    # [Background: a bare living room interior populated with only boxes. Ash's 
+    # hibernator stands amidst them.]
 
     show bg nanneyo_moving with dissolve
 
-    "Though she'd signed her lease and registered her palm scan with the landlord earlier this week, there was little unpacked in the apartment yet, save for a couple of pots and pans in the kitchen, and of course the bed in the other room."
+    "Though she'd signed her lease and registered her palm scan with the landlord 
+    earlier this week, there was little unpacked in the apartment yet, save for a couple 
+    of pots and pans in the kitchen, and of course the bed in the other room."
 
-    "Tempting as it was to collapse on the bed and do nothing else today, the apartment wasn't going to furnish itself, and she wanted it furnished before term started. Or at least attempted to be furnished."
+    "Tempting as it was to collapse on the bed and do nothing else today, the apartment 
+    wasn't going to furnish itself, and she wanted it furnished before term started. Or 
+    at least attempted to be furnished."
 
     "{i}A little bit each day,{/i} she encouraged herself. It was perfectly doable."
 
     "Fortunately she didn't have to work alone."
 
-    "She approached the tall steel cabinet against one wall. A smudge of green could be faintly seen through the frosted glass doors."
+    "She approached the tall steel cabinet against one wall. A smudge of green could be 
+    faintly seen through the frosted glass doors."
 
-    "She'd put her Biot into hibernation with the rest of her storage before leaving for summer break. Now was as good a time as any to boot him back up. Besides, he was fun to have around."
+    "She'd put her Biot into hibernation with the rest of her storage before leaving for 
+    summer break. Now was as good a time as any to boot him back up. Besides, he was fun 
+    to have around."
 
     "She tapped on the hibernator's console to start the boot sequence."
 
-    # [Art: animated close-up (not a full cutscene) of the hibernator console as Nanneyo interacts with it. She taps the screen or the power button to make the Divinity logo appear, which is then replaced by a prompt: "No awakening scheduled. Boot now? Y/N." When she confirms, the screen reads "Booting… Shampooing… Drying… Waking… Ready."]
+    # [Art: animated close-up (not a full cutscene) of the hibernator console as Nanneyo 
+    # interacts with it. She taps the screen or the power button to make the Divinity 
+    # logo appear, which is then replaced by a prompt: "No awakening scheduled. Boot 
+    # now? Y/N." When she confirms, the screen reads "Booting… Shampooing… Drying… 
+    # Waking… Ready."]
 
-    # [Sound: quiet whirring during the animations, which comes to a stop with a swish of the doors opening. 
+    # [Sound: quiet whirring during the animations, which comes to a stop with a swish 
+    # of the doors opening. 
     # Background: the room again, but with the hibernator open and empty. 
     # Sprite: a drowsy young Ash appears slowly on the screen.]
 
@@ -753,7 +909,10 @@ label testytest:
 
     a "Reporting for duty, ma'am!"
 
-    # [Cutscene: the opening cinematic begins. Storyboard pending, but consider focusing on Ash and Kim most prominently, then expanding to the full cast. Could include anime-cliche pan upwards to the sunny sky. After the brief instrumental intro, start focusing on small scenes between subgroups of the cast.]
+    # [Cutscene: the opening cinematic begins. Storyboard pending, but consider focusing 
+    # on Ash and Kim most prominently, then expanding to the full cast. Could include 
+    # anime-cliche pan upwards to the sunny sky. After the brief instrumental intro, 
+    # start focusing on small scenes between subgroups of the cast.]
 
     return
 
