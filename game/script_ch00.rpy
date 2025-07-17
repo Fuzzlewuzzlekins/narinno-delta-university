@@ -1,4 +1,4 @@
-label act_1:
+label chapter_0:
 
     # Chapter 0: Prologue
     # Scene 1 (POV: Kim)

@@ -80,7 +80,33 @@ label test_game_3:
     $ quick_menu = False
 
     # call screen minigame("sprites/dummy_front_idle.png")
-    call screen minigame("testbg", "dummy", ["dummy"])
+    call screen minigame("testbg", ("dummy", 500, 500), [
+                    (
+                        "dummy", 300, 600, [
+                            {"direction":"down","speed":500.0,"duration":1.0},
+                            {"direction":"down","speed":0.0,"duration":1.0},
+                            {"direction":"up","speed":500.0,"duration":1.0},
+                            {"direction":"up","speed":0.0,"duration":1.0}
+                        ],
+                        [
+                            "Oh, hello! Is it working?",
+                            "They gave me custom dialogue!"
+                        ]
+                    ),
+                    (
+                        "dummy", 800, 200, [
+                            {"direction":"left","speed":0.0,"duration":1.5},
+                            {"direction":"right","speed":500.0,"duration":1.0},
+                            {"direction":"right","speed":0.0,"duration":2.0},
+                            {"direction":"left","speed":500.0,"duration":1.0},
+                            {"direction":"left","speed":0.0,"duration":0.5}
+                        ],
+                        [
+                            "Hey there!",
+                            "No, I'm a different NPC."
+                        ]
+                    )
+                ]) with Fade(0.2, 0.0, 0.2, color="#ffffff")
 
     $ quick_menu = True
     window show

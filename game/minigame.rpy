@@ -1,3 +1,7 @@
+# Start out by setting up character sprites and backgrounds.
+define frame_rate = 10.0
+define anim_speed = 1.0 / frame_rate
+
 image testbg = "testgamebg.png"
 image dummy f_idle = "sprites/dummy_front_idle.png"
 image dummy b_idle = "sprites/dummy_back_idle.png"
@@ -6,32 +10,33 @@ image dummy r_idle = "sprites/dummy_right_idle.png"
 
 image dummy f_walk:
     "sprites/dummy_front_walk1.png"
-    pause 0.25
+    pause anim_speed
     "sprites/dummy_front_walk2.png"
-    pause 0.25
+    pause anim_speed
     repeat
 
 image dummy b_walk:
     "sprites/dummy_back_walk1.png"
-    pause 0.25
+    pause anim_speed
     "sprites/dummy_back_walk2.png"
-    pause 0.25
+    pause anim_speed
     repeat
 
 image dummy l_walk:
     "sprites/dummy_left_walk1.png"
-    pause 0.25
+    pause anim_speed
     "sprites/dummy_left_walk2.png"
-    pause 0.25
+    pause anim_speed
     repeat
 
 image dummy r_walk:
     "sprites/dummy_right_walk1.png"
-    pause 0.25
+    pause anim_speed
     "sprites/dummy_right_walk2.png"
-    pause 0.25
+    pause anim_speed
     repeat
 
+# Not used in minigame, just as a test
 image dummy patrol:
     pos (800, 300)
     parallel:
@@ -50,7 +55,7 @@ image dummy patrol:
     pause 2.0
     repeat
 
-
+# Unused
 screen popup_frame(who, what):
     window:
         has vbox
@@ -58,7 +63,8 @@ screen popup_frame(who, what):
         spacing 10
         text what id "what"
     
-# Based off of Pong (tutorial) and Appearing (documentation).
+# Start of the minigame code.
+# Based off of Pong (from Ren'Py tutorial) and Appearing (from Ren'Py docs).
 
 init python:
 
@@ -69,7 +75,7 @@ init python:
     # Each character has 8 animations (directional walk/idle).
     class MinigameCharacterSprite(renpy.Displayable):
 
-        def __init__(self, name, behavior=None, dialogue=None, direction="down", **kwargs):
+        def __init__(self, name, start_x=400.0, start_y=400.0, speed=800.0, behavior=None, dialogue=None, direction="down", **kwargs):
 
             # Pass any kwargs back to renpy.Displayable constructor.
             super(MinigameCharacterSprite, self).__init__(**kwargs)
@@ -89,14 +95,16 @@ init python:
             }
 
             # The current facing direction.
-            self.spritedir = direction
+            # self.spritedir = direction
+            self.spritedir = behavior[0]["direction"] if behavior else direction
 
             # Player sprite position, delta-position, speed
-            self.spritex = 400
-            self.spritey = 400
+            self.spritex = start_x
+            self.spritey = start_y
             self.spritedx = .5
             self.spritedy = .5
-            self.spritespeed = 800.0
+            # self.spritespeed = speed
+            self.spritespeed = behavior[0]["speed"] if behavior else speed
 
             # NPC behavior stuff
             self.behaviors = behavior
@@ -126,7 +134,7 @@ init python:
     # instance of the game.
     class MinigameDisplayable(renpy.Displayable):
         
-        def __init__(self, map=None, hero="dummy", npcs=[], **kwargs):
+        def __init__(self, map=None, hero=("dummy",500,500), npcs=[], **kwargs):
 
             # Pass additional properties on to the renpy.Displayable
             # constructor.
@@ -138,21 +146,12 @@ init python:
             self.mapx = 0
             self.mapy = 0
             self.hero = hero
-            self.herosprite = MinigameCharacterSprite(hero)
+            self.herosprite = MinigameCharacterSprite(hero[0], start_x=hero[1], start_y=hero[2])
             self.npcsprites = []
             for character in npcs:
-                testbehavior = [
-                    {"direction":"down","speed":500.0,"duration":1.0},
-                    {"direction":"down","speed":0.0,"duration":1.0},
-                    {"direction":"up","speed":500.0,"duration":1.0},
-                    {"direction":"up","speed":0.0,"duration":1.0}
-                ]
-                testdialogue = [
-                    "Oh, hello!"
-                    "This is a dialog box."
-                ]
-                self.npcsprites.append(MinigameCharacterSprite(character, testbehavior, testdialogue))
-                # self.npcsprites.append(renpy.displayable(character))
+                # TEMP schema: 0 - name, 1 - x, 2 - y, 3 - behavior, 4 - dialogue. TODO: switch to names instead of indexes
+                self.npcsprites.append(MinigameCharacterSprite(character[0], start_x=character[1], start_y=character[2],
+                                behavior=character[3], dialogue=character[4]))
 
             # If the arrow keys are pressed.
             self.keyleft = False
@@ -177,11 +176,9 @@ init python:
         def visit(self):
             return [ self.chosensprite ]
 
-        # Recomputes the position of the ball, handles bounces, and
+        # Recomputes the position of the background and sprites, and
         # draws the screen.
         def render(self, width, height, st, at):
-
-            # import pygame
             
             # The Render object we'll be drawing into.
             r = renpy.Render(width, height)
@@ -332,13 +329,13 @@ init python:
                                 closestdist = tempdist
                         # You found the NPC who talked! Pause them.
                         self.npcsprites[self.dialog_npc].lastbehaviorpause = pygame.time.get_ticks()
-                        # self.npcsprites[self.dialog_npc].behaviors.insert(0, {"direction":self.npcsprites[self.dialog_npc].spritedir,"speed":0.0,"duration":-1.0})
                         # Now build the dialog window.
                         self.dialog_open = True
-                        dialogtext = Text(self.npcsprites[self.dialog_npc].dialogue[0], size=10, xalign=0.5, yalign=0.5)
+                        dialogtext = Text(self.npcsprites[self.dialog_npc].dialogue[0], size=20, xalign=0.5, yalign=0.5)
                         self.dialog_object = Window(dialogtext, background='#ffffff', xsize=300, ysize=200)
+                        # Center the dialog box on the NPC sprite, above their head (may move later)
                         self.dialog_coords = [self.npcsprites[self.dialog_npc].spritex, 
-                                        charsprites[self.dialog_npc][1][1] - 100]
+                                        self.npcsprites[self.dialog_npc].spritey - (charsprites[self.dialog_npc][0].get_size()[1])]
                 # Otherwise, close the popup
                 else:
                     self.dialog_open = False
@@ -369,7 +366,7 @@ init python:
                 popupsprite = renpy.render(self.dialog_object, width, height, st, at) 
                 popupwidth, popupheight = popupsprite.get_size()
                 popupx = self.dialog_coords[0] - popupwidth/2 + self.mapx
-                popupy = self.dialog_coords[1] - popupheight/2 + self.mapy - 50
+                popupy = self.dialog_coords[1] - popupheight/2 + self.mapy
                 # Adjust popup location to fit within screen bounds if necessary
                 popupx = max([popupx, 50])
                 popupx = min([popupx, width-popupwidth-50])
@@ -399,8 +396,6 @@ init python:
 
         # Handles events.
         def event(self, ev, x, y, st):
-
-            # import pygame
 
             # Detect key presses.
             if ev.type == pygame.KEYDOWN:
@@ -438,7 +433,6 @@ init python:
 # screen minigame():
 screen minigame(bg, hero, npcs):
 
-    # default minigame = MinigameDisplayable()
     default minigame = MinigameDisplayable(bg, hero, npcs)
 
     add minigame

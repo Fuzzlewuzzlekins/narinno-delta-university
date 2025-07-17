@@ -56,6 +56,10 @@ transform leftish_4:
 transform rightish_4:
     xalign 0.67 yalign 1.0
 
+# Default 'dissolve' lasts 0.5 secs, let's make more
+define dissolve_f = Dissolve(0.2)
+define dissolve_s = Dissolve(1.0)
+
 define dissolveinleft = ComposeTransition(dissolve, after=easeinleft)
 define dissolveinright = ComposeTransition(dissolve, after=easeinright)
 define dissolveinbottom = ComposeTransition(dissolve, after=easeinbottom)
@@ -164,8 +168,8 @@ define newfadeinleft = ComposeTransition(dissolve, before=newscootinleft, after=
 label start:
 
     # All actual scripts of the game will be handled in separate files, 
-    # one per act/chapter(?). Start by jumping to act_1.
+    # one per act/chapter(?). Start by jumping to chapter_0 (prologue).
 
-    jump act_1
-    # jump test_scene
+    # jump chapter_0
+    jump test_scene
     # jump testytest
