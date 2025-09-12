@@ -18,15 +18,15 @@ label test_scene:
     ki "Here we are as 2"
 
     show kim at leftish_3
-    show ash at center
+    show ash at center_1
     show rohal at rightish_3
 
     a "and as 3"
 
-    show kim at left
+    show kim at left_4
     show ash at leftish_4
     show rohal at rightish_4
-    show tansei at right
+    show tansei at right_4
 
     r "and as 4!"
 
@@ -80,7 +80,7 @@ label test_game_3:
     $ quick_menu = False
 
     # call screen minigame("sprites/dummy_front_idle.png")
-    call screen minigame("testbg", ("dummy", 500, 500), [
+    call screen minigame(bg="testbg", hero=("dummy", 500, 500), npcs=[
                     (
                         "dummy", 300, 600, [
                             {"direction":"down","speed":500.0,"duration":1.0},
@@ -106,6 +106,9 @@ label test_game_3:
                             "No, I'm a different NPC."
                         ]
                     )
+                ],
+                goals=[
+                    ("goal", 1000, 1000)
                 ]) with Fade(0.2, 0.0, 0.2, color="#ffffff")
 
     $ quick_menu = True
@@ -116,7 +119,7 @@ label test_game_3:
         a "Oooh, the spacebar worked!"
     
     else:
-        r "Yeow! Kim, you're on fire!"
+        r "Huh? Not sure what it returned."
 
     # This ends the game.
 

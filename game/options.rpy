@@ -95,6 +95,10 @@ define config.end_game_transition = None
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
 
+# NDU custom: the default transition when characters change expressions.
+
+define config.say_attribute_transition = Dissolve(0.1)
+
 
 ## Window management ###########################################################
 ##

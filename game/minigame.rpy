@@ -3,38 +3,40 @@ define frame_rate = 10.0
 define anim_speed = 1.0 / frame_rate
 
 image testbg = "testgamebg.png"
-image dummy f_idle = "sprites/dummy_front_idle.png"
-image dummy b_idle = "sprites/dummy_back_idle.png"
-image dummy l_idle = "sprites/dummy_left_idle.png"
-image dummy r_idle = "sprites/dummy_right_idle.png"
+image dummy f_idle = "sprites/minigame/dummy_front_idle.png"
+image dummy b_idle = "sprites/minigame/dummy_back_idle.png"
+image dummy l_idle = "sprites/minigame/dummy_left_idle.png"
+image dummy r_idle = "sprites/minigame/dummy_right_idle.png"
 
 image dummy f_walk:
-    "sprites/dummy_front_walk1.png"
+    "sprites/minigame/dummy_front_walk1.png"
     pause anim_speed
-    "sprites/dummy_front_walk2.png"
+    "sprites/minigame/dummy_front_walk2.png"
     pause anim_speed
     repeat
 
 image dummy b_walk:
-    "sprites/dummy_back_walk1.png"
+    "sprites/minigame/dummy_back_walk1.png"
     pause anim_speed
-    "sprites/dummy_back_walk2.png"
+    "sprites/minigame/dummy_back_walk2.png"
     pause anim_speed
     repeat
 
 image dummy l_walk:
-    "sprites/dummy_left_walk1.png"
+    "sprites/minigame/dummy_left_walk1.png"
     pause anim_speed
-    "sprites/dummy_left_walk2.png"
+    "sprites/minigame/dummy_left_walk2.png"
     pause anim_speed
     repeat
 
 image dummy r_walk:
-    "sprites/dummy_right_walk1.png"
+    "sprites/minigame/dummy_right_walk1.png"
     pause anim_speed
-    "sprites/dummy_right_walk2.png"
+    "sprites/minigame/dummy_right_walk2.png"
     pause anim_speed
     repeat
+
+image goal = Solid("#ff0000", xsize=100, ysize=100)
 
 # Not used in minigame, just as a test
 image dummy patrol:
@@ -75,11 +77,13 @@ init python:
     # Each character has 8 animations (directional walk/idle).
     class MinigameCharacterSprite(renpy.Displayable):
 
-        def __init__(self, name, start_x=400.0, start_y=400.0, speed=800.0, behavior=None, dialogue=None, direction="down", **kwargs):
+        def __init__(self, name, x=400.0, y=400.0, speed=800.0, behavior=None, dialogue=None, direction="down", **kwargs):
 
             # Pass any kwargs back to renpy.Displayable constructor.
             super(MinigameCharacterSprite, self).__init__(**kwargs)
             
+            self.name = name
+
             # Sprites and animations.
             self.idle_sprites = {
                 "up" : renpy.displayable(name + " b_idle"),
@@ -99,8 +103,8 @@ init python:
             self.spritedir = behavior[0]["direction"] if behavior else direction
 
             # Player sprite position, delta-position, speed
-            self.spritex = start_x
-            self.spritey = start_y
+            self.spritex = x
+            self.spritey = y
             self.spritedx = .5
             self.spritedy = .5
             # self.spritespeed = speed
@@ -128,13 +132,49 @@ init python:
         def walk_sprite():
             return self.walk_sprites[self.spritedir]
 
+    # This class is a container for objects in the minigame 
+    # (goals, obstacles, interactibles, etc). It's simpler 
+    # than MinigameCharacterSprite but should behave similarly.
+    class MinigameObjectSprite(renpy.Displayable):
+
+        def __init__(self, name, x=400.0, y=400.0, **kwargs):
+            
+            # Pass any kwargs back to renpy.Displayable constructor.
+            super(MinigameObjectSprite, self).__init__(**kwargs)
+
+            # We want to track our own sprite (displayable) and our 
+            # position in the "map space".
+            self.name = name
+            self.sprite = renpy.displayable(name)
+            self.spritex = x
+            self.spritey = y
+
+        def visit(self):
+            return [ self.sprite ]
+
+        # render() override. Not sure why I didn't have to do this
+        # for MinigameCharacterSprite, but whatever
+        def render(self, width, height, st, at):
+
+            # Create render of sprite
+            spriterender = renpy.render(self.sprite, width, height, st, at)
+            spritewidth, spriteheight = spriterender.get_size()
+
+            # The Render object we'll draw into/return
+            # r = renpy.Render(spritewidth, spriteheight)
+            r = renpy.Render(width, height)
+
+            # Draw the sprite to the class render. No positioning 
+            # needed yet, since this isn't the full map
+            r.blit(spriterender, (0, 0))
+
+            return spriterender
+
     # This class is the base container for the minigame. 
     # Contains logic for background and player movement.
-    # Extend this class to handle unique NPC logic per 
-    # instance of the game.
     class MinigameDisplayable(renpy.Displayable):
         
-        def __init__(self, map=None, hero=("dummy",500,500), npcs=[], **kwargs):
+        def __init__(self, map=None, hero=("dummy",500,500), npcs=[], goals=[], timeout=None, **kwargs):
 
             # Pass additional properties on to the renpy.Displayable
             # constructor.
@@ -146,13 +186,15 @@ init python:
             self.mapx = 0
             self.mapy = 0
             self.hero = hero
-            self.herosprite = MinigameCharacterSprite(hero[0], start_x=hero[1], start_y=hero[2])
+            self.herosprite = MinigameCharacterSprite(hero[0], x=hero[1], y=hero[2])
             self.npcsprites = []
             for character in npcs:
                 # TEMP schema: 0 - name, 1 - x, 2 - y, 3 - behavior, 4 - dialogue. TODO: switch to names instead of indexes
-                self.npcsprites.append(MinigameCharacterSprite(character[0], start_x=character[1], start_y=character[2],
+                self.npcsprites.append(MinigameCharacterSprite(character[0], x=character[1], y=character[2],
                                 behavior=character[3], dialogue=character[4]))
-
+            self.goalsprites = []
+            for goal in goals:
+                self.goalsprites.append(MinigameObjectSprite(goal[0], x=goal[1], y=goal[2]))
             # If the arrow keys are pressed.
             self.keyleft = False
             self.keyright = False
@@ -165,13 +207,15 @@ init python:
             # The time of the past render-frame.
             self.oldst = None
 
-            # The winner.
-            self.winner = None
+            # # The winner.
+            # self.winner = None
+            self.win_condition = None
             self.interact = False
             self.dialog_open = False
             self.dialog_object = None
             self.dialog_npc = None
             self.dialog_coords = [0,0]
+            self.goal_reached = None
 
         def visit(self):
             return [ self.chosensprite ]
@@ -238,7 +282,6 @@ init python:
             if self.herosprite.spritey < player_top:
                 self.herosprite.spritey = player_top
 
-            # player_bot = height - self.FIELD_BORDER - playerheight / 2
             player_bot = mapheight - self.FIELD_BORDER - playerheight / 2
             if self.herosprite.spritey > player_bot:
                 self.herosprite.spritey = player_bot
@@ -247,7 +290,6 @@ init python:
             if self.herosprite.spritex < player_lef:
                 self.herosprite.spritex = player_lef
 
-            # player_rig = width - self.FIELD_BORDER - playerwidth / 2
             player_rig = mapwidth - self.FIELD_BORDER - playerwidth / 2
             if self.herosprite.spritex > player_rig:
                 self.herosprite.spritex = player_rig
@@ -262,7 +304,7 @@ init python:
             if self.mapy < (height - mapheight) or self.herosprite.spritey > mapheight - height / 2:
                 self.mapy = height - mapheight
 
-            # New: figure out what the NPCs are doing
+            # Figure out what the NPCs are doing
             charsprites = []
             for character in self.npcsprites:
                 # TODO: Don't update character if they're the one who's talking
@@ -346,19 +388,54 @@ init python:
                     oldtext = self.npcsprites[self.dialog_npc].dialogue.pop(0)
                     self.npcsprites[self.dialog_npc].dialogue.append(oldtext)
 
+            # New: see if the player has reached a goal
+            objsprites = []
+            for goal in self.goalsprites:
+                goalsprite = renpy.render(goal, width, height, st, at)
+                goalwidth, goalheight = goalsprite.get_size()
+                objsprites.append((goalsprite, (int(goal.spritex - goalwidth/2 + self.mapx), int(goal.spritey - goalheight/2 + self.mapy))))
+            if len(objsprites) > 0:
+                # Loop through goals and find collisions
+                collisions = []
+                herox, heroy = charsprites[len(charsprites)-1][1]
+                for i in range(len(objsprites)):
+                    goalx, goaly = objsprites[i][1]
+                    goalwidth, goalheight = objsprites[i][0].get_size()
+                    if ((goalx-herox <= playerwidth and herox-goalx <= goalwidth)
+                                    and (goaly-heroy <= playerheight and heroy-goaly <= goalheight)):
+                        collisions.append(i)
+                # If there is at least one collision...
+                if len(collisions) > 0:
+                    # Loop through collisions and find closest goal
+                    closestdist = math.dist([0,0], [mapwidth, mapheight])
+                    for i in collisions:
+                        goalx, goaly = objsprites[i][1]
+                        goalwidth, goalheight = objsprites[i][0].get_size()
+                        tempdist = math.dist([herox + playerwidth/2, heroy + playerheight/2],
+                                        [goalx + goalwidth/2, goaly + goalheight/2])
+                        if tempdist < closestdist:
+                            self.goal_reached = i
+                            closestdist = tempdist
+                    # You found the goal that was reached! Log it as the win condition.
+                    self.win_condition = self.goalsprites[self.goal_reached].name
+
             # Draw the background
             r.blit(mapsprite, (int(self.mapx), int(self.mapy)))
 
-            # Draw each character sprite, sorted by y coordinate
-            for i in range(len(charsprites)):
+            # Draw each character and object sprite, sorted by 
+            # y coordinate of bottom edge
+            allsprites = charsprites + objsprites
+            # allsprites.sort(key=lambda x: x[1][1] + x[0].get_size()[1])
+            for i in range(len(allsprites)):
                 highest = height
                 currentchar = None
-                for j in range(len(charsprites)):
-                    tempchar = charsprites[j]
-                    if tempchar[1][1] < highest:
-                        highest = tempchar[1][1]
+                for j in range(len(allsprites)):
+                    tempchar = allsprites[j]
+                    temppos = tempchar[1][1] + (tempchar[0].get_size()[1]/2)
+                    if temppos < highest:
+                        highest = temppos
                         currentchar = tempchar
-                charsprites.remove(currentchar)
+                allsprites.remove(currentchar)
                 r.blit(currentchar[0], currentchar[1])
 
             # show popup window
@@ -387,6 +464,10 @@ init python:
             #     self.winner = "ash"
             #     renpy.timeout(0)
 
+            # If we have a win condition, call event to notice it.
+            if self.win_condition:
+                renpy.timeout(0)
+
             # Ask that we be re-rendered ASAP, so we can show the next
             # frame.
             renpy.redraw(self, 0)
@@ -410,7 +491,8 @@ init python:
                 elif ev.key == pygame.K_SPACE:
                     self.interact = True
                 elif ev.key == pygame.K_ESCAPE:
-                    self.winner = True
+                    # self.winner = True
+                    self.win_condition = "escape"
             
             # Detect key releases.
             if ev.type == pygame.KEYUP:
@@ -423,17 +505,20 @@ init python:
                 elif ev.key == pygame.K_RIGHT:
                     self.keyright = False
 
-            # If we have a winner, return him or her. Otherwise, ignore
-            # the current event.
-            if self.winner:
-                return self.winner
+            # # If we have a winner, return him or her. Otherwise, ignore
+            # # the current event.
+            # if self.winner:
+            #     return self.winner
+            if self.win_condition:
+                # Return the win condition (goal reached, timeout, or escape).
+                return self.win_condition
             else:
                 raise renpy.IgnoreEvent()
 
 # screen minigame():
-screen minigame(bg, hero, npcs):
+screen minigame(bg, hero, npcs=[], goals=[], timeout=None):
 
-    default minigame = MinigameDisplayable(bg, hero, npcs)
+    default minigame = MinigameDisplayable(bg, hero, npcs, goals, timeout)
 
     add minigame
     
