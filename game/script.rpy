@@ -323,7 +323,7 @@ label start:
     # one per act/chapter(?). Start by jumping to chapter_0 (prologue).
 
     # jump test_scene
-    # jump chapter_0
     # jump testytest
-    jump chapter_1
     # jump photoop
+
+    jump chapter_2

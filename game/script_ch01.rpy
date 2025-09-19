@@ -241,7 +241,7 @@ label chapter_1:
 
     "Cobalt, Cobalt…"
 
-    "If only she could pick in out from amidst the \“Team Crimson\” and \“Team Clementine\” and 
+    "If only she could pick it out from amidst the \“Team Crimson\” and \“Team Clementine\” and 
     \“Team Cerulean\” and \“Team Cornflower\” and heavens knew what else..."
 
     "Aha! Among all of the red herrings, she finally spied the requisite sign 
@@ -604,7 +604,7 @@ label photoop:
     "Fortunately an outfit was in easy reach in her suitcase, right next to the bed. She 
     swapped her nightgown for a shirt and skirt that she tugged on quickly."
 
-    "She preened absentmindedly, running her fingers through her plumage, as she trotted 
+    "She stress-preened absentmindedly, running her fingers through her plumage, as she trotted 
     out to the main room."
 
     # [Background: Nanneyo’s living room, still box-strewn. Ash’s hibernator is sealed 
@@ -814,8 +814,13 @@ label photoop:
     # [Sprite: saucy.]
     nn  "...Is that why you want to look at the bed? Scope it out?"
 
+    # [Sprite: confused.] 
+    f "I… what?"
+
+    nn "Eh?" (multiple=2)
+
     # [Sprite: flustered.] 
-    f "I… no, cut that out!"
+    f "Oh, {i}no{/i}, you dirty-minded little—" (multiple=2)
 
     f "Uh, {i}ahem{/i}. Bed frame aside, do you need any help with unpacking? Boxes, 
     furniture, hanging stuff on the walls…?"
@@ -905,7 +910,7 @@ label photoop:
 
     t startled "Oof!"
 
-    nn "Sorry, we’re all big huggers ‘round these parts."
+    nn "Sorry, we’re all big huggers ’round these parts."
 
     # [Sprite: Tansei folds her arms over her chest, looking uncomfortable.]
 
@@ -1099,4 +1104,5 @@ label photoop:
     "Ah, well. Surely he would return to hibernation after so-and-so many minutes idle. 
     That was what any self-respecting piece of technology did."
 
-    return
+    # return
+    jump chapter_2
