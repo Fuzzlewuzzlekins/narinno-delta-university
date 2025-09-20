@@ -129,6 +129,9 @@ image khurrayo = Placeholder("boy")
 image allira = Placeholder("girl")
 image nami = Placeholder("girl")
 
+# Declare (default) narrative flags here.
+default kim_walk_pick = None
+
 # Define transforms and transitions here.
 
 transform center_1:
@@ -326,4 +329,4 @@ label start:
     # jump testytest
     # jump photoop
 
-    jump chapter_2
+    jump nvl_monologue_test

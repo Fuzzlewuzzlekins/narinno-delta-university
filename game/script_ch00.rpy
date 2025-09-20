@@ -830,6 +830,8 @@ label testytest:
 
     "She liked to think this was a good portent of the times to come."
 
+label chapter_0_b:
+    
     # POV: Nanneyo
     # [Background: the same Everett Hall as before.]
 

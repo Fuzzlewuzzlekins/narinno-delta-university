@@ -536,6 +536,8 @@ label photoop:
 
     "The group picked up the chant, and Team Cobalt was on its way."
 
+label chapter_1_b:
+
     # POV: Nanneyo
     # [Background: Nanneyo’s bedroom walls, tackily half-decorated.]
     scene bg nanneyo_bedroom with fade

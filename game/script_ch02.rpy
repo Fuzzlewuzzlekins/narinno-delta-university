@@ -66,7 +66,7 @@ label chapter_2:
     ki "You could use it, right? Screw gender norms, this is the galactic age. Why can’t 
     a guy have a womancave?"
 
-    nk angry @ angry talk "I don’t want to use it. End of sentence."
+    nk angry @ talk "I don’t want to use it. End of sentence."
 
     ki "Oh… okay. I’m sorry, I didn’t mean to offend—"
 
@@ -106,7 +106,7 @@ label chapter_2:
     # [Sprite: exasperated.]
     nk stern "But I’ve got {i}you{/i}, right? Terrans! Terran dudes, being like… me!"
 
-    nk worried @ worried talk "I needed it. Y’know? To not feel like a freak."
+    nk worried @ talk "I needed it. Y’know? To not feel like a freak."
 
     ki "So that’s why you came to a colony? To be around—"
 
@@ -157,7 +157,7 @@ label chapter_2:
 
     nk worried talk "...Aw, man, we weren’t even walking this whole time?"
 
-    nk happy @ happy talk "No wonder talking felt so easy!"
+    nk happy @ talk "No wonder talking felt so easy!"
 
     "That made her laugh. The amusement seemed to be shared."
 
@@ -167,7 +167,7 @@ label chapter_2:
 
     nk stern "Meh, it’s not intrinsically bad. I just haven’t enjoyed it in recent years."
 
-    nk worried @ worried talk "I got more sedentary after middle school. Lost that endless kid energy, y’know."
+    nk worried @ talk "I got more sedentary after middle school. Lost that endless kid energy, y’know."
 
     ki "Ah, yeah. Totally understandable."
 
@@ -182,7 +182,7 @@ label chapter_2:
 
     ki "Oh? What is it you do, mostly?"
 
-    nk happy @ happy talk "Console restoration! Refurbishment, rewiring for modern power sources and I/O 
+    nk happy @ talk "Console restoration! Refurbishment, rewiring for modern power sources and I/O 
     components, y’know."
 
     ki "Oh! You mean, like, antique game consoles and computers?"
@@ -197,7 +197,7 @@ label chapter_2:
 
     ki "Is it kind of like that one bit from {i}The Ambassador{/i}? Have you seen that movie?"
 
-    nk happy @ happy talk "Ooooh, yeah, the first contact docudrama? With Nekhalle Turren playing the—"
+    nk happy @ talk "Ooooh, yeah, the first contact docudrama? With Nekhalle Turren playing the—"
 
     ki "Yeah, that one! Remember in the prologue, where the Chorran scientists had to 
     fiddle with their equipment juuust right before they realized they were getting a 
@@ -213,12 +213,12 @@ label chapter_2:
     ki "Neat. That’s a really cool hobby! I bet you know a lot of stuff I couldn’t even 
     imagine."
 
-    nk happy @ happy talk "Well, there’s always room for more knowledge. I want to go into computer 
+    nk happy @ talk "Well, there’s always room for more knowledge. I want to go into computer 
     engineering while I’m here. Learn things properly, get into the industry."
 
     ki "That’s awesome! Sounds like a lot of fun."
 
-    nk @ happy talk "How about you? What do you do?"
+    nk @ talk "How about you? What do you do?"
 
     ki "Oh, uh."
 
@@ -235,7 +235,7 @@ label chapter_2:
 
     nk worried talk "Oof, hyperfixations will do that to ya. My sympathies."
 
-    nk happy @ happy talk "Any that’ve grabbed ya more than once? That you come back to?"
+    nk happy @ talk "Any that’ve grabbed ya more than once? That you come back to?"
 
     ki "Hmm, good question. Um, let’s see…"
 
@@ -271,24 +271,84 @@ label chapter_2:
 
     "She didn’t want to keep the others up ahead waiting."
 
-    "But nor did she want to push Nakoa’s limits."
+    "But nor did she want to push Nakoa’s limits..."
 
     # [Minigame: the three of them walk up the path. Nakoa and Karalún walk at the same speed, 
     # w/ Nakoa in the back and Kara in the front. Kim can choose to walk quickly, slowly, or stop.]
 
+    # NOTE: I've realized that this segment sounds dangerously like an escort quest; until I can 
+    # think of an elegant way to code in 2 different walk speeds, this choice should be handled 
+    # with manual choices so the player doesn't have to "stop and start" in the minigame. To that 
+    # end, I'll add some temp dialogue below.
+
+menu chapter_1_walk_choice:
+    "What to do?"
+
+    "Pick up the pace.":
+        $ kim_walk_pick = "Karalún"
+        $ renpy.fix_rollback()
+
+        # Kim gets too far ahead of Nakoa:
+
+        "No, best not to risk angering the Jorgoan—{nw=0.5}"
+        extend " er, the {i}others{/i}."
+
+        show nakoa happy at left_4
+        show kara happy at center_1
+        with ease
+
+        "She hustled to catch up to Karalún and push ahead."
+
+        define nk_s = Character("Nakoa", kind=nk, what_prefix='{size=-10}“', what_suffix='”{/size}')
+
+        nk_s worried @ talk "Oh, you can’t hear… okay."
+
+        # Kim goes ahead of Kara:
+
+        ka worried @ talk "Oh, it’s okay, there is no need to rush!"
+
+        ki "You sure?"
+
+        ka happy @ grin "Please feel free to keep talking. I’ll listen."
+
+        "Well... she still couldn't tell if that grin was a threat, but now she felt stupid. And rude."
+
+        "She swallowed her pride and slowed back down to her previous pace."
+
+        # Kim reenters Nakoa’s range:
+
+        show nakoa happy at center_1
+        show kara neutral at right_4
+        with ease
+
+        ki "Sorry, what was that?"
+
+    "Take it easy.":
+        $ kim_walk_pick = "Nakoa"
+        $ renpy.fix_rollback()
+
+        "She steeled herself. It took effort to resist the urge to please, but resist she did."
+
+        show nakoa happy at center_1
+        show kara neutral at right_4
+        with ease
+
+        "Threatening smile or not, she'd made a promise to her fellow shorty. They would stick 
+        together."
+
+        ki "So, where were we?"
+
+label chapter_1_after_walk_choice:
+
     # (Ideal) Dialogue if she stays in range of Nakoa:
 
-    show nakoa happy 
-    show kara neutral
-    with dissolve_f
-
-    nk @ happy talk "So, you were saying? Hobbies you’ve come back to more than once?"
+    nk @ talk "Yeah, you were saying? Hobbies you’ve come back to more than once?"
 
     ki "Right, right! Let’s see."
 
     ki "If I had to pick… I’d go with singing, I think."
 
-    nk @ happy talk "Oh, that’s right! You’re the Karaoke Queen."
+    nk @ talk "Oh, that’s right! You’re the Karaoke Queen."
 
     ki "Ahaha, not just karaoke! Though I do like it. Sometimes with my friends, 
     sometimes with my mom."
@@ -298,19 +358,23 @@ label chapter_2:
 
     ki "But whenever I wasn’t in one, I kind of missed it."
 
-    nk @ happy talk "I feel ya. There’s gotta be a good few options for you here, right? Let’s ask 
+    nk @ talk "I feel ya. There’s gotta be a good few options for you here, right? Let’s ask 
     Noah."
 
     ki "Yeah, for sure!"
 
+    show nakoa friendly at leftish_2 with ease
+
     nk friendly "Hey, Karalún, how about you? Got any hobbies?"
+
+    show kara worried at rightish_2 with ease
 
     ka worried talk "Oh, me? Hobbies?"
 
-    ka neutral @ neutral talk "Well, I did… um, what do you call it? When you fight with your body, without 
+    ka neutral @ talk "Well, I did… um, what do you call it? When you fight with your body, without 
     weapons."
 
-    nk happy @ happy talk "Oooh, martial arts?"
+    nk happy @ talk "Oooh, martial arts?"
 
     ka grin "Martial arts, yes! Thank you!"
 
@@ -324,17 +388,17 @@ label chapter_2:
 
     ka worried talk "No, it’s fine! I am told that I’m older than the average freshman."
 
-    ka neutral @ neutral talk "I am… twenty-four of your years old, if I remember the math correctly."
+    ka neutral @ talk "I am… twenty-four of your years old, if I remember the math correctly."
  
     ki "Alright, that makes sense. Cool."
 
-    nk @ happy talk "So how long have you been with us, in the Association?"
+    nk @ talk "So how long have you been with us, in the Association?"
 
     ki "We don’t have to keep asking her difficult questions—"
 
     ka grin "No, it’s fine, it’s fine!"
 
-    ka neutral @ neutral talk "I’ve lived in the Association for four years. I studied your history and 
+    ka neutral @ talk "I’ve lived in the Association for four years. I studied your history and 
     language. Now, for this year I have a college grant."
 
     nk @ stern "Four years ago... So the latest Avikran evacuation, back in ’32?"
@@ -347,29 +411,13 @@ label chapter_2:
 
     ka worried talk "Ah. It’s… different. It’s hard to explain."
 
-    ka neutral @ neutral talk "The rescue was relief, of course. A little strange, but relief."
+    ka neutral @ talk "The rescue was relief, of course. A little strange, but relief."
 
     nk @ worried talk "Yeah, that’s not surprising. Return to civilization. That’s gotta be 
     disorienting."
 
-    ka @ neutral talk "The cultures, though? Here, it is… louder. Brighter. More variety of things, 
+    ka @ talk "The cultures, though? Here, it is… louder. Brighter. More variety of things, 
     if I can say that." 
-
-    # Kim gets too far ahead of Nakoa:
-
-    # nk "Oh, you can’t hear… okay."
-
-    # Kim reenters Nakoa’s range:
-
-    # ki "Sorry, what was that?"
-
-    # May require additional partial lines to resume the conversation naturally.
-
-    # Kim goes ahead of Kara:
-
-    # ka "Oh, it’s okay, there is no need to rush!"
-
-    # ka "Please feel free to talk. I’ll listen."
 
     # Kim lags behind:
 
@@ -405,6 +453,8 @@ label chapter_2:
     "A whoop from Nami and a whining rebuttal from Nakoa hit Kim’s ears at the same time. 
     She stifled a chuckle."
 
+label nvl_monologue_test:
+
     # —
     # NOTE: was planned to be an NVL section. May take experimentation
 
@@ -413,89 +463,106 @@ label chapter_2:
     hide noah
     with fadeoutleft
 
-    "With the full group reconvened, talk was lively and spirits were high."
+    nvl clear
+    nvl show 
+    with Dissolve(0.2)
+
+    nvl_narrator "With the full group reconvened, talk was lively and spirits were high."
     
     # "Between Nakoa’s quips and anecdotes, Karalún’s curious insights, Noah’s occasional 
     # brotherly check-in, and the indistinct but energetic chatter from the trio up front, 
     # Kim forgot about the passage of time."
-    "Nakoa’s well of quips and anecdotes never ran dry, and with Karalún's curious insights, 
+    nvl_narrator "Nakoa’s well of quips and anecdotes never ran dry, and with Karalún's curious insights, 
     Noah’s occasional brotherly check-in, and the background chatter of the trio up ahead..."
 
-    "It was the perfect recipe for Kim to forget to perceive the passage of time."
+    nvl_narrator "It was the perfect recipe for Kim to forget to perceive the passage of time."
 
     show bg campsite_day with dissolve
     
-    "Eventually their trail reached a walk-in campsite, or rather a string of them."
+    nvl_narrator """
+    Eventually their trail reached a walk-in campsite, or rather a string of them.
     
-    "A few other student groups who’d had a staggered start ahead of their own could be 
-    seen in the distance, if you squinted and knew where to look between the trees."
+    A few other student groups who’d had a staggered start ahead of their own could be 
+    seen in the distance, if you squinted and knew where to look between the trees.
 
-    "Noah led the team to one of the vacant plots, marked by a swath of flat earth, picnic 
-    tables, and a fire pit." 
+    Noah led the team to one of the vacant plots, marked by a swath of flat earth, picnic 
+    tables, and a fire pit.
 
-    "With a triumphant unfurling and planting of their “Team Cobalt” banner at the edge of 
-    the clearing to mark their territory, the afternoon began in earnest."
+    With a triumphant unfurling and planting of their “Team Cobalt” banner at the edge of 
+    the clearing to mark their territory, the afternoon began in earnest.
+    """
 
     # —
     # TODO: art here??
 
-    "First was a late picnic lunch of deli wraps, courtesy of Nami’s pack."
+    nvl clear
 
-    "Then came the pitching of the tents, which had generously been carried by Khurrayo and 
-    Allira. (In retrospect, the two quadrupeds were the obvious choices.) "
+    nvl_narrator """
+    First was a late picnic lunch of deli wraps, courtesy of Nami’s pack.
 
-    "Then they played a word game featuring everyone’s native languages."
+    Then came the pitching of the tents, which had generously been carried by Khurrayo and 
+    Allira. (In retrospect, the two quadrupeds were the obvious choices.)
 
-    "On the hour came a more serious interlude, as Noah passed orientation handbooks around 
-    the circle."
+    Then they played a word game featuring everyone’s native languages.
 
-    "There was much to discuss about the school policies and offerings, naturally. Noah 
-    walked the group though the material and then opened the circle up to Q&A."
+    On the hour came a more serious interlude, as Noah passed orientation handbooks around 
+    the circle.
 
-    "As a break, next up was a craft project supplied by paper and colored pencils from 
-    Kim’s pack."
+    There was much to discuss about the school policies and offerings, naturally. Noah 
+    walked the group though the material and then opened the circle up to Q&A.
+
+    As a break, next up was a craft project supplied by paper and colored pencils from 
+    Kim’s pack.
     
-    "Not that she’d known it was the designated Craft Pack when she’d grabbed it from the 
+    Not that she’d known it was the designated Craft Pack when she’d grabbed it from the 
     pile back at the trailhead; she’d just noticed it was lighter than the others, and she 
-    hadn’t complained."
+    hadn’t complained.
 
-    "And with that, there was a bit of leisure time left over to stretch and take a bathroom 
+    And with that, there was a bit of leisure time left over to stretch and take a bathroom 
     break before they were due to report to the group picnic area for dinner with the other 
-    teams."
+    teams.
+    """
 
     # —
 
     # [bg darkens]
     show bg campsite_evening with dissolve
 
-    "Apparently a number of supplemental volunteers had convened to host a barbecue."
+    nvl clear
 
-    "Feeding the entire freshman class was no easy feat; Kim had all the more respect for 
-    the volunteer body for putting so much into the event."
+    nvl_narrator """
+    Apparently a number of supplemental volunteers had convened to host a barbecue.
 
-    "In the chaos of the dinner throng, she tried to skim the crowd for any other familiar 
-    faces, such as Luziim or Emma, to little avail."
+    Feeding the entire freshman class was no easy feat; Kim had all the more respect for 
+    the volunteer body for putting so much into the event.
 
-    "Oh well, it was easier to stick with Team Cobalt, which wasn’t lacking in interesting 
-    company, either."
+    In the chaos of the dinner throng, she tried to skim the crowd for any other familiar 
+    faces, such as Luziim or Emma, to little avail.
+
+    Oh well, it was easier to stick with Team Cobalt, which wasn’t lacking in interesting 
+    company, either.
+    """
 
     # [bg darkens again]
     # TODO: more art??
     show bg campsite_night with dissolve
 
-    "The gathering ended with a presentation, or perhaps it was better to call it a welcome."
+    nvl_narrator "The gathering ended with a presentation, or perhaps it was better to call it a welcome."
     
-    "A couple of the volunteers voiced platitudes about the formative years to come, as a 
+    nvl_narrator "A couple of the volunteers voiced platitudes about the formative years to come, as a 
     school and as a community."
 
-    "The speeches were, if a bit cliché, at least positive. The atmosphere of the event was one of optimism 
+    nvl_narrator "The speeches were, if a bit cliché, at least positive. The atmosphere of the event was one of optimism 
     and excitement. "
 
-    "Still, once it was over, Kim found herself much more eagerly walking back to Team 
+    nvl_narrator "Still, once it was over, Kim found herself much more eagerly walking back to Team 
     Cobalt’s campsite with her new friends."
 
-    "They had the rest of the night to enjoy each other’s company, and there was much yet to 
+    nvl_narrator "They had the rest of the night to enjoy each other’s company, and there was much yet to 
     share."
+
+    nvl hide 
+    with Dissolve(0.2)
 
     # —
 
@@ -811,7 +878,7 @@ label chapter_2:
 
     ki "I… wow."
 
-    ki "Alright, I admit, now I {i}am curious{/i}, but I feel like asking any more questions will 
+    ki "Alright, I admit, now I {i}am{/i} curious, but I feel like asking any more questions will 
     put me on a watch list."
 
     nk stern "Coward."
@@ -887,6 +954,8 @@ label chapter_2:
     ki "Oooh, right! Let’s see if they’ve started the s’mores yet."
 
     nk @ talk "Right behind ya."
+
+label chapter_2_b:
 
     # POV 2: Noah
     # [background: exterior of a dorm building]
