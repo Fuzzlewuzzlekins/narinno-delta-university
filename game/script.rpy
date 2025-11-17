@@ -214,6 +214,7 @@ transform farright_l:
 # Default 'dissolve' lasts 0.5 secs, let's make more
 define dissolve_f = Dissolve(0.1)
 define dissolve_s = Dissolve(1.0)
+define flash = Fade(0.1, 0.0, 0.1, color="#ffffff")
 
 define dissolveinleft = ComposeTransition(dissolve, after=easeinleft)
 define dissolveinright = ComposeTransition(dissolve, after=easeinright)
@@ -325,8 +326,8 @@ label start:
     # All actual scripts of the game will be handled in separate files, 
     # one per act/chapter(?). Start by jumping to chapter_0 (prologue).
 
-    # jump test_scene
+    jump test_scene
+    # jump outline
     # jump testytest
     # jump photoop
-
-    jump nvl_monologue_test
+    # jump nvl_monologue_test

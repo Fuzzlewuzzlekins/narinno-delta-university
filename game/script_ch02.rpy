@@ -1176,4 +1176,5 @@ label chapter_2_b:
 
     no "Yeah, it’s good to be back."
 
-    return
+    # return
+    jump chapter_3

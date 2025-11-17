@@ -150,7 +150,10 @@ label chapter_1:
 
     # [Background: the Takhu dorm hallway.]
 
-    scene bg kim_luziim_hall with dissolve
+    # scene bg kim_luziim_hall with dissolve
+    hide luziim
+    show bg kim_luziim_hall
+    with dissolve
 
     "They latched their door behind them and made for the stairwell."
 
@@ -783,7 +786,8 @@ label chapter_1_b:
     nn "For sure. How was the travel? Okay?"
 
     f "Eh, it was fine? Uneventful.{nw=0.5}"
-    extend " Which is good for a trip, come to think of it."
+
+    f "Eh, it was fine? Uneventful.{fast} Which is good for a trip, come to think of it."
 
     nn "Ha, fair point."
 

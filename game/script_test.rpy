@@ -12,23 +12,25 @@ label test_scene:
 
     # These display lines of dialogue.
     
-    show kim at leftish_2
-    show ash at rightish_2
+    show kim happy talk at leftish_2
+    show fyorra at rightish_2
 
     ki "Here we are as 2"
 
-    show kim at leftish_3
-    show ash at center_1
-    show rohal at rightish_3
+    show kim happy at leftish_3
+    show fyorra at center_1
+    show nakoa happy at rightish_3
 
-    a "and as 3"
+    f "and as 3"
 
-    show kim at left_4
-    show ash at leftish_4
-    show rohal at rightish_4
-    show tansei at right_4
+    show kim happy at left_4
+    show fyorra at leftish_4
+    show nakoa happy talk at rightish_4
+    show ash at right_4
 
-    r "and as 4!"
+    nk "and as 4!"
+
+    show nakoa happy
 
     jump test_game_3
 
@@ -83,10 +85,10 @@ label test_game_3:
     call screen minigame(bg="testbg", hero=("dummy", 500, 500), npcs=[
                     (
                         "dummy", 300, 600, [
-                            {"direction":"down","speed":500.0,"duration":1.0},
-                            {"direction":"down","speed":0.0,"duration":1.0},
-                            {"direction":"up","speed":500.0,"duration":1.0},
-                            {"direction":"up","speed":0.0,"duration":1.0}
+                            {"direction":"down","speed":500.0,"duration":1.0,"text":None},
+                            {"direction":"down","speed":0.0,"duration":1.0,"text":"WHOA"},
+                            {"direction":"up","speed":500.0,"duration":1.0,"text":None},
+                            {"direction":"up","speed":0.0,"duration":1.0,"text":None}
                         ],
                         [
                             "Oh, hello! Is it working?",
@@ -95,11 +97,11 @@ label test_game_3:
                     ),
                     (
                         "dummy", 800, 200, [
-                            {"direction":"left","speed":0.0,"duration":1.5},
-                            {"direction":"right","speed":500.0,"duration":1.0},
-                            {"direction":"right","speed":0.0,"duration":2.0},
-                            {"direction":"left","speed":500.0,"duration":1.0},
-                            {"direction":"left","speed":0.0,"duration":0.5}
+                            {"direction":"left","speed":0.0,"duration":1.5,"text":None},
+                            {"direction":"right","speed":500.0,"duration":1.0,"text":None},
+                            {"direction":"right","speed":0.0,"duration":2.0,"text":None},
+                            {"direction":"left","speed":500.0,"duration":1.0,"text":"I'm talking while moving! That's pretty neat."},
+                            {"direction":"left","speed":0.0,"duration":0.5,"text":None}
                         ],
                         [
                             "Hey there!",
@@ -109,7 +111,9 @@ label test_game_3:
                 ],
                 goals=[
                     ("goal", 1000, 1000)
-                ]) with Fade(0.2, 0.0, 0.2, color="#ffffff")
+                ],
+                _with_none=False) with flash
+    with flash
 
     $ quick_menu = True
     window show

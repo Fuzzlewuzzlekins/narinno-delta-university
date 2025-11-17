@@ -143,8 +143,6 @@ label chapter_0:
 
     "And the sooner the bubble popped, ideally on her own terms, the better."
 
-label testytest:
-
     # Background: the monorail station elsewhere in the starport.
 
     show bg starport_station with dissolve
@@ -376,7 +374,7 @@ label testytest:
     # [Sprite: the three others appear again.]
 
     show nakoa happy at leftish_3
-    show tansei at center_1
+    show tansei neutral at center_1
     show emma at rightish_3
     with fadeinright
 
@@ -393,7 +391,7 @@ label testytest:
 
     t talk "Oh, I’m not an incoming freshman. I’m a junior. Class of ’38."
 
-    t friendly @ friendly talk "Figured it couldn’t hurt to come into town a few days early, be a chaperone, show 
+    t friendly @ talk "Figured it couldn’t hurt to come into town a few days early, be a chaperone, show 
     you around town, help with a bit of move-in shopping—"
 
     nk stern "You talking to me, or to everyone?"
@@ -445,7 +443,7 @@ label testytest:
     was playful, and genuinely affectionate as far as she could tell."
 
     show nakoa happy with dissolve_f
-    t happy @ happy talk "Anyway, enough of us. Who’s next?"
+    t happy @ talk "Anyway, enough of us. Who’s next?"
 
     e "Sure, I’ll go!"
 
@@ -505,7 +503,7 @@ label testytest:
     e "Yeah, just be yourself and treat everyone with the same respect, and you’ll be 
     fine."
 
-    t happy @ happy talk "Exactly. It’s an admirable step you’re taking, if you ask me."
+    t happy @ talk "Exactly. It’s an admirable step you’re taking, if you ask me."
 
     "Kim blushed and ducked her head. These strangers she’d almost certainly just 
     offended were too kind."
@@ -556,9 +554,11 @@ label testytest:
 
     t shy "Aside from that, let’s see. I’ve studied quite a bit of Sayaro, a fair bit of 
     Elonen, bits and pieces of… uh, way too many random languages that caught my eye at 
-    some point or another. Nothing I can really say I’m fluent in."
+    some point or another."
+    
+    t excited "Nothing else I can really say I’m {i}fluent{/i} in."
 
-    ki "Hey, that’s amazing! You should be proud."
+    ki "Hey, that’s still amazing! You should be proud."
 
     show tansei happy with dissolve_f
     ki "Ooh, and while we’re talking about languages... you said your name was Tansei?"
@@ -603,6 +603,8 @@ label testytest:
     hide emma
     with fadeoutleft
 
+label testytest:
+
     # Background/Art: a half-bird’s-eye view of the campus as seen from the vantage 
     # point of the elevated monorail stop. Amidst a tree-lined neighborhood, the campus 
     # stands out with its swaths of red brick buildings and green fields.]
@@ -612,13 +614,14 @@ label testytest:
     "Tansei was right: the nondescript proper name of \“Vaniman\” didn’t do this station 
     justice."
 
-    "As if it had been planned this way from the city’s construction, the monorail 
-    platform boasted a panoramic view of what could be none other than the Narinno Delta 
-    University: Kimmings campus, front and center."
+    "As if planned this way from the city’s construction, the monorail platform boasted a 
+    panoramic view of what could only be the Narinno Delta University: Kimmings campus, 
+    front and center."
 
     "A patchwork quilt of green fields and red brick, a beacon shining amidst the carpet 
-    of residences hugging its borders. Not that the surrounding tree-studded 
-    neighborhood looked remotely unpleasant, either."
+    of residences hugging its borders."
+
+    "Not that the surrounding tree-studded neighborhood looked remotely unpleasant, either."
 
     nk "Oh, man, this view is something else."
 
@@ -638,14 +641,63 @@ label testytest:
 
     # TODO: add minigame tutorial here
 
-    "Something uncomfortable stewed inside her. Nothing nearly so debilitating as 
-    anxiety or dread, but a faint resistance. Trepidation."
+    window hide
+    $ quick_menu = False
+    $ renpy.suspend_rollback(True)
 
-    nk "You coming?"
+    # call screen minigame("sprites/dummy_front_idle.png")
+    call screen minigame(bg="testbg", hero=("mg_kim", 960, 300), npcs=[
+                    (
+                        "dummy", 650, 600, [
+                            {"direction":"down","speed":450.0,"duration":2.5,"text":None},
+                            {"direction":"left","speed":0.0,"duration":1000.0,"text":None}
+                        ],
+                        [
+                            "Ah, go ahead, I'm fixing my bags."
+                        ]
+                    ),
+                    (
+                        "mg_tansei", 800, 500, [
+                            {"direction":"down","speed":500.0,"duration":2.0,"text":None},
+                            {"direction":"right","speed":0.0,"duration":1000.0,"text":None}
+                        ],
+                        [
+                            "Please, go ahead."
+                        ]
+                    ),
+                    (
+                        "mg_nakoa", 1100, 420, [
+                            {"direction":"down","speed":350.0,"duration":1.8,"text":None},
+                            {"direction":"up","speed":0.0,"duration":1.5,"text":"You coming?"},
+                            {"direction":"up","speed":0.0,"duration":1000.0,"text":None}
+                        ],
+                        [
+                            "You go first, you've got the most bags."
+                        ]
+                    )
+                ],
+                goals=[
+                    ("goal", 960, 1200)
+                ],
+                _with_none=False) with flash
+    with flash
 
-    ki "Yeah, yeah! I’m right behind you."
+    $ quick_menu = True
+    $ renpy.suspend_rollback(False)
+    window show
 
-    "She followed the others onto the escalator."
+    # # Alt dialogue in case I can't get the minigame up and running:
+
+    # "Something uncomfortable stewed inside her. Nothing nearly so debilitating as 
+    # anxiety or dread, but a faint resistance. Trepidation."
+
+    # nk "You coming?"
+
+    # ki "Yeah, yeah! I’m right behind you."
+
+    # "She followed the others onto the escalator."
+
+    # 
 
     # [Art: the perspective of the view parallaxes downwards somewhat.]
 

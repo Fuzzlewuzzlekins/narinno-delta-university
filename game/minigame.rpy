@@ -36,6 +36,32 @@ image dummy r_walk:
     pause anim_speed
     repeat
 
+image mg_kim f_idle = "sprites/minigame/kim_front_idle.png"
+image mg_kim b_idle = "sprites/minigame/kim_back_idle.png"
+image mg_kim l_idle = "sprites/minigame/kim_left_idle.png"
+image mg_kim r_idle = "sprites/minigame/kim_right_idle.png"
+image mg_nakoa f_idle = "sprites/minigame/nakoa_front_idle.png"
+image mg_nakoa b_idle = "sprites/minigame/nakoa_back_idle.png"
+image mg_nakoa l_idle = "sprites/minigame/nakoa_left_idle.png"
+image mg_nakoa r_idle = "sprites/minigame/nakoa_right_idle.png"
+image mg_tansei f_idle = "sprites/minigame/tansei_front_idle.png"
+image mg_tansei b_idle = "sprites/minigame/tansei_back_idle.png"
+image mg_tansei l_idle = "sprites/minigame/tansei_left_idle.png"
+image mg_tansei r_idle = "sprites/minigame/tansei_right_idle.png"
+# Temp: use idles for walks because I haven't made frames yet
+image mg_kim f_walk = "sprites/minigame/kim_front_idle.png"
+image mg_kim b_walk = "sprites/minigame/kim_back_idle.png"
+image mg_kim l_walk = "sprites/minigame/kim_left_idle.png"
+image mg_kim r_walk = "sprites/minigame/kim_right_idle.png"
+image mg_nakoa f_walk = "sprites/minigame/nakoa_front_idle.png"
+image mg_nakoa b_walk = "sprites/minigame/nakoa_back_idle.png"
+image mg_nakoa l_walk = "sprites/minigame/nakoa_left_idle.png"
+image mg_nakoa r_walk = "sprites/minigame/nakoa_right_idle.png"
+image mg_tansei f_walk = "sprites/minigame/tansei_front_idle.png"
+image mg_tansei b_walk = "sprites/minigame/tansei_back_idle.png"
+image mg_tansei l_walk = "sprites/minigame/tansei_left_idle.png"
+image mg_tansei r_walk = "sprites/minigame/tansei_right_idle.png"
+
 image goal = Solid("#ff0000", xsize=100, ysize=100)
 
 # Not used in minigame, just as a test
@@ -114,6 +140,7 @@ init python:
             self.behaviors = behavior
             self.lastbehaviorstart = pygame.time.get_ticks()
             self.lastbehaviorpause = pygame.time.get_ticks()
+            self.paused = False
             self.dialogue = dialogue
 
         # Not sure if needed?
@@ -207,15 +234,20 @@ init python:
             # The time of the past render-frame.
             self.oldst = None
 
-            # # The winner.
-            # self.winner = None
+            # The win condition.
             self.win_condition = None
+            self.goal_reached = None
+
+            # Interaction: is key pressed, is window open, who's talking, etc.
             self.interact = False
             self.dialog_open = False
             self.dialog_object = None
             self.dialog_npc = None
             self.dialog_coords = [0,0]
-            self.goal_reached = None
+
+            # NEW: "automatic" dialog boxes spoken without interaction
+            self.bg_dialog_objects = [None for i in range(len(self.npcsprites))]
+            self.bg_dialog_coords = [[0,0] for i in range(len(self.npcsprites))]
 
         def visit(self):
             return [ self.chosensprite ]
@@ -307,12 +339,11 @@ init python:
             # Figure out what the NPCs are doing
             charsprites = []
             for character in self.npcsprites:
-                # TODO: Don't update character if they're the one who's talking
                 charspeed = dtime * character.spritespeed
                 # If it's time for the next behavior, update list and values
                 currenttime = pygame.time.get_ticks()
                 if (currenttime - character.lastbehaviorstart > character.behaviors[0]["duration"] * 1000 
-                                and not self.dialog_open):
+                                and not character.paused):
                     character.lastbehaviorstart = currenttime
                     oldbehavior = character.behaviors.pop(0)
                     character.behaviors.append(oldbehavior)
@@ -320,7 +351,7 @@ init python:
                     character.spritespeed = character.behaviors[0]["speed"]
                 # Move sprite according to same procedure as hero
                 charspeed = dtime * character.spritespeed
-                if not self.dialog_open:
+                if not character.paused:
                     if character.spritedir == "left":
                         character.spritex -= character.spritedx * charspeed
                     if character.spritedir == "right":
@@ -329,9 +360,22 @@ init python:
                         character.spritey -= character.spritedy * charspeed
                     if character.spritedir == "down":
                         character.spritey += character.spritedy * charspeed
-                # Select walking or idle
+                else:
+                    # NEW: if NPC is talking, rotate to face the player
+                    xdiff = self.herosprite.spritex - character.spritex
+                    ydiff = self.herosprite.spritey - character.spritey
+                    if xdiff < 0 and abs(xdiff) > abs(ydiff):
+                        character.spritedir = "left"
+                    elif xdiff >= 0 and abs(xdiff) > abs(ydiff):
+                        character.spritedir = "right"
+                    else:
+                        if ydiff < 0:
+                            character.spritedir = "up"
+                        else:
+                            character.spritedir = "down"
+                # Select walking or idle animation
                 charsprite = None
-                if character.spritespeed == 0.0 or self.dialog_open:
+                if character.spritespeed == 0.0 or character.paused:
                     charsprite = renpy.render(character.idle_sprites[character.spritedir], width, height, st, at)
                 else:
                     charsprite = renpy.render(character.walk_sprites[character.spritedir], width, height, st, at)
@@ -370,6 +414,7 @@ init python:
                                 self.dialog_npc = i
                                 closestdist = tempdist
                         # You found the NPC who talked! Pause them.
+                        self.npcsprites[self.dialog_npc].paused = True
                         self.npcsprites[self.dialog_npc].lastbehaviorpause = pygame.time.get_ticks()
                         # Now build the dialog window.
                         self.dialog_open = True
@@ -377,18 +422,28 @@ init python:
                         self.dialog_object = Window(dialogtext, background='#ffffff', xsize=300, ysize=200)
                         # Center the dialog box on the NPC sprite, above their head (may move later)
                         self.dialog_coords = [self.npcsprites[self.dialog_npc].spritex, 
-                                        self.npcsprites[self.dialog_npc].spritey - (charsprites[self.dialog_npc][0].get_size()[1])]
+                                        self.npcsprites[self.dialog_npc].spritey - (charsprites[self.dialog_npc][0].get_size()[1]) + 100]
                 # Otherwise, close the popup
                 else:
                     self.dialog_open = False
                     # Unpause NPC
-                    # self.npcsprites[self.dialog_npc].behaviors.pop(0)
+                    self.npcsprites[self.dialog_npc].paused = False
                     self.npcsprites[self.dialog_npc].lastbehaviorstart += pygame.time.get_ticks() - self.npcsprites[self.dialog_npc].lastbehaviorpause
                     # Advance speaking NPC's dialogue by 1 line for next time
                     oldtext = self.npcsprites[self.dialog_npc].dialogue.pop(0)
                     self.npcsprites[self.dialog_npc].dialogue.append(oldtext)
 
-            # New: see if the player has reached a goal
+            # NEW: create "idle" dialog windows for NPCs not being interacted with
+            for i in range(len(self.npcsprites)):
+                # TODO: give NPCs a "cooldown" so they don't redisplay this idle text right after being spoken to
+                if self.npcsprites[i].behaviors[0]["text"] and not self.npcsprites[i].paused:
+                    dialogtext = Text(self.npcsprites[i].behaviors[0]["text"], size=16, xalign=0.5, yalign=0.5)
+                    self.bg_dialog_objects[i] = Window(dialogtext, background='#cccccc', xsize=240, ysize=160)
+                    self.bg_dialog_coords[i] = [self.npcsprites[i].spritex, self.npcsprites[i].spritey - (charsprites[i][0].get_size()[1]) + 100]
+                else:
+                    self.bg_dialog_objects[i] = None
+
+            # See if the player has reached a goal
             objsprites = []
             for goal in self.goalsprites:
                 goalsprite = renpy.render(goal, width, height, st, at)
@@ -427,7 +482,7 @@ init python:
             allsprites = charsprites + objsprites
             # allsprites.sort(key=lambda x: x[1][1] + x[0].get_size()[1])
             for i in range(len(allsprites)):
-                highest = height
+                highest = height * 2 # Hopefully no sprites are taller than the screen...
                 currentchar = None
                 for j in range(len(allsprites)):
                     tempchar = allsprites[j]
@@ -438,7 +493,21 @@ init python:
                 allsprites.remove(currentchar)
                 r.blit(currentchar[0], currentchar[1])
 
-            # show popup window
+            # NEW: show idle popup windows
+            for i in range(len(self.bg_dialog_objects)):
+                if self.bg_dialog_objects[i]:
+                    popupsprite = renpy.render(self.bg_dialog_objects[i], width, height, st, at) 
+                    popupwidth, popupheight = popupsprite.get_size()
+                    popupx = self.bg_dialog_coords[i][0] - popupwidth/2 + self.mapx
+                    popupy = self.bg_dialog_coords[i][1] - popupheight/2 + self.mapy
+                    # Adjust popup location to fit within screen bounds if necessary
+                    popupx = max([popupx, 50])
+                    popupx = min([popupx, width-popupwidth-50])
+                    popupy = max([popupy, 50])
+                    popupy = min([popupy, height-popupheight-50])
+                    r.blit(popupsprite, (int(popupx), int(popupy)))
+
+            # show main popup window
             if self.dialog_open:
                 popupsprite = renpy.render(self.dialog_object, width, height, st, at) 
                 popupwidth, popupheight = popupsprite.get_size()
@@ -450,19 +519,6 @@ init python:
                 popupy = max([popupy, 50])
                 popupy = min([popupy, height-popupheight-50])
                 r.blit(popupsprite, (int(popupx), int(popupy)))
-
-
-            # Check for a winner.
-            # if self.bx < -50:
-            #     self.winner = "kim"
-
-            #     # Needed to ensure that event is called, noticing
-            #     # the winner.
-            #     renpy.timeout(0)
-
-            # elif self.bx > width + 50:
-            #     self.winner = "ash"
-            #     renpy.timeout(0)
 
             # If we have a win condition, call event to notice it.
             if self.win_condition:
@@ -490,8 +546,8 @@ init python:
                     self.keyright = True
                 elif ev.key == pygame.K_SPACE:
                     self.interact = True
+                # TODO: remove escape skip (or implement fair bypass)
                 elif ev.key == pygame.K_ESCAPE:
-                    # self.winner = True
                     self.win_condition = "escape"
             
             # Detect key releases.
@@ -505,12 +561,9 @@ init python:
                 elif ev.key == pygame.K_RIGHT:
                     self.keyright = False
 
-            # # If we have a winner, return him or her. Otherwise, ignore
-            # # the current event.
-            # if self.winner:
-            #     return self.winner
+            # Return the win condition (goal reached, timeout, or escape),
+            # otherwise ignore event
             if self.win_condition:
-                # Return the win condition (goal reached, timeout, or escape).
                 return self.win_condition
             else:
                 raise renpy.IgnoreEvent()
@@ -522,6 +575,8 @@ screen minigame(bg, hero, npcs=[], goals=[], timeout=None):
 
     add minigame
     
+    # Display instructions/keypresses available in this instance
+    # TODO: make this respond to parameters (and be in a less obtrusive place)
     text _("Use arrow keys and spacebar"):
         at truecenter
         xanchor 0.5

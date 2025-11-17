@@ -73,15 +73,15 @@ label chapter_3:
 
     ka worried talk "Ah! I’m sorry!"
 
-    ka "I-I am still learning how to smile smaller. I don’t want to scare anyone."
+    ka pensive @ talk "I-I am still learning how to smile smaller. I don’t want to scare anyone."
 
     ki "Hey, hey, don’t overthink it! I’m getting used to it. Everyone else will too."
 
     ki "How’ve the first two days of class been treating you?"
 
-    ka "Ah, well, thank you! My presence did not seem to anger anyone yet."
+    ka excited "Ah, well, thank you! My presence did not seem to anger anyone yet."
 
-    ka "It is embarrassing that I still struggle with some written words in Standard. I have to 
+    ka neutral @ talk "It is embarrassing that I still struggle with some written words in Standard. I have to 
     look them up later."
 
     ki "Oh, that’s normal. I don’t think Standard is anyone’s native language, everyone’s gonna 
@@ -90,7 +90,7 @@ label chapter_3:
     ki "...Actually, wait, I take that back. If it’s a creole language, that means it has 
     native speakers, right? Because if it didn’t, it would still be considered a pidgin."
 
-    ka "I’m sorry, a what-language? And why is it a pigeon?"
+    ka @ talk "I’m sorry, a what-language? And why is it a pigeon?"
 
     ki "Oh, sorry, let me back up."
 
@@ -104,7 +104,7 @@ label chapter_3:
     just when they need it, to the point that their kids speak it as a first language, then it 
     officially isn’t a pidgin anymore. It’s a creole."
 
-    ka "So… a pidgin language is a hybrid language that’s temporary, like a code, but a creole 
+    ka @ talk "So… a pidgin language is a hybrid language that’s temporary, like a code, but a creole 
     language is what happens when a pidgin language gets big enough to have native speakers?"
 
     ki "Yep! I remember reading somewhere when I was a kid that Standard was a pidgin, but 
@@ -112,17 +112,20 @@ label chapter_3:
     sometime in the middle, after a census or something."
 
     # [background: changes to outside Takhu Hall]
+    show bg kim_luziim_kara_exterior
 
-    ka "Interesting! So it is young, then."
+    ka @ talk "Interesting! So it is young, then."
 
     ki "Yeah, the Association’s only a hundred and thirty-ish years old, so it couldn’t be any 
     older than that."
 
     ki "...What were we talking about? I have no idea how we got on this."
 
-    ka "Oh, it’s fine. I just learned something, so that’s good!"
+    ka excited "Oh, it’s fine. I just learned something, so that’s good!"
 
     ki "Heh, fair."
+
+    show kara neutral with dissolve_f
 
     "Come to think of it, she’d absentmindedly been walking towards Takhu Hall this whole time, 
     Karalún at her side. "
@@ -131,37 +134,40 @@ label chapter_3:
 
     ki "I was thinking about sitting down at that café back there."
 
-    ka "Oh, I’m sorry! I didn’t mean to distract you. Should we go back?"
+    ka worried @ talk "Oh, I’m sorry! I didn’t mean to distract you. Should we go back?"
 
     ki "No, it’s fine! Not enough time at this point, and I was on the fence anyway."
+
+    show kara neutral with dissolve_f
 
     "Karalún blinked, perhaps in confusion at the phrase ‘on the fence,’ but if she had, she 
     chose not to ask about it."
 
-    ka "Do you have something else scheduled soon?"
+    ka @ talk "Do you have something else scheduled soon?"
 
     ki "Yep, choir at 3:30. It’s the last class I haven’t seen yet."
 
-    ka "‘Kwa-yur.’ You and Noah used that word a few times. It is… a type of music group?"
+    ka @ talk "‘Kwa-yur.’ You and Noah used that word a few times. It is… a type of music group?"
 
     ki "Yep, it’s for singing! That’s what you call a group of singers."
 
-    ka "Ahh, that sounds like fun!"
+    ka happy "Ahh, that sounds like fun!"
 
     ki "Yeah, I’m looking forward to it."
 
     ki "Anyway, want to hang out in my room for a bit while we wait? It’s not much yet, but 
     it’s something."
 
-    ka "Sure! I don’t mind."
+    ka @ grin "Sure! I don’t mind."
 
     ki "Awesome. Maybe you’ll meet my roommate, I’m not sure if she’s in right now."
 
     ki "I’ll be sure to introduce you if she is."
 
-    ka "Thank you! I’m happy to meet new people."
+    ka excited "Thank you! I’m happy to meet new people."
 
     # [background change: Kim’s dorm hallway]
+    scene bg kim_luziim_hall with dissolve
 
     "Kim led the way inside and upstairs. It only took a minute to ascend to the correct floor 
     and arrive at Kim’s room."
@@ -170,6 +176,7 @@ label chapter_3:
     after a few seconds she pressed her palm to the reader and slid the door open."
 
     # [background: Kim’s room.]
+    show bg kim_luziim_dorm with dissolve
 
     "By this point, both beds looked well lived in. Kim felt a pang of sudden embarrassment at 
     showing Karalún such a messy space, but it was too late now."
@@ -177,6 +184,7 @@ label chapter_3:
     "To her surprise, however, the mass of blankets on the bed on the right shifted."
 
     # [Sprite: half-dressed Luziim appears]
+    show luziim at center_1 with dissolve
 
     l "Hey. What time is it?"
 
@@ -191,6 +199,9 @@ label chapter_3:
     "Well, she seemed comfortable introducing herself as she was, which Kim supposed was fine."
 
     # [Sprite: Kara returns on screen, looking terrified. Music cuts out.]
+    show luziim at leftish_2
+    show kara worried at rightish_2
+    with easeinright
 
     "Karalún, however… did not look fine. She stood frozen, eyes the widest Kim had yet seen 
     them."
@@ -199,25 +210,26 @@ label chapter_3:
 
     # [Sprite: Kara’s gaze darts away.]
 
-    ka "I am sorry. I should leave."
+    ka @ talk "I am sorry. I should leave."
 
     l "What, am I that scary? I won’t bite."
 
-    ka "Yes— ah! No! I—"
+    ka @ talk "Yes— ah! No! I—"
 
-    ka "I-I-I do not want to disturb you. I will go now."
+    ka pensive @ talk "I-I-I do not want to disturb you. I will go now."
 
     l "You’re disturbing me by leaving me hanging here, girl. Name’s Luziim. What’s yours?"
 
-    ka "K… Karalún."
+    ka worried @ talk "K… Karalún."
 
     "She slid her hand into Luziim’s hand as if it were an animal’s jaws."
 
     ki "Okay, what’s going on here? Is there a problem I don’t know about?"
 
+    show kara startled with dissolve_f
     "Karalún gaped at her."
 
-    ka "I… I am Jorgoan, Kim! I—"
+    ka @ angry "I… I am Jorgoan, Kim! I—"
 
     l "And I’m a zanduul. What of it?"
 
@@ -228,11 +240,11 @@ label chapter_3:
 
     # [Sad music comes in.]
 
-    ka "Do you not… hate me?"
+    ka pensive @ talk "Do you not… hate me?"
 
     l "No, why would I hate you?"
 
-    ka "Because my people—"
+    ka @ talk "Because my people—"
 
     l "Your Empire committed genocide? I am well aware."
 
@@ -242,7 +254,7 @@ label chapter_3:
 
     l "Oh, stop. By what, a handful of years? Tell me how many years."
 
-    ka "I am twenty-four of your years old."
+    ka neutral @ talk "I am twenty-four of your years old."
 
     l "So you were twelve when the Searing happened. A twelve-year-old kid. My point still 
     stands."
@@ -253,7 +265,7 @@ label chapter_3:
     l "In fact, if you’re here, you hate the Empire too, right? You’re either Avikran or from 
     one of the rebel states."
 
-    ka "Ah, yes. I am Avikran."
+    ka @ talk "Ah, yes. I am Avikran."
 
     # [sprite: Luziim smirks]
 
@@ -265,27 +277,31 @@ label chapter_3:
 
     ki "Ah, that’s—"
 
-    ka "I snuck into an archival building. Charged with breaking and entering, petty theft, and 
+    ka @ talk "I snuck into an archival building. Charged with breaking and entering, petty theft, and 
     treason."
 
     l "Oooh, you hurt ’em so bad you got treason? Hell yeah. We’re definitely friends."
 
     # [sprite: Karalún has finally begun smiling.]
 
-    ka "Ha ha, if you like. I was part of a rebellion. We called ourselves the Destined Sun."
+    ka excited "Ha ha, if you like. I was part of a rebellion. We called ourselves the Destined Sun."
 
-    ka "And I had a code name, Chasm-Darter. I was meant to be fast and… ah, sneaky? Sneaky, 
+    ka neutral @ talk "And I had a code name, Chasm-Darter. I was meant to be fast and… ah, sneaky? Sneaky, 
     yes."
 
     ki "Oh! That’s where you got your title from, at orientation!"
 
-    ka "Yes! I am…"
+    ka excited "Yes! I am…"
 
-    ka "Well, I… failed. And I am ashamed that I failed. But I am proud that I tried! So I 
+    ka pensive talk "Well, I… failed. And I am ashamed that I failed.{nw=0.5}"
+
+    show kara happy
+    ka "Well, I… failed. And I am ashamed that I failed.{fast} But I am proud that I tried! So I 
     thought it made sense to be my orientation title."
 
     l "What’s this about orientation titles?"
 
+    show kara neutral with dissolve_f
     ki "Oh, we played a name game on Team Cobalt where everyone gave themselves a pretentious 
     title. Like ‘Lord of Candles’ and ‘The Dungeonmaster’ and stuff."
 
@@ -293,7 +309,7 @@ label chapter_3:
 
     l "Aw, damn, you guys got the cool name game."
 
-    l "On Team Chartreuse we just did animals. I was Luziim the Lizard. Yawn."
+    l "On Team Chartreuse we just did animals. I was Luziim the Lizard. {i}Yawn.{/i}"
 
     ki "Hey, that’s not boring, it’s got a nice ring to it."
 
@@ -308,7 +324,7 @@ label chapter_3:
 
     ki "Ha ha, yeah. I’m excited! It’ll be good to be in a group again."
 
-    ka "I hope that you have fun! Perhaps after I learn how to read music, I will join you 
+    ka @ talk "I hope that you have fun! Perhaps after I learn how to read music, I will join you 
     next semester."
 
     ki "That would be neat! See you both later, then."
@@ -316,6 +332,10 @@ label chapter_3:
     "Luziim and Karalún both waved in farewell, and then Kim was on her way."
 
     # [background: dorm hallway again]
+    hide luziim
+    hide kara
+    show bg kim_luziim_hall 
+    with dissolve
 
     "It was good to see Luziim and Karalún seeming to get along. After their awkward 
     introduction, Kim had been worried."
@@ -328,6 +348,7 @@ label chapter_3:
     she had yet to visit."
 
     # [background: choir hall]
+    show bg music_choirroom
 
     "The hallways in this building were comparatively tame, but the rehearsal spaces were grand 
     and vaulting. This choir room was no exception."
@@ -389,12 +410,15 @@ label chapter_3:
     "???" "“Kimiko-Who-Goes-By-Kim!”"
 
     # [Sprite: Nanneyo appears, waving and beaming.]
+    show nanneyo at center_1 with dissolve
 
     "She honed in on the source of the voice."
 
     "Oh! This was the volunteer who had checked her in last week."
 
     # [Sprite: Blake and Fyorra appear as well.]
+    show blake at leftish_3 with dissolve
+    show fyorra at rightish_3 with dissolve
 
     "More specifically, she looked to be one of a trio of students who were currently clumped up 
     around the piano on the other side of the room."
@@ -490,7 +514,7 @@ label chapter_3:
     "Blake stiffened and tapped a folder under his arm."
 
     b "Hey, I think it’s fair to want to hear what I’ve written in actual voices in range. Try 
-    singing these in my falsetto and see how you like it."
+    singing these in my falsetto and see how {i}you{/i} like it."
 
     "Nanneyo giggled at that."
 
@@ -519,7 +543,7 @@ label chapter_3:
 
     "He’d already smoothly extracted a sheet from his folder and was handing it to her."
 
-    ki "Oh, uh, mezzo soprano. Yeah, soprano’s fine."
+    ki "O-oh, uh, mezzo soprano. Yeah, soprano’s fine."
 
     nn "I look forward to hearing your voice, Kim! I’m sure it’s lovely!"
 
@@ -529,6 +553,11 @@ label chapter_3:
     to take a seat."
 
     # [Sprite: Blake disappears.]
+    hide blake with dissolveoutright
+
+    show nanneyo at leftish_2
+    show fyorra at rightish_2
+    with ease
 
     nn "Oooh, I like this already.{nw=0.5}"
     extend " I think."
@@ -569,21 +598,27 @@ label chapter_3:
     f "Ready."
 
     "Kim gulped. This wasn’t a full choir, nor was it karaoke, nor singing in the shower. This 
-    was a small group. Of strangers, no less."
+    was a {i}small group{/i}. Of strangers, no less."
 
     ki "Ready as I’ll ever be."
 
     b "Alright, on four."
+
+    # TODO: add rhythm game segment here!!
+
+label chapter_3_b:
     
     # POV 2: Fyorra
     # [Art/animation: As the transition between the two scenes, there plays a choral segment. To 
     # be written. The more experienced three seem to be enjoying themselves. Kim looks with 
     # uncertainty at her music at one or two points, but eventually smiles, having fun.]
+    scene bg music_choirroom with fade
 
     "For as nervous as the poor newcomer had seemed, and as unhelpfully pushy as Blake and 
     Nanneyo had been, Fyorra had to admit: the girl had pipes."
 
     # [Sprite: Kim appears for the first time.]
+    show kim worried at center_1 with dissolve
 
     "Her posture was wary at first, but it didn’t take long to straighten with excitement."
 
@@ -598,10 +633,13 @@ label chapter_3:
     "At 4:50 on the dot, ey cleared eir throat and raised eir hand."
 
     # [Sprite: the other two slide on screen.]
+    show blake at leftish_3
+    show nanneyo at rightish_3
+    with dissolve
 
     f "Sorry, but I’ll need to call it here, friends. I have to be somewhere at five."
 
-    "Blake checked his own wrist. "
+    "Blake checked his own wrist."
 
     b "Ah, damn, I didn’t even realize we’d filled the class slot. Time flies when you’re having 
     fun!"
@@ -629,11 +667,16 @@ label chapter_3:
     nn "Hey, wait—"
 
     # [Sprite: all 3 slide offscreen]
+    hide blake
+    hide kim
+    hide nanneyo
+    with easeoutleft
 
     "But Fyorra was already turning on eir heel to leave. Ey had ten minutes—nine now, 
     technically—to reach the third floor of the science complex."
 
     # [Background: a campus field, outside the music building]
+    show bg music_exterior with dissolve
 
     "Ey proceeded through the music building without event. But upon opening the exterior door, 
     ey heard a rapid gallop of footfalls approaching from behind."
@@ -641,6 +684,7 @@ label chapter_3:
     nn "Fyor! Wait up!"
 
     # [Sprite: Nanneyo reappears]
+    show nanneyo at center_1 with easeinbottom
 
     # [AUTHOR’S NOTE: In an earlier version of the script, this is where the musical number 
     # “What Are Friends For” took place. Below I have rewritten the scene as prose as a backup 
@@ -656,7 +700,7 @@ label chapter_3:
     f "...No, it really isn’t. The prerequisite’s only Calc 1."
 
     # [Sprite: cross.]
-    nn "‘Only’ Calc 1? You say that like everyone and their nai can do it."
+    nn "‘Only’ Calc 1? You say that like everyone and their {i}nai{/i} can do it."
 
     nn "Learn to accept a little praise, yeah? We’re not all geniuses like you."
 
@@ -683,7 +727,7 @@ label chapter_3:
 
     nn "Of course, that’s what best friends are for."
 
-    A" warmth took hold in Fyorra’s cheeks."
+    "A warmth took hold in Fyorra’s cheeks."
 
     nn "What? You look surprised. Are we not best friends?"
 
@@ -695,32 +739,33 @@ label chapter_3:
 
     f "...No, I don’t think that’s standard, actually."
 
-    nn "Oh."
-    
+    nn "Oh.{nw=0.5}"
     # [Sprite: she brightens mid-thought.]
-    nn "Well, thanks for sticking with me, then. You didn’t have to put up with my bullshit."
+    nn "Oh.{fast} Well, thanks for sticking with me, then. You didn’t have to put up with my bullshit."
 
     f "...Language, Nan."
 
     f "And no, I wasn’t going to just leave you to rot with that two-bottle hangover, I have a 
     heart."
 
+    show bg science_exterior with dissolve
+
     nn "You sure? Thought you were a prude. You could’ve left me to learn my lesson."
 
-    f "I’m a prude, not a monster, sheesh."
+    f "I’m a prude, not a {i}monster{/i}, sheesh."
 
     nn "Or you just love me."
 
-    f "A’ight, if you’re gonna call me a prude, I’m gonna call you a shameless flirt, you 
+    f "A’ight, if you’re gonna call me a prude, I’m gonna call you a {i}shameless flirt{/i}, you 
     little—"
 
     nn "You’re cute when you’re riled up."
 
     f "Hey! No—!"
 
-    nn "Cutie prude-y patootie."
+    nn "Cutie prude-y patootie." (multiple=2)
 
-    f "Cease!"
+    f "Cease!" (multiple=2)
 
     "Ey couldn’t contain eir laughter anymore. Nanneyo had a way about her: always able to make 
     Fyorra crack. It was infuriating, in an inexplicably warm and fuzzy way."
@@ -751,18 +796,26 @@ label chapter_3:
     nn "See ya, Fyor."
 
     # [Sprite: Nanneyo disappears.]
+    hide nanneyo with dissolveoutright
 
     "And that was that. Fyorra’s troublesome, bubbly former roommate parted with em at the door."
 
     # [Scene: the math lab.]
+    # show bg science_mathlab with dissolve
+    show bg science_stairs with dissolve
 
     "The math department was based on the third floor of the science complex. After ascending a 
     couple of flights of stairs, Fyorra beheld what had to be eir destination."
+
+    show bg science_mathlab with dissolve
 
     "Just past the landing, the hallway gave way to a classroom-sized open space, populated 
     with a mix of desks and reading chairs. A sort of study lounge."
 
     # [Sprite: Prof. Banaru and Nyarokhu appear.]
+    show p_banaru at leftish_2
+    show nyarokhu at rightish_2
+    with dissolve
 
     "Two figures were already present. Both looked idly in Fyorra’s direction at eir arrival."
 
@@ -784,9 +837,9 @@ label chapter_3:
 
     "Fyorra looked the strange dubina up and down, who did the same in return."
 
-    "Stranger" "“Don’t think so.”"
+    "Stranger" "“Don’t think so.”" (multiple=2)
 
-    f "No, can’t say I have."
+    f "No, can’t say I have." (multiple=2)
 
     "Ey would have remembered that urban choice of attire, surely."
 
@@ -824,6 +877,8 @@ label chapter_3:
     "Prof. Banaru" "“I’ll get back to my lesson plans, then. You two play nice.”"
 
     # [Sprite: the professor leaves.]
+    hide p_banaru with dissolveoutleft
+    show nyarokhu at center_1 with ease
 
     "And with that, they were away. Fyorra was alone with eir new coworker."
 
@@ -885,6 +940,7 @@ label chapter_3:
     and see the two of them squabbling."
 
     # [Sprite: Nyarokhu disappears.]
+    hide nyarokhu with dissolveoutright
 
     "Ey set the “MATH TUTOR” placard down at the edge of the desk, took a moment to straighten 
     it, and then let eir bag hit the floor as ey settled onto a stool."
@@ -919,11 +975,14 @@ label chapter_3:
 
     "Fyorra looked up from eir work."
 
-    "Who was this he/him they were referring to? Did they really just presume…?"
+    "Who was this {i}he/him{/i} they were referring to? Did they really just presume…?"
 
     "Ey turned in eir seat."
 
     # [Sprite: the pair of onkai appear.]
+    show mathstudent_1 at leftish_2
+    show mathstudent_2 at rightish_2
+    with easeinleft
 
     f "Hey, excuse me."
 
@@ -937,6 +996,10 @@ label chapter_3:
     "Student 2" "“What? I didn’t—”"
 
     # [Sprite: Nyarokhu appears.]
+    show mathstudent_1 at leftish_3
+    show mathstudent_2 at center_1
+    show nyarokhu at rightish_3
+    with easeinright
 
     ny "Fyorra, drop it. It’s fine."
 
@@ -965,9 +1028,17 @@ label chapter_3:
     ny "Excuse us."
 
     # [Sprite: the onkai slide offscreen. Background: switches to the stairwell.]
+    hide mathstudent_1
+    hide mathstudent_2
+    with easeoutleft
+
+    show nyarokhu at center_1
+    with ease
 
     "Leaving the students alone for a moment, they stepped several paces down the hallway and 
     turned into the stairwell."
+
+    show bg science_stairs with dissolve
 
     # [Sprite: Nyarokhu is suddenly close to the camera, furious.]
 
@@ -975,7 +1046,7 @@ label chapter_3:
 
     "Fyorra recoiled from the venom in Nyarokhu’s whisper."
 
-    f "(My problem? I was standing up for you!)"
+    f "({i}My{/i} problem? I was standing up for you!)"
 
     ny "(You were sticking your nose in my own goddamn business!)"
 
@@ -1005,7 +1076,7 @@ label chapter_3:
 
     ny "..."
 
-    ny "I am not stooping to anyone’s level. This is—"
+    ny "I am not {i}stooping to anyone’s level{/i}. This is—"
 
     # [Sprite: Nyarokhu slumps.]
 
@@ -1014,12 +1085,15 @@ label chapter_3:
     ny "Truce. We both keep to ourselves and keep our mouths shut."
 
     # [Sprite: Nyarokhu slides away.]
+    hide nyarokhu with dissolveoutleft
 
     "Before Fyorra could retort, Nyarokhu had stalked back into the hallway with heavy strides."
 
     "Truce."
 
     "A truce ey could do, a pact to live and let live until this semester was over."
+
+    show bg science_mathlab with dissolve
 
     "Ey followed Nyarokhu back to the lounge and resumed eir seat."
 
@@ -1028,3 +1102,5 @@ label chapter_3:
     "Surely he knew he’d look a little more professional without the hat, right?"
 
     "Oh well. Not Fyorra’s problem."
+
+    return
