@@ -781,6 +781,9 @@ label testytest:
 
     show nanneyo at center_1 with dissolveinbottom
 
+    play music allegroinf_intro
+    queue music allegroinf_loop
+
     "Volunteer" "\“Heyas! Welcome to NDU, can I get your name?\”"
 
     "Kim’s mental processes stalled for a moment, caught off guard by the perky greeting 

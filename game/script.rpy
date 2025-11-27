@@ -326,8 +326,8 @@ label start:
     # All actual scripts of the game will be handled in separate files, 
     # one per act/chapter(?). Start by jumping to chapter_0 (prologue).
 
-    jump test_scene
+    # jump test_scene
     # jump outline
-    # jump testytest
+    jump testytest
     # jump photoop
     # jump nvl_monologue_test
