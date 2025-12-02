@@ -180,6 +180,9 @@ label chapter_0:
 
     "Kim followed the stranger’s gaze to a pair of—"
 
+    play music siblings_intro fadeout 0.5
+    queue music siblings_loop
+
     "...uh, feline folk. {i}Onkai,{/i} Kim corrected in her head. A pair of onkai who 
     had just perked up. One of them stood and approached the kiosk."
 
@@ -510,6 +513,9 @@ label chapter_0:
 
     nk happy @ talk "Japan, huh? Video game capital of the galaxy?"
 
+    play music siblings_intro fadeout 0.5
+    queue music siblings_loop
+
     ki "Huh?"
 
     nk friendly "Yeah! Trendsetters back in Earth’s early digital age, right? Revolutionary 
@@ -610,6 +616,9 @@ label testytest:
     # stands out with its swaths of red brick buildings and green fields.]
 
     show bg school_station with dissolve
+
+    play music fresh_intro fadeout 0.5
+    queue music fresh_loop
 
     "Tansei was right: the nondescript proper name of \“Vaniman\” didn’t do this station 
     justice."
@@ -781,7 +790,7 @@ label testytest:
 
     show nanneyo at center_1 with dissolveinbottom
 
-    play music allegroinf_intro
+    play music allegroinf_intro fadeout 0.5
     queue music allegroinf_loop
 
     "Volunteer" "\“Heyas! Welcome to NDU, can I get your name?\”"

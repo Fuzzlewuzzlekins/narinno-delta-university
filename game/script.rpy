@@ -328,6 +328,7 @@ label start:
 
     # jump test_scene
     # jump outline
-    jump testytest
+    jump chapter_0
+    # jump testytest
     # jump photoop
     # jump nvl_monologue_test
