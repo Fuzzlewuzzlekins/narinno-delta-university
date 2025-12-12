@@ -80,6 +80,8 @@ image kim suspicious talk = "sprites/kim_suspicious_talk.png"
 image kim curious = "sprites/kim_curious.png"
 
 # Nakoa sprites: main
+image nakoa neutral = "sprites/nakoa_neutral.png"
+image nakoa neutral talk = "sprites/nakoa_neutral_talk.png"
 image nakoa happy = "sprites/nakoa_happy.png"
 image nakoa happy talk = "sprites/nakoa_happy_talk.png"
 image nakoa worried = "sprites/nakoa_worried.png"
@@ -87,6 +89,9 @@ image nakoa worried talk = "sprites/nakoa_worried_talk.png"
 image nakoa angry = "sprites/nakoa_angry.png"
 image nakoa angry talk = "sprites/nakoa_angry_talk.png"
 image nakoa grin = "sprites/nakoa_grin.png"
+image nakoa grin talk = "sprites/nakoa_grin_talk.png"
+image nakoa grimace = "sprites/nakoa_grimace.png"
+image nakoa grimace talk = "sprites/nakoa_grimace_talk.png"
 # Nakoa sprites: slouching
 image nakoa grumpy = "sprites/nakoa_grumpy.png"
 image nakoa grumpy talk = "sprites/nakoa_grumpy_talk.png"
@@ -95,6 +100,8 @@ image nakoa scowl = "sprites/nakoa_scowl.png"
 image nakoa friendly = "sprites/nakoa_friendly.png"
 image nakoa smug = "sprites/nakoa_smug.png"
 image nakoa stern = "sprites/nakoa_stern.png"
+image nakoa offended = "sprites/nakoa_offended.png"
+image nakoa offended talk = "sprites/nakoa_offended_talk.png"
 
 # Tansei sprites: main
 image tansei neutral = "sprites/tansei_neutral.png"
@@ -328,7 +335,8 @@ label start:
 
     # jump test_scene
     # jump outline
-    jump chapter_0
+    # jump chapter_0
+    jump quickstart
     # jump testytest
     # jump photoop
     # jump nvl_monologue_test

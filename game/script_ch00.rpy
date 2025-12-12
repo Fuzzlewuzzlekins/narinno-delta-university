@@ -143,6 +143,8 @@ label chapter_0:
 
     "And the sooner the bubble popped, ideally on her own terms, the better."
 
+label quickstart:
+
     # Background: the monorail station elsewhere in the starport.
 
     show bg starport_station with dissolve
@@ -198,7 +200,8 @@ label chapter_0:
     show nakoa stern with dissolve_f
     "Onka 2" "\“You want Vaniman!\”"
 
-    show tansei neutral talk with dissolve_f
+    show tansei neutral talk 
+    with dissolve_f
     "Onka 1" "\“...Vaniman Street, yes.\”"
 
     show tansei neutral with dissolve_f
@@ -207,7 +210,7 @@ label chapter_0:
     # [Sprite: Emma slides away briefly.] 
 
     show emma at offscreenright with dissolveoutright
-    show nakoa happy 
+    show nakoa neutral 
     show tansei happy 
     with dissolve_f
 
@@ -215,7 +218,7 @@ label chapter_0:
     turned back to the kiosk, Kim hefted her bags in her hands and trotted towards the 
     interaction."
 
-    show nakoa happy at leftish_2
+    show nakoa neutral at leftish_2
     show tansei happy at rightish_2
     with ease
 
@@ -226,7 +229,7 @@ label chapter_0:
 
     # [Sprite: Emma reappears.]
 
-    show nakoa happy at leftish_3
+    show nakoa neutral at leftish_3
     show tansei happy at center_1
     show emma at rightish_3
     with ease
@@ -245,14 +248,14 @@ label chapter_0:
     ki "You’d think they’d label it or something, right?"
 
     show nakoa stern with dissolve_f
-    "Onka 2" "\“Yeah, seriously. You’re like the fifth or sixth people we’ve seen get 
+    "Onka 2" "\“Yeah, seriously. You’re like the fifth or sixth group we’ve seen get 
     confused, and we’ve only been here for ten minutes.\”"
 
     "The person—the onka—jerked a thumb towards the small crowd of other strangers 
     waiting further down the platform. There were a dozen or so in total, virtually 
     all young adults at a glance."
 
-    show nakoa happy with dissolve_f
+    show nakoa neutral with dissolve_f
     "Human" "\“Yeah, they should fix that, huh? Put a sticker on the wall, or 
     something.\”"
 
@@ -376,7 +379,7 @@ label chapter_0:
 
     # [Sprite: the three others appear again.]
 
-    show nakoa happy at leftish_3
+    show nakoa neutral at leftish_3
     show tansei neutral at center_1
     show emma at rightish_3
     with fadeinright
@@ -402,10 +405,10 @@ label chapter_0:
     t gesture talk "Well, I was only planning on it being you,{nw=0.5}"
     # [Sprite: Tansei turns mid-sentence.]
     show tansei happy talk
-    t "Well, I was only planning on it being you,{fast} but you’re welcome to come 
+    t "Well, I was only planning on it being you,{fast} but you two are welcome to come 
     along! I’m happy to show everyone around, play tour guide for a few days."
 
-    show nakoa happy 
+    show nakoa neutral 
     show tansei happy
     with dissolve_f
     e "Oh, that would be great! Thank you!"
@@ -425,9 +428,11 @@ label chapter_0:
 
     # [Sprite: Nakoa smirks in vindication as he continues. Tansei scowls slightly.]
 
-    nk friendly "Tachil. Small town on the Sforollan coast, back on Tandoro."
+    nk happy talk "Tachil. Small town on the Sforollan coast, back on Tandoro."
 
-    nk smug "Not really well known, but the cute hometown vibes? Love it. I’m biased; deal 
+    nk friendly "Not really well known, but the cute hometown vibes? Love it.{nw=0.5}"
+    show nakoa smug
+    nk "Not really well known, but the cute hometown vibes? Love it.{fast} I’m biased; deal 
     with it."
 
     nk friendly "Still proud of our food. If you ever see a Sforollan restaurant, you can’t go 
@@ -476,10 +481,13 @@ label chapter_0:
     ki "—varied, uh, people."
 
     # [Sprite: Nakoa and Tansei give Kim a suspicious look.]
-    show nakoa angry 
+    show nakoa grimace 
     show tansei neutral
     with dissolve_f
     "That had been a mistake to say too, hadn’t it? So much for blending in."
+
+    play music cosmonaut_intro fadeout 0.5
+    queue music cosmonaut_loop
 
     ki "I-I..."
 
@@ -513,8 +521,8 @@ label chapter_0:
 
     nk happy @ talk "Japan, huh? Video game capital of the galaxy?"
 
-    play music siblings_intro fadeout 0.5
-    queue music siblings_loop
+    # play music siblings_intro fadeout 0.5
+    # queue music siblings_loop
 
     ki "Huh?"
 
@@ -542,6 +550,8 @@ label chapter_0:
     ki "It’s Japanese for, um... I’m not sure what the best translation is in Standard. 
     Someone not from Earth. Non-Terran."
 
+    show nakoa neutral with dissolve_f
+
     t @ talk "Extraterrestrial?"
 
     ki "I think so? A bit more like... nonhuman, I’d say."
@@ -550,21 +560,25 @@ label chapter_0:
 
     # [Sprite: Tansei chuckles.]
 
-    t happy @ talk "Forgive me, I get really curious about new words. I’m a linguistics major. I’ve 
-    always loved languages, all kinds of them."
+    t happy @ talk "Forgive me, I get really curious about new words. I’m a linguistics major. 
+    I’ve always loved languages, all kinds of them."
 
     ki "Oooh, that’s awesome! How many languages do you speak?"
 
-    t excited "Oof, that depends on how you define ‘speak.’ I’m fluent in Sforollan and 
-    Standard, obviously, but..."
-
-    t shy "Aside from that, let’s see. I’ve studied quite a bit of Sayaro, a fair bit of 
-    Elonen, bits and pieces of… uh, way too many random languages that caught my eye at 
-    some point or another."
+    t shy "Oof, that depends on how you define ‘speak.’ You know being a linguist doesn't 
+    automatically make you a polyglot, right?"
     
-    t excited "Nothing else I can really say I’m {i}fluent{/i} in."
+    t excited "Anyway, I’m fluent in Sforollan and Standard, obviously, but... aside from that, 
+    let's see."
 
-    ki "Hey, that’s still amazing! You should be proud."
+    t shy "I studied Sayaro as my tertiary back in high school, then took two semesters of Elonen 
+    for fun when I got here… and I {i}guess{/i} you could count all the random languages I’ve looked up 
+    on a whim."
+    
+    t excited "But nothing really sticks if you don’t practice it. I wouldn’t say I’m {i}fluent{/i} 
+    in anything but the first two, sorry."
+
+    ki "Hey, but you’ve pursued a lot, that’s amazing! You should be proud."
 
     show tansei happy with dissolve_f
     ki "Ooh, and while we’re talking about languages... you said your name was Tansei?"
@@ -574,7 +588,7 @@ label chapter_0:
 
     t happy @ talk "Oh, is that right? Funny how that works. I’m flattered."
 
-    nk @ talk "Ooh, is my name a word?"
+    nk happy @ talk "Ooh, is my name a word?"
 
     ki "Uh, not that I can think of, sorry."
 
@@ -582,8 +596,11 @@ label chapter_0:
 
     ki "I’m... sorry?"
 
-    nk stern "Yeah, your native tongue with a thousand years of history’d better make my name 
-    a word. To respect me. Right now."
+    nk talk "Yeah, your native tongue with a thousand years of history’d better make my name 
+    a word.{nw=0.5}"
+    show nakoa stern
+    nk "Yeah, your native tongue with a thousand years of history’d better make my name 
+    a word.{fast} To respect me. Right now."
 
     # [Sprite: Tansei and Emma are visibly amused.]
 
@@ -592,7 +609,7 @@ label chapter_0:
 
     t neutral talk "Oh, hold up. Our stop’s coming up."
 
-    show nakoa happy with dissolve_f
+    show nakoa neutral with dissolve_f
     t happy @ talk "Everyone got your luggage?"
 
     "Kim checked around herself. Her carry-on was still on the seat next to her, and her 
@@ -618,7 +635,7 @@ label testytest:
     show bg school_station with dissolve
 
     play music fresh_intro fadeout 0.5
-    queue music fresh_loop
+    queue music fresh_ext_loop
 
     "Tansei was right: the nondescript proper name of \“Vaniman\” didn’t do this station 
     justice."
@@ -734,7 +751,7 @@ label testytest:
     # [Sprite: Tansei, Nakoa, and Emma reappear.]
 
     show tansei happy at leftish_3
-    show nakoa happy at center_1
+    show nakoa neutral at center_1
     show emma at rightish_3
     with fadeinright
 
@@ -745,7 +762,7 @@ label testytest:
 
     t neutral @ talk "You want me to come in with you, or should I wait out here with the luggage?"
 
-    nk @ talk "Oh, I’ll be fine! We’ll be fine. We’ll meet you out here."
+    nk happy talk "Oh, I’ll be fine! We’ll be fine. We’ll meet you out here."
 
     nk friendly "No reason to lug everything around more than we need, yeah?"
 
