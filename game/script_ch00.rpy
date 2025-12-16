@@ -300,10 +300,12 @@ label quickstart:
     with dissolve_f
     "But much to Kim’s surprise, the pair doubled over in laughter."
 
-    show tansei excited with dissolve_f
+    show tansei excited talk with dissolve_f
     "Onka 1" "\“Ha! You are, in fact, correct! This is—\”"
 
-    show nakoa smug with dissolve_f
+    show nakoa smug 
+    show tansei excited
+    with dissolve_f
     "Onka 2" "\“Ohhh, man, that’s great.\”"
 
     show tansei happy talk with dissolve_f
