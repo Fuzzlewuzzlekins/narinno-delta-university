@@ -34,15 +34,10 @@ define t_nvl = Character("Tansei", kind=nvl, who_color="#db89eb")
 image ash = "sprites/ash_temp.png"
 image blake = Placeholder("boy")
 image fyorra = "sprites/fyorra_temp.png"
-image karalun = Placeholder("girl")
-image kim = "sprites/kim_temp.png"
 image luziim = Placeholder("girl")
-image nakoa = "sprites/nakoa_temp.png"
-image nanneyo = Placeholder("girl")
 image noah = Placeholder("boy")
 image nyarokhu = Placeholder("boy")
 image rohal = "sprites/rohal_temp.png"
-image tansei = "sprites/tansei_temp.png"
 
 # Karalún sprites: main
 image kara neutral = "sprites/kara_neutral.png"
@@ -103,6 +98,103 @@ image nakoa stern = "sprites/nakoa_stern.png"
 image nakoa offended = "sprites/nakoa_offended.png"
 image nakoa offended talk = "sprites/nakoa_offended_talk.png"
 
+# # Nanneyo sprites: main
+# image nanneyo neutral = "sprites/nanneyo_neutral.png"
+# image nanneyo neutral talk = "sprites/nanneyo_neutral_talk.png"
+# image nanneyo happy = "sprites/nanneyo_happy.png"
+# image nanneyo happy talk = "sprites/nanneyo_happy_talk.png"
+# image nanneyo worried = "sprites/nanneyo_worried.png"
+# image nanneyo worried talk = "sprites/nanneyo_worried_talk.png"
+# image nanneyo stern = "sprites/nanneyo_stern.png"
+# image nanneyo stern talk = "sprites/nanneyo_stern_talk.png"
+# # Nanneyo sprites: turning
+# image nanneyo friendly = "sprites/nanneyo_friendly.png"
+# image nanneyo friendly talk = "sprites/nanneyo_friendly_talk.png"
+# image nanneyo angry = "sprites/nanneyo_angry.png"
+# image nanneyo angry talk = "sprites/nanneyo_angry_talk.png"
+# image nanneyo thinking = "sprites/nanneyo_thinking.png"
+# image nanneyo thinking talk = "sprites/nanneyo_thinking_talk.png"
+# image nanneyo flirty = "sprites/nanneyo_flirty.png"
+# image nanneyo flirty talk = "sprites/nanneyo_flirty_talk.png"
+# image nanneyo laughing = "sprites/nanneyo_laughing.png"
+# image nanneyo laughing talk = "sprites/nanneyo_laughing_talk.png"
+
+# Nanneyo sprites w/ nametag variants... probably not optimal, will experiment later
+# Main pose:
+image nanneyo neutral = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_neutral.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_neutral.png"
+)
+image nanneyo neutral talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_neutral_talk.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_neutral_talk.png"
+)
+image nanneyo happy = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_happy.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_happy.png"
+)
+image nanneyo happy talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_happy_talk.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_happy_talk.png"
+)
+image nanneyo worried = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_worried.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_worried.png"
+)
+image nanneyo worried talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_worried_talk.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_worried_talk.png"
+)
+image nanneyo stern = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_stern.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_stern.png"
+)
+image nanneyo stern talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_stern_talk.png", (0, 0), "sprites/nanneyo_nametag1.png"),
+    "nn_nametag = False", "sprites/nanneyo_stern_talk.png"
+)
+# Turning pose:
+image nanneyo friendly = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_friendly.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_friendly.png"
+)
+image nanneyo friendly talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_friendly_talk.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_friendly_talk.png"
+)
+image nanneyo angry = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_angry.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_angry.png"
+)
+image nanneyo angry talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_angry_talk.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_angry_talk.png"
+)
+image nanneyo thinking = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_thinking.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_thinking.png"
+)
+image nanneyo thinking talk = ConditionSwitch(
+    "Tnn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_thinking_talk.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_thinking_talk.png"
+)
+image nanneyo flirty = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_flirty.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_flirty.png"
+)
+image nanneyo flirty talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_flirty_talk.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_flirty_talk.png"
+)
+image nanneyo laughing = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_laughing.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_laughing.png"
+)
+image nanneyo laughing talk = ConditionSwitch(
+    "nn_nametag = True", Composite((550, 950), (0, 0), "sprites/nanneyo_laughing_talk.png", (0, 0), "sprites/nanneyo_nametag2.png"),
+    "nn_nametag = False", "sprites/nanneyo_laughing_talk.png"
+)
+
 # Tansei sprites: main
 image tansei neutral = "sprites/tansei_neutral.png"
 image tansei neutral talk = "sprites/tansei_neutral_talk.png"
@@ -132,10 +224,11 @@ image tansei pensive = "sprites/tansei_pensive.png"
 image tansei crying = "sprites/tansei_crying.png"
 image tansei startled = "sprites/tansei_startled.png"
 
-define e = Character("Emma", kind=c_base)
-image emma = Placeholder("girl")
-# # TEMPORARY: use Kim for Emma for photo op
-# image emma = "sprites/kim_temp.png"
+define e = Character("Emma", kind=c_base, image="emma")
+image emma neutral = "sprites/emma_neutral.png"
+image emma neutral talk = "sprites/emma_neutral_talk.png"
+image emma worried = "sprites/emma_worried.png"
+image emma worried talk = "sprites/emma_worried_talk.png"
 image khurrayo = Placeholder("boy")
 image allira = Placeholder("girl")
 image nami = Placeholder("girl")
@@ -340,7 +433,8 @@ label start:
     # jump test_scene
     # jump outline
     # jump chapter_0
-    jump quickstart
+    # jump quickstart
     # jump testytest
+    jump hi_nan
     # jump photoop
     # jump nvl_monologue_test

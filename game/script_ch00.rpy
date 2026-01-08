@@ -169,7 +169,7 @@ label quickstart:
 
     # Sprite: a human girl (Emma) appears, looking confused.
 
-    show emma at farright with dissolveinright
+    show emma worried at farright with dissolveinright
 
     "There was a suitcase-burdened stranger standing in front of the ticket kiosk but 
     not looking at the screen, one hand raised in an attempt to get someone’s attention."
@@ -194,17 +194,19 @@ label quickstart:
     "Onka 1" "\“You looking for something?\”"
     
     show tansei neutral with dissolve_f
+    show emma worried talk with dissolve_f
     "Human" "\“Uh, yes! Which stop is closest to the NDU Kimmings campus?\”"
 
     # Sprite: Nakoa raises a hand and calls out.
+    show emma worried with dissolve_f
     show nakoa stern with dissolve_f
     "Onka 2" "\“You want Vaniman!\”"
 
-    show tansei neutral talk 
-    with dissolve_f
+    show tansei neutral talk with dissolve_f
     "Onka 1" "\“...Vaniman Street, yes.\”"
 
     show tansei neutral with dissolve_f
+    show emma neutral talk with dissolve_f
     "Human" "\“Thank you!\”"
 
     # [Sprite: Emma slides away briefly.] 
@@ -231,11 +233,12 @@ label quickstart:
 
     show nakoa neutral at leftish_3
     show tansei happy at center_1
-    show emma at rightish_3
+    show emma neutral talk at rightish_3
     with ease
 
     "Human" "\“Alright, got it. Thank you so much!\”"
 
+    show emma neutral with dissolve_f
     show tansei happy talk with dissolve_f
     "Onka 1" "\“No problem.\”"
 
@@ -256,10 +259,12 @@ label quickstart:
     all young adults at a glance."
 
     show nakoa neutral with dissolve_f
+    show emma neutral talk with dissolve_f
     "Human" "\“Yeah, they should fix that, huh? Put a sticker on the wall, or 
     something.\”"
 
     show tansei neutral talk with dissolve_f
+    show emma neutral with dissolve_f
     "Onka 1" "\“Would be nice.\”"
 
     # [Sprite: Tansei points.]
@@ -274,7 +279,10 @@ label quickstart:
     "With a few nods of agreement, the group moved back to the onkai’s original seat. 
     The bench was plenty long enough for the four of them."
 
-    show tansei neutral with dissolve_f
+    show nakoa neutral at leftish_3_l
+    show tansei neutral at center_1_l
+    show emma at rightish_3_l
+    with ease
     "The seat was cold and hard, not meant for prolonged relaxation, but it presumably 
     wouldn’t be for long."
 
@@ -323,17 +331,21 @@ label quickstart:
 
     # [Sprite: Tansei points sternly at Kim/the camera.]
 
-    t stern @ stern talk "Are very, {i}very{/i} lucky we were actually related."
+    t stern @ talk "Are very, {i}very{/i} lucky we were actually related."
 
     ki "Y-yes! Point taken! Won’t assume again."
     
-    t @ stern talk "I don’t have to ask you two if {i}you’re{/i} related to make a point?"
+    t @ talk "I don’t have to ask you two if {i}you’re{/i} related to make a point?"
 
     # [Sprite: Emma recoils in embarrassment.]
+    
+    show emma worried talk with dissolve_f
 
     ki "No, we’re good!" (multiple=2)
 
     "Human" "\“Oh, no no no, we’re... yeah.\”" (multiple=2)
+
+    show emma worried with dissolve_f
 
     "Kim and the other human shot each other a look. Definitely not related, no."
 
@@ -344,13 +356,13 @@ label quickstart:
 
     # [Sprite: Emma waves when it’s her turn.]
 
-    e "Emma, Emma Broderick. Nice to meet everybody!"
+    e neutral @ talk "Emma, Emma Broderick. Nice to meet everybody!"
 
     t happy talk "You too!"
 
     # [Sprite: Tansei leans and looks into the distance.]
 
-    t gesture @ gesture talk "Oop, is that our train?"
+    t gesture @ talk "Oop, is that our train?"
 
     # [Sound: thrum of a monorail approaching, then slowing to a stop.]
 
@@ -383,7 +395,7 @@ label quickstart:
 
     show nakoa neutral at leftish_3
     show tansei neutral at center_1
-    show emma at rightish_3
+    show emma neutral at rightish_3
     with fadeinright
 
     ki "You got all your things?"
@@ -413,18 +425,18 @@ label quickstart:
     show nakoa neutral 
     show tansei happy
     with dissolve_f
-    e "Oh, that would be great! Thank you!"
+    e @ talk "Oh, that would be great! Thank you!"
 
     ki "Yes, that’s very generous! I’d appreciate that a lot."
 
     t happy talk "No problem at all."
 
-    t friendly @ friendly talk "So, here’s a question for everyone. Where are we all from?"
+    t friendly @ talk "So, here’s a question for everyone. Where are we all from?"
 
     nk @ talk "We’re both from Tachil, Sforolla—"
 
     # [Sprite: a stiff smile.] 
-    t neutral @ neutral talk "Let’s let our friends go first, please."
+    t neutral @ talk "Let’s let our friends go first, please."
 
     ki "Oh, no, it’s okay! Go for it, I’m eager to hear about where you’re from."
 
@@ -440,7 +452,7 @@ label quickstart:
     nk friendly "Still proud of our food. If you ever see a Sforollan restaurant, you can’t go 
     wrong with the seafood casseroles."
 
-    t stern @ stern talk "Are you done being a travel agent?"
+    t stern @ talk "Are you done being a travel agent?"
 
     nk stern "Never. I need friends back home."
 
@@ -452,19 +464,21 @@ label quickstart:
     "Kim wasn’t sure how seriously to take that, but the way Tansei tousled Nakoa’s fur 
     was playful, and genuinely affectionate as far as she could tell."
 
-    show nakoa happy with dissolve_f
+    show nakoa happy 
+    show tansei happy
+    with dissolve_f
     t happy @ talk "Anyway, enough of us. Who’s next?"
 
-    e "Sure, I’ll go!"
+    e neutral @ talk "Sure, I’ll go!"
 
-    e "I’m from Camp Vessik, Verdenia. On Narinno Gamma."
+    e @ talk "I’m from Camp Vessik, Verdenia. On Narinno Gamma."
 
     ki "Oh! You’re from Narinno Gamma?"
 
-    e "Yeah, born and raised. Technically born in Pyredell and then moved to Camp 
+    e neutral talk "Yeah, born and raised. Technically born in Pyredell and then moved to Camp 
     Vessik, but they’re both in Verdenia, so..."
 
-    e "...Is that exciting? I didn’t think the colonies were all that interesting."
+    e worried @ talk "...Is that exciting? I didn’t think the colonies were all that interesting."
 
     ki "Oh, no, I just... assumed you were from Earth too, for some reason."
 
@@ -473,7 +487,7 @@ label quickstart:
     ki "I guess that gives you a leg up here on Narinno Delta, already being used to 
     living on a colony and all."
 
-    e "What do you mean by that?"
+    e @ talk "What do you mean by that?"
 
     ki "Well, the colonies are more diverse, right? You’re already used to living 
     around—"
@@ -513,7 +527,7 @@ label quickstart:
     nk worried @ talk "Hey, whoa, chill. Your heart sounds like it’s in the right place. No need to 
     overthink it all."
 
-    e "Yeah, just be yourself and treat everyone with the same respect, and you’ll be 
+    e neutral @ talk "Yeah, just be yourself and treat everyone with the same respect, and you’ll be 
     fine."
 
     t happy @ talk "Exactly. It’s an admirable step you’re taking, if you ask me."
@@ -567,17 +581,17 @@ label quickstart:
 
     ki "Oooh, that’s awesome! How many languages do you speak?"
 
-    t shy "Oof, that depends on how you define ‘speak.’ You know being a linguist doesn't 
+    t shy talk "Oof, that depends on how you define ‘speak.’ You know being a linguist doesn't 
     automatically make you a polyglot, right?"
     
-    t excited "Anyway, I’m fluent in Sforollan and Standard, obviously, but... aside from that, 
+    t excited talk "Anyway, I’m fluent in Sforollan and Standard, obviously, but... aside from that, 
     let's see."
 
-    t shy "I studied Sayaro as my tertiary back in high school, then took two semesters of Elonen 
+    t shy talk "I studied Sayaro as my tertiary back in high school, then took two semesters of Elonen 
     for fun when I got here… and I {i}guess{/i} you could count all the random languages I’ve looked up 
     on a whim."
     
-    t excited "But nothing really sticks if you don’t practice it. I wouldn’t say I’m {i}fluent{/i} 
+    t excited @ talk "But nothing really sticks if you don’t practice it. I wouldn’t say I’m {i}fluent{/i} 
     in anything but the first two, sorry."
 
     ki "Hey, but you’ve pursued a lot, that’s amazing! You should be proud."
@@ -754,7 +768,7 @@ label testytest:
 
     show tansei happy at leftish_3
     show nakoa neutral at center_1
-    show emma at rightish_3
+    show emma neutral at rightish_3
     with fadeinright
 
     t happy talk "Looks like that there’s your check-in. Everett Hall."
@@ -768,7 +782,7 @@ label testytest:
 
     nk friendly "No reason to lug everything around more than we need, yeah?"
 
-    e "Yeah, I think we’ll be fine. Thank you, though!"
+    e @ talk "Yeah, I think we’ll be fine. Thank you, though!"
 
     ki "Yes, thank you so much! We’ll meet you back here, then."
 
@@ -783,6 +797,9 @@ label testytest:
 
     "Freed of the bulk of their luggage, the three freshmen trotted up the street."
 
+label hi_nan:
+
+    $ nn_nametag = True
     # [Background: the spacious interior of Everett Hall. Tables and queues of students 
     # are visible.]
 
@@ -807,12 +824,14 @@ label testytest:
     # [Sprite: Nanneyo appears. A "Hello, my name is Nanneyo (she/her)" sticker is 
     # visible on her shirt.]
 
-    show nanneyo at center_1 with dissolveinbottom
+    show nanneyo happy at center_1 with dissolveinbottom
 
     play music allegroinf_intro fadeout 0.5
     queue music allegroinf_loop
 
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“Heyas! Welcome to NDU, can I get your name?\”"
+    show nanneyo happy with dissolve_f
 
     "Kim’s mental processes stalled for a moment, caught off guard by the perky greeting 
     from such an inhuman face."
@@ -823,20 +842,27 @@ label testytest:
 
     ki "Uh, Sorakawa. Kimiko."
 
+    show nanneyo thinking talk with dissolve_f
     "Volunteer" "\“Sorakawa, Sorakawa... ah, Kimiko, here we are!\”"
 
+    show nanneyo friendly talk with dissolve_f
     "Volunteer" "\“Now that is a pretty name. Is that what you go by? Or do you prefer 
     something else?\”"
+    show nanneyo friendly with dissolve_f
 
     ki "Uh, I answer to it fine, but I like to go by Kim, for short."
 
+    show nanneyo friendly talk with dissolve_f
     "Volunteer" "\“Kim? Oh, that’s cute! I love it even better!\”"
 
+    show nanneyo thinking talk with dissolve_f
     "Volunteer" "\“So, Kim, I’ve got you listed here for Takhu Hall, room 204. That’s a 
     double.\”"
 
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“So let’s get you scanned into our system and get you all squared 
     away!\”"
+    show nanneyo happy with dissolve_f
 
     "The dubina nudged a palm reader and a box of hand wipes across the table. Kim 
     plucked a wipe and began to clean her hands."
@@ -844,24 +870,29 @@ label testytest:
     ki "Do you know if my roommate’s moved in yet?"
 
     # [Sprite: Nanneyo squints comically seriously at her device (a tab?).]
-
+    show nanneyo thinking talk with dissolve_f
     "Volunteer" "\“Ooh, no, not off the top of my head. Lemme see.\”"
+    show nanneyo thinking with dissolve_f
 
     "She fiddled with her spreadsheet for a few seconds, though Kim couldn’t make out 
     anything from this angle."
 
+    show nanneyo thinking talk with dissolve_f
     "Volunteer" "\“Oh, here we go. Takhu 204. Don’t have an arrival marked yet, but you 
     should be rooming with an ‘Oshan, Luziim’ whenever they get in.\”"
 
     # [Sprite: Nanneyo brightens up.]
-
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“...Oh, yes! Go ahead and put your hand on the scanner right there. 
     Either hand is fine, whichever you’d rather use for door access.\”"
+    show nanneyo happy with dissolve_f
 
     ki "Either one?"
 
+    show nanneyo happy talk with dissolve_f    
     "Volunteer" "\“Yeah, it doesn’t matter. Some people like their dominant hand. Some 
     people like their off hand, so they can save their dominant hand to carry stuff.\”"
+    show nanneyo happy with dissolve_f
 
     "After a moment’s recollection over how she usually opened doors back home, Kim 
     pressed her right, dominant hand to the scanner."
@@ -870,28 +901,37 @@ label testytest:
 
     ki "So my roommate hasn’t arrived yet?"
 
+    show nanneyo neutral talk with dissolve_f
     "Volunteer" "\“Doesn’t look like it. Is there an issue?\”"
+    show nanneyo neutral with dissolve_f
 
     ki "Oh, no, no issue, just making small talk. Heh."
 
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“Ha, I getcha.\”"
 
+    show nanneyo neutral talk with dissolve_f
     "Volunteer" "\“But hey, if you do have trouble with your roommate for any reason 
     during the year, bring it up to Student Services.\”"
 
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“They take reports of disruptive or incompatible behavior pretty 
     seriously. I mean it, if you ever feel unsafe or whatever, they’ll hear you out.\”"
+    show nanneyo happy with dissolve_f
 
     ki "Well, thank you. That’s good to know."
 
     "The volunteer smiled, rapped together a small stack of papers, and handed it across 
     the table."
 
+    show nanneyo happy talk with dissolve_f
     "Volunteer" "\“In here we’ve got lots of helpful notes for you: a copy of the 
     orientation schedule, dorm policies, campus map, all that good stuff.\”"
 
+    show nanneyo neutral talk with dissolve_f
     "Volunteer" "\“Please don’t hesitate to come back and ask us if you have any 
     questions or issues, okay? We’ll be open until at least 8 tonight!\”"
+    show nanneyo neutral with dissolve_f
 
     ki "Oh, awesome! Thank you so much, uh—"
 
@@ -899,9 +939,10 @@ label testytest:
 
     ki "Miss Nanneyo, thank you!"
 
+    show nanneyo happy with dissolve_f
     "The dubina’s face lit up, hopefully in pleasant surprise."
 
-    nn "Hey, you’re welcome! Have a good move-in, and maybe we’ll see each other 
+    nn friendly @ talk "Hey, you’re welcome! Have a good move-in, and maybe we’ll see each other 
     around!"
 
     "Kim returned the smile as she turned back towards the front door."
@@ -912,6 +953,8 @@ label testytest:
     pleasantly."
 
     "She liked to think this was a good portent of the times to come."
+
+    $ nn_nametag = False
 
 label chapter_0_b:
     
