@@ -829,7 +829,7 @@ label hi_nan:
     play music allegroinf_intro fadeout 0.5
     queue music allegroinf_loop
 
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“Heyas! Welcome to NDU, can I get your name?\”"
     show nanneyo happy with dissolve_f
 
@@ -842,24 +842,24 @@ label hi_nan:
 
     ki "Uh, Sorakawa. Kimiko."
 
-    show nanneyo thinking talk with dissolve_f
+    show nanneyo thinking_talk with dissolve_f
     "Volunteer" "\“Sorakawa, Sorakawa... ah, Kimiko, here we are!\”"
 
-    show nanneyo friendly talk with dissolve_f
+    show nanneyo friendly_talk with dissolve_f
     "Volunteer" "\“Now that is a pretty name. Is that what you go by? Or do you prefer 
     something else?\”"
     show nanneyo friendly with dissolve_f
 
     ki "Uh, I answer to it fine, but I like to go by Kim, for short."
 
-    show nanneyo friendly talk with dissolve_f
+    show nanneyo friendly_talk with dissolve_f
     "Volunteer" "\“Kim? Oh, that’s cute! I love it even better!\”"
 
-    show nanneyo thinking talk with dissolve_f
+    show nanneyo thinking_talk with dissolve_f
     "Volunteer" "\“So, Kim, I’ve got you listed here for Takhu Hall, room 204. That’s a 
     double.\”"
 
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“So let’s get you scanned into our system and get you all squared 
     away!\”"
     show nanneyo happy with dissolve_f
@@ -870,29 +870,29 @@ label hi_nan:
     ki "Do you know if my roommate’s moved in yet?"
 
     # [Sprite: Nanneyo squints comically seriously at her device (a tab?).]
-    show nanneyo thinking talk with dissolve_f
+    show nanneyo thinking_talk with dissolve_f
     "Volunteer" "\“Ooh, no, not off the top of my head. Lemme see.\”"
     show nanneyo thinking with dissolve_f
 
     "She fiddled with her spreadsheet for a few seconds, though Kim couldn’t make out 
     anything from this angle."
 
-    show nanneyo thinking talk with dissolve_f
+    show nanneyo thinking_talk with dissolve_f
     "Volunteer" "\“Oh, here we go. Takhu 204. Don’t have an arrival marked yet, but you 
     should be rooming with an ‘Oshan, Luziim’ whenever they get in.\”"
 
     # [Sprite: Nanneyo brightens up.]
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“...Oh, yes! Go ahead and put your hand on the scanner right there. 
     Either hand is fine, whichever you’d rather use for door access.\”"
     show nanneyo happy with dissolve_f
 
     ki "Either one?"
 
-    show nanneyo happy talk with dissolve_f    
+    show nanneyo neutral_talk with dissolve_f    
     "Volunteer" "\“Yeah, it doesn’t matter. Some people like their dominant hand. Some 
     people like their off hand, so they can save their dominant hand to carry stuff.\”"
-    show nanneyo happy with dissolve_f
+    show nanneyo neutral with dissolve_f
 
     "After a moment’s recollection over how she usually opened doors back home, Kim 
     pressed her right, dominant hand to the scanner."
@@ -901,34 +901,35 @@ label hi_nan:
 
     ki "So my roommate hasn’t arrived yet?"
 
-    show nanneyo neutral talk with dissolve_f
+    show nanneyo neutral_talk with dissolve_f
     "Volunteer" "\“Doesn’t look like it. Is there an issue?\”"
     show nanneyo neutral with dissolve_f
 
     ki "Oh, no, no issue, just making small talk. Heh."
 
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“Ha, I getcha.\”"
 
-    show nanneyo neutral talk with dissolve_f
+    show nanneyo worried_talk with dissolve_f
     "Volunteer" "\“But hey, if you do have trouble with your roommate for any reason 
     during the year, bring it up to Student Services.\”"
 
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“They take reports of disruptive or incompatible behavior pretty 
     seriously. I mean it, if you ever feel unsafe or whatever, they’ll hear you out.\”"
-    show nanneyo happy with dissolve_f
+    show nanneyo neutral with dissolve_f
 
     ki "Well, thank you. That’s good to know."
 
+    show nanneyo happy with dissolve_f
     "The volunteer smiled, rapped together a small stack of papers, and handed it across 
     the table."
 
-    show nanneyo happy talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“In here we’ve got lots of helpful notes for you: a copy of the 
     orientation schedule, dorm policies, campus map, all that good stuff.\”"
 
-    show nanneyo neutral talk with dissolve_f
+    show nanneyo neutral_talk with dissolve_f
     "Volunteer" "\“Please don’t hesitate to come back and ask us if you have any 
     questions or issues, okay? We’ll be open until at least 8 tonight!\”"
     show nanneyo neutral with dissolve_f
@@ -942,7 +943,7 @@ label hi_nan:
     show nanneyo happy with dissolve_f
     "The dubina’s face lit up, hopefully in pleasant surprise."
 
-    nn friendly @ talk "Hey, you’re welcome! Have a good move-in, and maybe we’ll see each other 
+    nn friendly @ friendly_talk "Hey, you’re welcome! Have a good move-in, and maybe we’ll see each other 
     around!"
 
     "Kim returned the smile as she turned back towards the front door."
