@@ -74,29 +74,38 @@ image kim suspicious = "sprites/kim_suspicious.png"
 image kim suspicious talk = "sprites/kim_suspicious_talk.png"
 image kim curious = "sprites/kim_curious.png"
 
-# Nakoa sprites: main
-image nakoa neutral = "sprites/nakoa_neutral.png"
-image nakoa neutral talk = "sprites/nakoa_neutral_talk.png"
-image nakoa happy = "sprites/nakoa_happy.png"
-image nakoa happy talk = "sprites/nakoa_happy_talk.png"
-image nakoa worried = "sprites/nakoa_worried.png"
-image nakoa worried talk = "sprites/nakoa_worried_talk.png"
-image nakoa angry = "sprites/nakoa_angry.png"
-image nakoa angry talk = "sprites/nakoa_angry_talk.png"
-image nakoa grin = "sprites/nakoa_grin.png"
-image nakoa grin talk = "sprites/nakoa_grin_talk.png"
-image nakoa grimace = "sprites/nakoa_grimace.png"
-image nakoa grimace talk = "sprites/nakoa_grimace_talk.png"
+# # Nakoa sprites: main
+# image nakoa neutral = "sprites/nakoa_neutral.png"
+# image nakoa neutral talk = "sprites/nakoa_neutral_talk.png"
+# image nakoa happy = "sprites/nakoa_happy.png"
+# image nakoa happy talk = "sprites/nakoa_happy_talk.png"
+# image nakoa worried = "sprites/nakoa_worried.png"
+# image nakoa worried talk = "sprites/nakoa_worried_talk.png"
+# image nakoa angry = "sprites/nakoa_angry.png"
+# image nakoa angry talk = "sprites/nakoa_angry_talk.png"
+# image nakoa grin = "sprites/nakoa_grin.png"
+# image nakoa grin talk = "sprites/nakoa_grin_talk.png"
+# image nakoa grimace = "sprites/nakoa_grimace.png"
+# image nakoa grimace talk = "sprites/nakoa_grimace_talk.png"
 # Nakoa sprites: slouching
 image nakoa grumpy = "sprites/nakoa_grumpy.png"
 image nakoa grumpy talk = "sprites/nakoa_grumpy_talk.png"
 image nakoa scowl = "sprites/nakoa_scowl.png"
-# Nakoa sprites: sassy
-image nakoa friendly = "sprites/nakoa_friendly.png"
-image nakoa smug = "sprites/nakoa_smug.png"
-image nakoa stern = "sprites/nakoa_stern.png"
-image nakoa offended = "sprites/nakoa_offended.png"
-image nakoa offended talk = "sprites/nakoa_offended_talk.png"
+# # Nakoa sprites: sassy
+# image nakoa friendly = "sprites/nakoa_friendly.png"
+# image nakoa smug = "sprites/nakoa_smug.png"
+# image nakoa stern = "sprites/nakoa_stern.png"
+# image nakoa offended = "sprites/nakoa_offended.png"
+# image nakoa offended talk = "sprites/nakoa_offended_talk.png"
+
+# Nakoa sprites: layered image
+layeredimage nakoa:
+    attribute base1 default:
+        when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or angry or angry_talk or grin or grin_talk or grimace or grimace_talk)
+    attribute base2 default:
+        when (friendly or smug or stern or offended or offended_talk)
+    group face auto:
+        attribute neutral default
 
 # Nanneyo sprites: layered image
 # TODO: refactor other characters to use this system
@@ -112,40 +121,61 @@ layeredimage nanneyo:
     if nn_nametag:
         "nanneyo_nametag2" when (flirting or flirting_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
 
-# Tansei sprites: main
-image tansei neutral = "sprites/tansei_neutral.png"
-image tansei neutral talk = "sprites/tansei_neutral_talk.png"
-image tansei happy = "sprites/tansei_happy.png"
-image tansei happy talk = "sprites/tansei_happy_talk.png"
-image tansei stern = "sprites/tansei_stern.png"
-image tansei stern talk = "sprites/tansei_stern_talk.png"
-image tansei worried = "sprites/tansei_worried.png"
-image tansei worried talk = "sprites/tansei_worried_talk.png"
-image tansei sad = "sprites/tansei_sad.png"
-image tansei sad talk = "sprites/tansei_sad_talk.png"
-# Tansei sprites: hand out
-image tansei gesture = "sprites/tansei_gesture.png"
-image tansei gesture talk = "sprites/tansei_gesture_talk.png"
-image tansei friendly = "sprites/tansei_friendly.png"
-image tansei friendly talk = "sprites/tansei_friendly_talk.png"
-image tansei angry = "sprites/tansei_angry.png"
-image tansei angry talk = "sprites/tansei_angry_talk.png"
-# Tansei sprites: tucking hair
-image tansei excited = "sprites/tansei_excited.png"
-image tansei excited talk = "sprites/tansei_excited_talk.png"
-image tansei laughing = "sprites/tansei_laughing.png"
-image tansei shy = "sprites/tansei_shy.png"
-image tansei shy talk = "sprites/tansei_shy_talk.png"
+# # Tansei sprites: main
+# image tansei neutral = "sprites/tansei_neutral.png"
+# image tansei neutral talk = "sprites/tansei_neutral_talk.png"
+# image tansei happy = "sprites/tansei_happy.png"
+# image tansei happy talk = "sprites/tansei_happy_talk.png"
+# image tansei stern = "sprites/tansei_stern.png"
+# image tansei stern talk = "sprites/tansei_stern_talk.png"
+# image tansei worried = "sprites/tansei_worried.png"
+# image tansei worried talk = "sprites/tansei_worried_talk.png"
+# image tansei sad = "sprites/tansei_sad.png"
+# image tansei sad talk = "sprites/tansei_sad_talk.png"
+# # Tansei sprites: hand out
+# image tansei gesture = "sprites/tansei_gesture.png"
+# image tansei gesture talk = "sprites/tansei_gesture_talk.png"
+# image tansei friendly = "sprites/tansei_friendly.png"
+# image tansei friendly talk = "sprites/tansei_friendly_talk.png"
+# image tansei angry = "sprites/tansei_angry.png"
+# image tansei angry talk = "sprites/tansei_angry_talk.png"
+# # Tansei sprites: tucking hair
+# image tansei excited = "sprites/tansei_excited.png"
+# image tansei excited talk = "sprites/tansei_excited_talk.png"
+# image tansei laughing = "sprites/tansei_laughing.png"
+# image tansei shy = "sprites/tansei_shy.png"
+# image tansei shy talk = "sprites/tansei_shy_talk.png"
 # Tansei sprites: profile
 image tansei pensive = "sprites/tansei_pensive.png"
 image tansei crying = "sprites/tansei_crying.png"
 image tansei startled = "sprites/tansei_startled.png"
 
+# Tansei sprites: layered image
+layeredimage tansei:
+    attribute base1 default:
+        when (neutral or neutral_talk or happy or happy_talk or stern or stern_talk or worried or worried_talk or sad or sad_talk)
+    attribute base2 default:
+        when (gesture or gesture_talk or friendly or friendly_talk or angry or angry_talk)
+    attribute base3 default:
+        when (excited or excited_talk or laughing or shy or shy_talk)
+    group face auto:
+        attribute neutral default
+    attribute hair1 default:
+        when (neutral or neutral_talk or happy or happy_talk or stern or stern_talk or worried or worried_talk or sad or sad_talk)
+    attribute hair2 default:
+        when (gesture or gesture_talk or friendly or friendly_talk or angry or angry_talk)
+    attribute hair3 default:
+        when (excited or excited_talk or laughing or shy or shy_talk)
+
 define e = Character("Emma", kind=c_base, image="emma")
-image emma neutral = "sprites/emma_neutral.png"
-image emma neutral talk = "sprites/emma_neutral_talk.png"
-image emma worried = "sprites/emma_worried.png"
-image emma worried talk = "sprites/emma_worried_talk.png"
+# image emma neutral = "sprites/emma_neutral.png"
+# image emma neutral talk = "sprites/emma_neutral_talk.png"
+# image emma worried = "sprites/emma_worried.png"
+# image emma worried talk = "sprites/emma_worried_talk.png"
+layeredimage emma:
+    attribute base default
+    group face auto:
+        attribute neutral default
 image khurrayo = Placeholder("boy")
 image allira = Placeholder("girl")
 image nami = Placeholder("girl")
@@ -349,9 +379,9 @@ label start:
 
     # jump test_scene
     # jump outline
-    # jump chapter_0
+    jump chapter_0
     # jump quickstart
     # jump testytest
-    jump hi_nan
+    # jump hi_nan
     # jump photoop
     # jump nvl_monologue_test

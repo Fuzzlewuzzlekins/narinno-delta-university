@@ -5,6 +5,7 @@ label test_scene:
     # images directory to show it.
 
     scene bg room
+    $ nn_nametag = False
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -12,25 +13,23 @@ label test_scene:
 
     # These display lines of dialogue.
     
-    show kim happy talk at leftish_2
-    show fyorra at rightish_2
+    show nakoa happy_talk at leftish_2
+    show tansei neutral at rightish_2
 
     ki "Here we are as 2"
 
-    show kim happy at leftish_3
-    show fyorra at center_1
-    show nakoa happy at rightish_3
+    show nakoa happy_talk at leftish_3
+    show tansei neutral at center_1
+    show emma worried at rightish_3
 
     f "and as 3"
 
-    show kim happy at left_4
-    show fyorra at leftish_4
-    show nakoa happy talk at rightish_4
-    show ash at right_4
+    show nakoa happy_talk at left_4
+    show tansei neutral at leftish_4
+    show emma worried at rightish_4
+    show nanneyo thinking_talk at right_4
 
     nk "and as 4!"
-
-    show nakoa happy
 
     jump test_game_3
 

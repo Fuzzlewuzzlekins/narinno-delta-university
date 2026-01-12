@@ -279,7 +279,7 @@ label chapter_1:
 
     "He seemed to brighten up at that."
 
-    nk @ talk "Heh, yeah. Let’s do it."
+    nk @ happy_talk "Heh, yeah. Let’s do it."
 
     "???" "\“Um, excuse me…\”"
 
@@ -298,7 +298,7 @@ label photoop:
     "???" "\“Are you all Team Cobalt?\”"
 
     show kara worried with dissolve_f
-    nk happy @ happy talk "Yeah, that’s us."
+    nk happy @ happy_talk "Yeah, that’s us."
 
     show kara happy with dissolve_f
     "The amphibious individual smiled and nodded timidly, muttering \“thank you\” before 
@@ -359,7 +359,7 @@ label photoop:
 
     no "Nakoa."
 
-    show nakoa happy talk at right_4 with easeinright
+    show nakoa happy_talk at right_4 with easeinright
     nk "Right here. He/him."
     hide nakoa with easeoutright
 
@@ -910,7 +910,7 @@ label chapter_1_b:
 
     nn "Of course I remember Tansei!"
 
-    t happy talk "Yes, we’ve briefly acquainted—"
+    t happy_talk "Yes, we’ve briefly acquainted—"
 
     # [Sprite: Tansei’s sprite gets close, looking startled.]
 
@@ -920,7 +920,7 @@ label chapter_1_b:
 
     # [Sprite: Tansei folds her arms over her chest, looking uncomfortable.]
 
-    t stern talk "I can see that."
+    t stern_talk "I can see that."
     show tansei neutral with dissolve_f
 
     nn "So, hey, you need to step in for a moment for anything? Drop off any luggage…?"
@@ -938,13 +938,13 @@ label chapter_1_b:
     show tansei stern with dissolve_f
     "Tansei cleared her throat."
 
-    t neutral @ talk "I was chaperoning my brother. He’s an incoming freshman, and I wanted to help him 
+    t neutral @ neutral_talk "I was chaperoning my brother. He’s an incoming freshman, and I wanted to help him 
     move in safely."
 
     b "And I offered to split the hotel bill, once I heard she had to be in town an extra 
     day. Seemed only nice."
 
-    t happy @ happy talk "I appreciate it, really."
+    t happy @ happy_talk "I appreciate it, really."
 
     # [Sprite: Blake slides closer to Tansei for a waist-hold and/or kiss.]
 
@@ -1004,16 +1004,16 @@ label chapter_1_b:
 
     "Yet, as Blake had succinctly put it, why not?"
 
-    t happy @ happy talk "I take it you three will be doing choir again this year."
+    t happy @ happy_talk "I take it you three will be doing choir again this year."
 
     nn "Yeah, the open one with Professor Achren. He’s great."
 
-    t neutral @ neutral talk "‘The open one,’ meaning…"
+    t neutral @ neutral_talk "‘The open one,’ meaning…"
 
     nn "Meaning the one where you don’t have to audition to get in. There are higher 
     level ensembles for the music majors, but they just feel cliquey to me, y’know?"
 
-    t neutral @ neutral talk "Ah, yes. We’ve got similar divisions in band and orchestra."
+    t neutral @ neutral_talk "Ah, yes. We’ve got similar divisions in band and orchestra."
 
     b "…Actually, I was considering trying for one of the auditioned choirs next year."
 
@@ -1043,15 +1043,15 @@ label chapter_1_b:
     show tansei worried with dissolve_f
     "The onka looked surprised to have been looped back into the conversation."
 
-    t happy @ happy talk "Yeah, it’s pleasant. Good pastime."
+    t neutral @ neutral_talk "Yeah, it’s pleasant. Good pastime."
 
     f "How about that student-run dance program, CDC? You still doing that?"
 
     # [Sprite: Tansei looks unusually happy.]
-    t excited "Oh, yes! Absolutely. I love getting up and moving around, it’s great exercise."
+    t happy_talk "Oh, yes! Absolutely. I love getting up and moving around, it’s great exercise."
 
     # [Sprite: she tucks her hair back as she speaks brightly.]
-    t shy "And the community is great, it’s all good fun. No scrutiny, just great energy."
+    t excited @ excited_talk "And the community is great, it’s all good fun. No scrutiny, just great energy."
 
     f "That’s awesome. We’ll make sure we come to all your shows."
 
@@ -1064,7 +1064,7 @@ label chapter_1_b:
 
     # [Sprite: Tansei dips her head, shy again.]
 
-    t neutral @ neutral talk "You don’t need to keep telling this story."
+    t neutral @ neutral_talk "You don’t need to keep telling this story."
 
     b "I asked you out because you looked like goddamn Joy Incarnate up on that stage, 
     yeah? And I haven’t regretted it for a minute."
@@ -1093,7 +1093,7 @@ label chapter_1_b:
 
     f "Aye!"
 
-    t happy @ happy talk "I’m in."
+    t happy @ happy_talk "I’m in."
 
     "It was decided. The crew advanced with a spring in their step, eager for brunch."
 

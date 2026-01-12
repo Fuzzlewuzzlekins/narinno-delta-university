@@ -27,7 +27,7 @@ label chapter_2:
     # [SFX: footsteps. Sprite: an exhausted Nakoa trudges into the frame.]
     # TODO: neutral/thoughtful sprites for Nakoa, I'm using "stern" too much...
 
-    show nakoa worried talk at center_1 with dissolve
+    show nakoa worried_talk at center_1 with dissolve
 
     nk "Haah… haah…"
 
@@ -39,7 +39,7 @@ label chapter_2:
 
     nk "If you’re sure."
 
-    nk happy @ happy talk "Oof… guess it’s my own fault…! Punishment for holing up in the mancave."
+    nk happy @ happy_talk "Oof… guess it’s my own fault…! Punishment for holing up in the mancave."
 
     ki "Mancave? I’m curious what an onka mancave even looks like."
 
@@ -47,7 +47,7 @@ label chapter_2:
 
     ki "I-I mean, any mancave, I didn’t mean—"
 
-    nk happy talk "Heh. Nah, I get it."
+    nk happy_talk "Heh. Nah, I get it."
 
     nk friendly "It’s not really a concept back home. Fair for you to be curious."
 
@@ -66,7 +66,7 @@ label chapter_2:
     ki "You could use it, right? Screw gender norms, this is the galactic age. Why can’t 
     a guy have a womancave?"
 
-    nk angry @ talk "I don’t want to use it. End of sentence."
+    nk angry @ angry_talk "I don’t want to use it. End of sentence."
 
     ki "Oh… okay. I’m sorry, I didn’t mean to offend—"
 
@@ -98,7 +98,7 @@ label chapter_2:
 
     ki "It sounds like all that might be a big deal on Tandoro, still?"
 
-    nk worried talk "Yeah. I’ve always been me, too, but back home it felt all… weird. Like I wasn’t 
+    nk worried_talk "Yeah. I’ve always been me, too, but back home it felt all… weird. Like I wasn’t 
     supposed to be me."
 
     nk scowl "Mom never liked the clothes I wanted to wear. The stuff I wanted to do."
@@ -106,18 +106,18 @@ label chapter_2:
     # [Sprite: exasperated.]
     nk stern "But I’ve got {i}you{/i}, right? Terrans! Terran dudes, being like… me!"
 
-    nk worried @ talk "I needed it. Y’know? To not feel like a freak."
+    nk worried @ worried_talk "I needed it. Y’know? To not feel like a freak."
 
     ki "So that’s why you came to a colony? To be around—"
 
-    nk worried talk "—guys like me, yeah. That was part of it, at least."
+    nk worried_talk "—guys like me, yeah. That was part of it, at least."
 
     nk grumpy talk "Mostly just wanted to get out of that house. It got worse after Tani left."
 
     # [Sprite: grumbly.]
     nk scowl "Favorite child…"
 
-    nk worried talk "Not that that’s on her. I love my sis. And she knew how to play her hand."
+    nk worried_talk "Not that that’s on her. I love my sis. And she knew how to play her hand."
 
     nk stern "And she {i}got{/i} me, y’know? We both—"
 
@@ -140,7 +140,7 @@ label chapter_2:
     ki "I… don’t really know what to say about myself… to a relative stranger."
 
     # TODO: sad/regretful sprite
-    nk worried talk "...Yeah, fair. Totally fair. ’M sorry."
+    nk worried_talk "...Yeah, fair. Totally fair. ’M sorry."
 
     nk stern "Well, if you think of a way I can make it up to you, lemme know. I owe you one."
 
@@ -155,9 +155,9 @@ label chapter_2:
 
     ki "So, you hanging in there? Had a chance to catch your breath?"
 
-    nk worried talk "...Aw, man, we weren’t even walking this whole time?"
+    nk worried_talk "...Aw, man, we weren’t even walking this whole time?"
 
-    nk happy @ talk "No wonder talking felt so easy!"
+    nk happy @ happy_talk "No wonder talking felt so easy!"
 
     "That made her laugh. The amusement seemed to be shared."
 
@@ -167,14 +167,14 @@ label chapter_2:
 
     nk stern "Meh, it’s not intrinsically bad. I just haven’t enjoyed it in recent years."
 
-    nk worried @ talk "I got more sedentary after middle school. Lost that endless kid energy, y’know."
+    nk worried @ worried_talk "I got more sedentary after middle school. Lost that endless kid energy, y’know."
 
     ki "Ah, yeah. Totally understandable."
 
-    nk happy talk "Tani and I were little gremlins as kids, apparently. Parents keep telling 
+    nk happy_talk "Tani and I were little gremlins as kids, apparently. Parents keep telling 
     stories about us running all over the place, and I believe ’em."
 
-    nk worried talk "I vaguely remember Tani slowing down as she got older, and… I guess I felt bad 
+    nk worried_talk "I vaguely remember Tani slowing down as she got older, and… I guess I felt bad 
     leaving her behind? So I slowed down too. Got into different hobbies."
 
     nk friendly "I might not be exercising by body as much as I should, but at least I’m 
@@ -182,12 +182,12 @@ label chapter_2:
 
     ki "Oh? What is it you do, mostly?"
 
-    nk happy @ talk "Console restoration! Refurbishment, rewiring for modern power sources and I/O 
+    nk happy @ happy_talk "Console restoration! Refurbishment, rewiring for modern power sources and I/O 
     components, y’know."
 
     ki "Oh! You mean, like, antique game consoles and computers?"
 
-    nk happy talk "Exactly! And it’s not just wires and soldering. Had to teach myself a lot about 
+    nk happy_talk "Exactly! And it’s not just wires and soldering. Had to teach myself a lot about 
     encoding and signal conversion."
 
     nk friendly "Y’know, ’cause two devices don’t just magically work when you plug them 
@@ -197,7 +197,7 @@ label chapter_2:
 
     ki "Is it kind of like that one bit from {i}The Ambassador{/i}? Have you seen that movie?"
 
-    nk happy @ talk "Ooooh, yeah, the first contact docudrama? With Nekhalle Turren playing the—"
+    nk happy @ happy_talk "Ooooh, yeah, the first contact docudrama? With Nekhalle Turren playing the—"
 
     ki "Yeah, that one! Remember in the prologue, where the Chorran scientists had to 
     fiddle with their equipment juuust right before they realized they were getting a 
@@ -213,12 +213,12 @@ label chapter_2:
     ki "Neat. That’s a really cool hobby! I bet you know a lot of stuff I couldn’t even 
     imagine."
 
-    nk happy @ talk "Well, there’s always room for more knowledge. I want to go into computer 
+    nk happy @ happy_talk "Well, there’s always room for more knowledge. I want to go into computer 
     engineering while I’m here. Learn things properly, get into the industry."
 
     ki "That’s awesome! Sounds like a lot of fun."
 
-    nk @ talk "How about you? What do you do?"
+    nk @ happy_talk "How about you? What do you do?"
 
     ki "Oh, uh."
 
@@ -233,9 +233,9 @@ label chapter_2:
     into a new thing—like some specific, obscure craft or online project—and love it for a 
     month, then forget about it again."
 
-    nk worried talk "Oof, hyperfixations will do that to ya. My sympathies."
+    nk worried_talk "Oof, hyperfixations will do that to ya. My sympathies."
 
-    nk happy @ talk "Any that’ve grabbed ya more than once? That you come back to?"
+    nk happy @ happy_talk "Any that’ve grabbed ya more than once? That you come back to?"
 
     ki "Hmm, good question. Um, let’s see…"
 
@@ -258,7 +258,7 @@ label chapter_2:
 
     ka worried @ worried talk "No, it’s fine! Noah asked that I check on you."
 
-    nk @ happy talk "Eh, we’re plugging along, don’t worry."
+    nk @ happy_talk "Eh, we’re plugging along, don’t worry."
 
     ki "We can pick up the pace a bit, if we need to."
 
@@ -290,8 +290,7 @@ menu chapter_1_walk_choice:
 
         # Kim gets too far ahead of Nakoa:
 
-        "No, best not to risk angering the Jorgoan—{nw=0.5}"
-        extend " er, the {i}others{/i}."
+        "No, best not to risk angering the Jorgoan—{w=0.5}er, the {i}others{/i}."
 
         show nakoa happy at left_4
         show kara happy at center_1
@@ -301,7 +300,7 @@ menu chapter_1_walk_choice:
 
         define nk_s = Character("Nakoa", kind=nk, what_prefix='{size=-10}“', what_suffix='”{/size}')
 
-        nk_s worried @ talk "Oh, you can’t hear… okay."
+        nk_s worried @ worried_talk "Oh, you can’t hear… okay."
 
         # Kim goes ahead of Kara:
 
@@ -342,13 +341,13 @@ label chapter_1_after_walk_choice:
 
     # (Ideal) Dialogue if she stays in range of Nakoa:
 
-    nk @ talk "Yeah, you were saying? Hobbies you’ve come back to more than once?"
+    nk @ happy_talk "Yeah, you were saying? Hobbies you’ve come back to more than once?"
 
     ki "Right, right! Let’s see."
 
     ki "If I had to pick… I’d go with singing, I think."
 
-    nk @ talk "Oh, that’s right! You’re the Karaoke Queen."
+    nk @ happy_talk "Oh, that’s right! You’re the Karaoke Queen."
 
     ki "Ahaha, not just karaoke! Though I do like it. Sometimes with my friends, 
     sometimes with my mom."
@@ -358,7 +357,7 @@ label chapter_1_after_walk_choice:
 
     ki "But whenever I wasn’t in one, I kind of missed it."
 
-    nk @ talk "I feel ya. There’s gotta be a good few options for you here, right? Let’s ask 
+    nk @ happy_talk "I feel ya. There’s gotta be a good few options for you here, right? Let’s ask 
     Noah."
 
     ki "Yeah, for sure!"
@@ -374,7 +373,7 @@ label chapter_1_after_walk_choice:
     ka neutral @ talk "Well, I did… um, what do you call it? When you fight with your body, without 
     weapons."
 
-    nk happy @ talk "Oooh, martial arts?"
+    nk happy @ happy_talk "Oooh, martial arts?"
 
     ka grin "Martial arts, yes! Thank you!"
 
@@ -392,7 +391,7 @@ label chapter_1_after_walk_choice:
  
     ki "Alright, that makes sense. Cool."
 
-    nk @ talk "So how long have you been with us, in the Association?"
+    nk @ happy_talk "So how long have you been with us, in the Association?"
 
     ki "We don’t have to keep asking her difficult questions—"
 
@@ -413,7 +412,7 @@ label chapter_1_after_walk_choice:
 
     ka neutral @ talk "The rescue was relief, of course. A little strange, but relief."
 
-    nk @ worried talk "Yeah, that’s not surprising. Return to civilization. That’s gotta be 
+    nk @ worried_talk "Yeah, that’s not surprising. Return to civilization. That’s gotta be 
     disorienting."
 
     ka @ talk "The cultures, though? Here, it is… louder. Brighter. More variety of things, 
@@ -604,7 +603,7 @@ label nvl_monologue_test:
 
     ki "Yeah, there you go!"
 
-    nk @ happy talk "Alright, step 4?"
+    nk @ happy_talk "Alright, step 4?"
 
     ki "Step 4, this is the fun part. Use the creases you just made to kind of… {i}hinge{/i} the 
     paper upwards, like this."
@@ -616,7 +615,7 @@ label nvl_monologue_test:
     "Both of her pupils looked on in puzzlement for a moment, before the lightbulbs clicked 
     on in their heads."
 
-    nk happy @ happy talk "Oh! Oh I get it, that’s super cool."
+    nk happy @ happy_talk "Oh! Oh I get it, that’s super cool."
 
     ka @ worried talk "I think I… like this…?"
 
@@ -675,7 +674,7 @@ label nvl_monologue_test:
     no "No need to be sorry! You’re still learning. We’re all still constantly learning, 
     really."
 
-    nk happy @ happy talk "Words of wisdom, my man."
+    nk happy @ happy_talk "Words of wisdom, my man."
 
     "Nakoa closed up the first aid kit and slid onto the bench next to Kim."
 
@@ -710,7 +709,7 @@ label nvl_monologue_test:
 
     ki "Oh, that does sound useful."
 
-    nk @ happy talk "Hey, Karalún, maybe there’ll be a club for you too! Brush up on your 
+    nk @ happy_talk "Hey, Karalún, maybe there’ll be a club for you too! Brush up on your 
     martial arts."
 
     ka worried talk "Oh, I… yes, you’re right. I hadn’t thought of it."
@@ -751,7 +750,7 @@ label nvl_monologue_test:
     no "Not that I’ll be your leader anymore by that point. The RAs will have that handled. 
     But it can’t hurt to stay acquaintances."
 
-    nk @ happy talk "Sure, why not? You seem alright."
+    nk @ happy_talk "Sure, why not? You seem alright."
 
     ki "Yeah, good idea!"
 
@@ -793,7 +792,7 @@ label nvl_monologue_test:
 
     nk friendly "We could use the tent. Take turns."
 
-    nk happy @ talk "I’m not going to bed yet, I’m waiting up for s’mores."
+    nk happy @ happy_talk "I’m not going to bed yet, I’m waiting up for s’mores."
 
     ki "Ha ha, that’s fair."
 
@@ -804,7 +803,7 @@ label nvl_monologue_test:
 
     ka @ talk "Roast… what?"
 
-    nk @ talk "It’s a gooey dessert, that’s all you need to know. We’ll explain once we get there, 
+    nk @ happy_talk "It’s a gooey dessert, that’s all you need to know. We’ll explain once we get there, 
     it’ll make more sense."
 
     ka worried @ talk "R-right, I… I’m sorry."
@@ -826,7 +825,7 @@ label nvl_monologue_test:
     ki "Nothing wrong with that, it’s just uncommon. Most kids in the Association start 
     doing music during primary school."
 
-    nk @ happy talk "Though whether they stick with it is another question."
+    nk @ happy_talk "Though whether they stick with it is another question."
 
     ka neutral talk "Oh, no, I did some music as a child. We sang anthems."
 
@@ -853,13 +852,13 @@ label nvl_monologue_test:
 
     ki "Heh. Well, we’re glad you’re enjoying it!"
 
-    nk worried @ talk "What did you do to get kicked out? If that’s not a rude question, I mean."
+    nk worried @ worried_talk "What did you do to get kicked out? If that’s not a rude question, I mean."
 
     "Kim flinched—that {i}was{/i} a rude question!—but Karalún was already answering."
 
     ka @ talk "Treason."
 
-    nk @ talk "...What kind of treason?"
+    nk @ worried_talk "...What kind of treason?"
 
     ki "Nakoa!"
 
@@ -869,7 +868,7 @@ label nvl_monologue_test:
 
     ka @ talk "Breaking and entering, and petty theft."
 
-    nk worried @ talk "...Like, burglary? Broke into someone’s house? Not sure why that’s treason, unless 
+    nk worried @ worried_talk "...Like, burglary? Broke into someone’s house? Not sure why that’s treason, unless 
     it was someone important."
 
     ka neutral talk "It was a government building. An archive."
@@ -899,7 +898,7 @@ label nvl_monologue_test:
 
     ki "What did you find that was so important? If it’s safe for you to reveal, I mean."
 
-    nk @ talk "...Not weapons codes, right?"
+    nk @ worried_talk "...Not weapons codes, right?"
 
     ka neutral talk "No, nothing like that. We found… I believe you might call it a ‘museum.’"
 
@@ -908,7 +907,7 @@ label nvl_monologue_test:
 
     ka neutral @ talk "I took as many photos as I could. And I paid the price. They caught me."
 
-    nk worried @ talk "And exiled you for… finding history they wanted to keep a secret?"
+    nk @ worried_talk "And exiled you for… finding history they wanted to keep a secret?"
 
     nk @ stern "Why would they keep all that stuff if they didn’t want the populace finding out? 
     You’d think they’d have, I dunno, destroyed it or something."
@@ -941,7 +940,7 @@ label nvl_monologue_test:
 
     "Nakoa had started patting Karalún’s shoulder awkwardly."
 
-    nk happy @ talk "Well, hey, no better time to find a new family than here, right? We’re with ya."
+    nk happy @ happy_talk "Well, hey, no better time to find a new family than here, right? We’re with ya."
 
     ka worried "..."
 
@@ -953,7 +952,7 @@ label nvl_monologue_test:
 
     ki "Oooh, right! Let’s see if they’ve started the s’mores yet."
 
-    nk @ talk "Right behind ya."
+    nk @ happy_talk "Right behind ya."
 
 label chapter_2_b:
 
@@ -1022,19 +1021,19 @@ label chapter_2_b:
 
     no "Hey, Tani."
 
-    t happy @ talk "Hey, Noah."
+    t happy @ happy_talk "Hey, Noah."
 
     no "This bloke isn’t running you ragged yet, is he?"
 
-    t neutral talk "I freely volunteered to help Blake move in and get settled, but thank you for 
+    t neutral_talk "I freely volunteered to help Blake move in and get settled, but thank you for 
     caring."
 
-    t happy @ talk "Don’t worry, he owes me the same now. We were just about to head over to Cressa Hall 
+    t happy @ happy_talk "Don’t worry, he owes me the same now. We were just about to head over to Cressa Hall 
     to do my room."
 
     no "Tit for tat, mm? Guess that keeps things fair."
 
-    t gesture @ talk "Oh, but we don’t want to be a bore now that you’re here. Want to take a break? Grab 
+    t gesture @ gesture_talk "Oh, but we don’t want to be a bore now that you’re here. Want to take a break? Grab 
     a drink or a snack?"
 
     no "Oh, no, don’t worry about me. I’ll come along and help, I’ve got nothing better to 
@@ -1049,7 +1048,7 @@ label chapter_2_b:
 
     "Tansei cackled."
 
-    t happy @ talk "Alright, compromise. We’ll {i}all{/i} take a caffeine break, and then {i}all{/i} help with my 
+    t happy @ happy_talk "Alright, compromise. We’ll {i}all{/i} take a caffeine break, and then {i}all{/i} help with my 
     room. {i}Prekessai?{/i}"
 
     "Noah and Blake nodded in agreement."
@@ -1077,7 +1076,7 @@ label chapter_2_b:
 
     "Tansei snorted in laughter."
 
-    t happy @ talk "Speak for yourself, Blake. My brother’s in the freshman class and he is 
+    t happy @ happy_talk "Speak for yourself, Blake. My brother’s in the freshman class and he is 
     a hundred and ten percent still a kid to me."
 
     no "There, see? It’s not a weird way to think."
@@ -1094,7 +1093,7 @@ label chapter_2_b:
 
     b "Aw, yeah, that’s a bummer, but I can see it."
 
-    t neutral @ talk "Anyone leave an impression on you? Any friends you think might last?"
+    t neutral @ neutral_talk "Anyone leave an impression on you? Any friends you think might last?"
 
     no "Well, I don’t know about friends, but the most interesting one was definitely the 
     Jorgoan. Wasn’t expecting to get one in my group."
@@ -1121,11 +1120,11 @@ label chapter_2_b:
 
     no "Those teeth were impressive."
 
-    t @ talk "You can say ‘Those teeth’ll scare you,’ it’s okay. We’re all thinking it."
+    t @ neutral_talk "You can say ‘Those teeth’ll scare you,’ it’s okay. We’re all thinking it."
 
     b "Tansei!"
 
-    t stern @ talk "What? It’s true."
+    t stern @ stern_talk "What? It’s true."
 
     no "No, no, I get it. There’s so much more to Jorgoans than scary teeth, and it was my 
     job to look past that and be welcoming. Like, there’s tragedy there."
@@ -1160,7 +1159,7 @@ label chapter_2_b:
 
     b "Then let’s set a date! This Saturday, after the first week of classes."
 
-    t @ talk "Isn’t that the day of the Club Fair?"
+    t @ neutral_talk "Isn’t that the day of the Club Fair?"
 
     b "Damn, you’re right."
 

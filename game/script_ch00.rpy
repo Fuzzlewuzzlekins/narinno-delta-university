@@ -190,11 +190,11 @@ label quickstart:
 
     # Sprite: Tansei scoots closer to Emma.
 
-    show tansei neutral talk at leftish_4 with ease
+    show tansei neutral_talk at leftish_4 with ease
     "Onka 1" "\“You looking for something?\”"
     
     show tansei neutral with dissolve_f
-    show emma worried talk with dissolve_f
+    show emma worried_talk with dissolve_f
     "Human" "\“Uh, yes! Which stop is closest to the NDU Kimmings campus?\”"
 
     # Sprite: Nakoa raises a hand and calls out.
@@ -202,11 +202,11 @@ label quickstart:
     show nakoa stern with dissolve_f
     "Onka 2" "\“You want Vaniman!\”"
 
-    show tansei neutral talk with dissolve_f
+    show tansei neutral_talk with dissolve_f
     "Onka 1" "\“...Vaniman Street, yes.\”"
 
     show tansei neutral with dissolve_f
-    show emma neutral talk with dissolve_f
+    show emma neutral_talk with dissolve_f
     "Human" "\“Thank you!\”"
 
     # [Sprite: Emma slides away briefly.] 
@@ -226,20 +226,20 @@ label quickstart:
 
     ki "Hey, sorry! I think I’m looking for that stop too. Vaniman Street, you said?"
 
-    show tansei happy talk with dissolve_f
+    show tansei happy_talk with dissolve_f
     "Onka 1" "\“Yep, that’s the one.\”"
 
     # [Sprite: Emma reappears.]
 
     show nakoa neutral at leftish_3
     show tansei happy at center_1
-    show emma neutral talk at rightish_3
+    show emma neutral_talk at rightish_3
     with ease
 
     "Human" "\“Alright, got it. Thank you so much!\”"
 
     show emma neutral with dissolve_f
-    show tansei happy talk with dissolve_f
+    show tansei happy_talk with dissolve_f
     "Onka 1" "\“No problem.\”"
 
     show tansei happy with dissolve_f
@@ -259,11 +259,11 @@ label quickstart:
     all young adults at a glance."
 
     show nakoa neutral with dissolve_f
-    show emma neutral talk with dissolve_f
+    show emma neutral_talk with dissolve_f
     "Human" "\“Yeah, they should fix that, huh? Put a sticker on the wall, or 
     something.\”"
 
-    show tansei neutral talk with dissolve_f
+    show tansei neutral_talk with dissolve_f
     show emma neutral with dissolve_f
     "Onka 1" "\“Would be nice.\”"
 
@@ -271,7 +271,7 @@ label quickstart:
     show tansei neutral with dissolve_f
     "The taller of the onka pair gestured back towards the station benches."
 
-    show tansei gesture talk with dissolve_f
+    show tansei gesture_talk with dissolve_f
     "Onka 1" "\“Oh, please, do sit with us. Don’t mean to keep you all standing 
     around.\”"
 
@@ -303,12 +303,12 @@ label quickstart:
     alike, I swear—"
 
     # [Sprite: Nakoa and Tansei laugh.]
-    show nakoa happy talk 
+    show nakoa happy_talk 
     show tansei laughing
     with dissolve_f
     "But much to Kim’s surprise, the pair doubled over in laughter."
 
-    show tansei excited talk with dissolve_f
+    show tansei excited_talk with dissolve_f
     "Onka 1" "\“Ha! You are, in fact, correct! This is—\”"
 
     show nakoa smug 
@@ -316,7 +316,7 @@ label quickstart:
     with dissolve_f
     "Onka 2" "\“Ohhh, man, that’s great.\”"
 
-    show tansei happy talk with dissolve_f
+    show tansei happy_talk with dissolve_f
     "Onka 1" "\“This is my brother.\”"
 
     # [Sprite: Nakoa waves.]
@@ -325,21 +325,21 @@ label quickstart:
     with dissolve_f
     "{s}Onka 2{/s} {color=#f3947c}Nakoa{/color}" "\“Nakoa. Nakoa olu-Hani.\”"
 
-    nk happy @ talk "And this is the big sis, Tansei."
+    nk happy @ happy_talk "And this is the big sis, Tansei."
 
-    t happy talk "Tansei oro-Hani. Pleasure to meet you all. And you…"
+    t happy_talk "Tansei oro-Hani. Pleasure to meet you all. And you…"
 
     # [Sprite: Tansei points sternly at Kim/the camera.]
 
-    t stern @ talk "Are very, {i}very{/i} lucky we were actually related."
+    t stern @ stern_talk "Are very, {i}very{/i} lucky we were actually related."
 
     ki "Y-yes! Point taken! Won’t assume again."
     
-    t @ talk "I don’t have to ask you two if {i}you’re{/i} related to make a point?"
+    t @ stern_talk "I don’t have to ask you two if {i}you’re{/i} related to make a point?"
 
     # [Sprite: Emma recoils in embarrassment.]
     
-    show emma worried talk with dissolve_f
+    show emma worried_talk with dissolve_f
 
     ki "No, we’re good!" (multiple=2)
 
@@ -356,13 +356,13 @@ label quickstart:
 
     # [Sprite: Emma waves when it’s her turn.]
 
-    e neutral @ talk "Emma, Emma Broderick. Nice to meet everybody!"
+    e neutral @ neutral_talk "Emma, Emma Broderick. Nice to meet everybody!"
 
-    t happy talk "You too!"
+    t happy_talk "You too!"
 
     # [Sprite: Tansei leans and looks into the distance.]
 
-    t gesture @ talk "Oop, is that our train?"
+    t gesture @ gesture_talk "Oop, is that our train?"
 
     # [Sound: thrum of a monorail approaching, then slowing to a stop.]
 
@@ -400,49 +400,49 @@ label quickstart:
 
     ki "You got all your things?"
 
-    nk @ talk "Yeah, pretty sure. Just the two bags, right, Tani?"
+    nk @ neutral_talk "Yeah, pretty sure. Just the two bags, right, Tani?"
 
-    t @ talk "Yeah, we should be good."
+    t @ neutral_talk "Yeah, we should be good."
 
     # [Sound: a swoosh/click of the doors closing, then a droning hum kicks in.]
 
     ki "Okay, just checking! It just looked like you two were packed light. Lighter than 
     me, at least."
 
-    t talk "Oh, I’m not an incoming freshman. I’m a junior. Class of ’38."
+    t neutral_talk "Oh, I’m not an incoming freshman. I’m a junior. Class of ’38."
 
-    t friendly @ talk "Figured it couldn’t hurt to come into town a few days early, be a chaperone, show 
+    t friendly @ friendly_talk "Figured it couldn’t hurt to come into town a few days early, be a chaperone, show 
     you around town, help with a bit of move-in shopping—"
 
     nk stern "You talking to me, or to everyone?"
 
-    t gesture talk "Well, I was only planning on it being you,{nw=0.5}"
+    t gesture_talk "Well, I was only planning on it being you,{nw=0.5}"
     # [Sprite: Tansei turns mid-sentence.]
-    show tansei happy talk
+    show tansei happy_talk
     t "Well, I was only planning on it being you,{fast} but you two are welcome to come 
     along! I’m happy to show everyone around, play tour guide for a few days."
 
     show nakoa neutral 
     show tansei happy
     with dissolve_f
-    e @ talk "Oh, that would be great! Thank you!"
+    e @ neutral_talk "Oh, that would be great! Thank you!"
 
     ki "Yes, that’s very generous! I’d appreciate that a lot."
 
-    t happy talk "No problem at all."
+    t happy_talk "No problem at all."
 
-    t friendly @ talk "So, here’s a question for everyone. Where are we all from?"
+    t friendly @ friendly_talk "So, here’s a question for everyone. Where are we all from?"
 
-    nk @ talk "We’re both from Tachil, Sforolla—"
+    nk @ neutral_talk "We’re both from Tachil, Sforolla—"
 
     # [Sprite: a stiff smile.] 
-    t neutral @ talk "Let’s let our friends go first, please."
+    t neutral @ neutral_talk "Let’s let our friends go first, please."
 
     ki "Oh, no, it’s okay! Go for it, I’m eager to hear about where you’re from."
 
     # [Sprite: Nakoa smirks in vindication as he continues. Tansei scowls slightly.]
 
-    nk happy talk "Tachil. Small town on the Sforollan coast, back on Tandoro."
+    nk happy_talk "Tachil. Small town on the Sforollan coast, back on Tandoro."
 
     nk friendly "Not really well known, but the cute hometown vibes? Love it.{nw=0.5}"
     show nakoa smug
@@ -452,7 +452,7 @@ label quickstart:
     nk friendly "Still proud of our food. If you ever see a Sforollan restaurant, you can’t go 
     wrong with the seafood casseroles."
 
-    t stern @ talk "Are you done being a travel agent?"
+    t stern @ stern_talk "Are you done being a travel agent?"
 
     nk stern "Never. I need friends back home."
 
@@ -467,18 +467,18 @@ label quickstart:
     show nakoa happy 
     show tansei happy
     with dissolve_f
-    t happy @ talk "Anyway, enough of us. Who’s next?"
+    t happy @ happy_talk "Anyway, enough of us. Who’s next?"
 
-    e neutral @ talk "Sure, I’ll go!"
+    e neutral @ neutral_talk "Sure, I’ll go!"
 
-    e @ talk "I’m from Camp Vessik, Verdenia. On Narinno Gamma."
+    e @ neutral_talk "I’m from Camp Vessik, Verdenia. On Narinno Gamma."
 
     ki "Oh! You’re from Narinno Gamma?"
 
-    e neutral talk "Yeah, born and raised. Technically born in Pyredell and then moved to Camp 
+    e neutral_talk "Yeah, born and raised. Technically born in Pyredell and then moved to Camp 
     Vessik, but they’re both in Verdenia, so..."
 
-    e worried @ talk "...Is that exciting? I didn’t think the colonies were all that interesting."
+    e worried @ worried_talk "...Is that exciting? I didn’t think the colonies were all that interesting."
 
     ki "Oh, no, I just... assumed you were from Earth too, for some reason."
 
@@ -487,7 +487,7 @@ label quickstart:
     ki "I guess that gives you a leg up here on Narinno Delta, already being used to 
     living on a colony and all."
 
-    e @ talk "What do you mean by that?"
+    e @ worried_talk "What do you mean by that?"
 
     ki "Well, the colonies are more diverse, right? You’re already used to living 
     around—"
@@ -500,6 +500,7 @@ label quickstart:
     show nakoa grimace 
     show tansei neutral
     with dissolve_f
+    stop music fadeout 2.0
     "That had been a mistake to say too, hadn’t it? So much for blending in."
 
     play music cosmonaut_intro fadeout 0.5
@@ -524,18 +525,18 @@ label quickstart:
     ki "I knew I had to pop the bubble. I want to be more worldly; that’s why I’m here. 
     Please forgive my missteps along the way."
 
-    nk worried @ talk "Hey, whoa, chill. Your heart sounds like it’s in the right place. No need to 
+    nk worried @ worried_talk "Hey, whoa, chill. Your heart sounds like it’s in the right place. No need to 
     overthink it all."
 
-    e neutral @ talk "Yeah, just be yourself and treat everyone with the same respect, and you’ll be 
+    e neutral @ neutral_talk "Yeah, just be yourself and treat everyone with the same respect, and you’ll be 
     fine."
 
-    t happy @ talk "Exactly. It’s an admirable step you’re taking, if you ask me."
+    t happy @ happy_talk "Exactly. It’s an admirable step you’re taking, if you ask me."
 
     "Kim blushed and ducked her head. These strangers she’d almost certainly just 
     offended were too kind."
 
-    nk happy @ talk "Japan, huh? Video game capital of the galaxy?"
+    nk happy @ happy_talk "Japan, huh? Video game capital of the galaxy?"
 
     # play music siblings_intro fadeout 0.5
     # queue music siblings_loop
@@ -545,16 +546,16 @@ label quickstart:
     nk friendly "Yeah! Trendsetters back in Earth’s early digital age, right? Revolutionary 
     stuff."
 
-    nk happy @ talk "Not strictly as early as Chorra’s innovations, but hella impressive for 
+    nk happy @ happy_talk "Not strictly as early as Chorra’s innovations, but hella impressive for 
     pre-contact time."
 
     ki "Ah, well, if you say so."
 
-    t neutral @ talk "On the topic of your home, actually. I have a little question."
+    t neutral @ neutral_talk "On the topic of your home, actually. I have a little question."
 
     ki "Sure, go for it."
 
-    t @ talk "You said a word, earlier, that I hadn’t heard before. What was it? 
+    t @ neutral_talk "You said a word, earlier, that I hadn’t heard before. What was it? 
     {i}Uchuujin{/i}?"
 
     ki "Oh! Yeah, uh..."
@@ -568,30 +569,30 @@ label quickstart:
 
     show nakoa neutral with dissolve_f
 
-    t @ talk "Extraterrestrial?"
+    t @ neutral_talk "Extraterrestrial?"
 
     ki "I think so? A bit more like... nonhuman, I’d say."
 
-    t talk "Huh. Fair enough."
+    t neutral_talk "Huh. Fair enough."
 
     # [Sprite: Tansei chuckles.]
 
-    t happy @ talk "Forgive me, I get really curious about new words. I’m a linguistics major. 
+    t happy @ happy_talk "Forgive me, I get really curious about new words. I’m a linguistics major. 
     I’ve always loved languages, all kinds of them."
 
     ki "Oooh, that’s awesome! How many languages do you speak?"
 
-    t shy talk "Oof, that depends on how you define ‘speak.’ You know being a linguist doesn't 
+    t shy_talk "Oof, that depends on how you define ‘speak.’ You know being a linguist doesn't 
     automatically make you a polyglot, right?"
     
-    t excited talk "Anyway, I’m fluent in Sforollan and Standard, obviously, but... aside from that, 
+    t excited_talk "Anyway, I’m fluent in Sforollan and Standard, obviously, but... aside from that, 
     let's see."
 
-    t shy talk "I studied Sayaro as my tertiary back in high school, then took two semesters of Elonen 
+    t shy_talk "I studied Sayaro as my tertiary back in high school, then took two semesters of Elonen 
     for fun when I got here… and I {i}guess{/i} you could count all the random languages I’ve looked up 
     on a whim."
     
-    t excited @ talk "But nothing really sticks if you don’t practice it. I wouldn’t say I’m {i}fluent{/i} 
+    t excited @ excited_talk "But nothing really sticks if you don’t practice it. I wouldn’t say I’m {i}fluent{/i} 
     in anything but the first two, sorry."
 
     ki "Hey, but you’ve pursued a lot, that’s amazing! You should be proud."
@@ -602,17 +603,17 @@ label quickstart:
     ki "That’s a word in Japanese! It means ‘diligence.’ If you wanna hang onto that as 
     a cool bit of trivia."
 
-    t happy @ talk "Oh, is that right? Funny how that works. I’m flattered."
+    t happy @ happy_talk "Oh, is that right? Funny how that works. I’m flattered."
 
-    nk happy @ talk "Ooh, is my name a word?"
+    nk happy @ happy_talk "Ooh, is my name a word?"
 
     ki "Uh, not that I can think of, sorry."
 
-    nk angry @ talk "What? Unfair. I call shenanigans."
+    nk angry @ angry_talk "What? Unfair. I call shenanigans."
 
     ki "I’m... sorry?"
 
-    nk talk "Yeah, your native tongue with a thousand years of history’d better make my name 
+    nk angry_talk "Yeah, your native tongue with a thousand years of history’d better make my name 
     a word.{nw=0.5}"
     show nakoa stern
     nk "Yeah, your native tongue with a thousand years of history’d better make my name 
@@ -623,10 +624,10 @@ label quickstart:
     show nakoa smug with dissolve_f
     "He’d had her worried for a second there. Kim laughed once the joke became obvious."
 
-    t neutral talk "Oh, hold up. Our stop’s coming up."
+    t neutral_talk "Oh, hold up. Our stop’s coming up."
 
     show nakoa neutral with dissolve_f
-    t happy @ talk "Everyone got your luggage?"
+    t happy @ happy_talk "Everyone got your luggage?"
 
     "Kim checked around herself. Her carry-on was still on the seat next to her, and her 
     larger suitcase was still tucked under her seat, behind her feet."
@@ -771,18 +772,18 @@ label testytest:
     show emma neutral at rightish_3
     with fadeinright
 
-    t happy talk "Looks like that there’s your check-in. Everett Hall."
+    t happy_talk "Looks like that there’s your check-in. Everett Hall."
 
     t "If I remember correctly, they should be pretty quick about getting your name down 
     and sending you on your way."
 
-    t neutral @ talk "You want me to come in with you, or should I wait out here with the luggage?"
+    t neutral @ neutral_talk "You want me to come in with you, or should I wait out here with the luggage?"
 
-    nk happy talk "Oh, I’ll be fine! We’ll be fine. We’ll meet you out here."
+    nk happy_talk "Oh, I’ll be fine! We’ll be fine. We’ll meet you out here."
 
     nk friendly "No reason to lug everything around more than we need, yeah?"
 
-    e @ talk "Yeah, I think we’ll be fine. Thank you, though!"
+    e @ neutral_talk "Yeah, I think we’ll be fine. Thank you, though!"
 
     ki "Yes, thank you so much! We’ll meet you back here, then."
 
@@ -874,7 +875,7 @@ label hi_nan:
     "Volunteer" "\“Ooh, no, not off the top of my head. Lemme see.\”"
     show nanneyo thinking with dissolve_f
 
-    "She fiddled with her spreadsheet for a few seconds, though Kim couldn’t make out 
+    "The dubina fiddled with their—her?—spreadsheet for a few seconds, though Kim couldn’t make out 
     anything from this angle."
 
     show nanneyo thinking_talk with dissolve_f
@@ -894,7 +895,7 @@ label hi_nan:
     people like their off hand, so they can save their dominant hand to carry stuff.\”"
     show nanneyo neutral with dissolve_f
 
-    "After a moment’s recollection over how she usually opened doors back home, Kim 
+    "After a moment’s recollection over how she usually opened doors back home,{w=0.5} Kim 
     pressed her right, dominant hand to the scanner."
 
     "With a flash and a blip, the reader did its work."
@@ -925,11 +926,11 @@ label hi_nan:
     "The volunteer smiled, rapped together a small stack of papers, and handed it across 
     the table."
 
-    show nanneyo happy_talk with dissolve_f
+    show nanneyo neutral_talk with dissolve_f
     "Volunteer" "\“In here we’ve got lots of helpful notes for you: a copy of the 
     orientation schedule, dorm policies, campus map, all that good stuff.\”"
 
-    show nanneyo neutral_talk with dissolve_f
+    show nanneyo happy_talk with dissolve_f
     "Volunteer" "\“Please don’t hesitate to come back and ask us if you have any 
     questions or issues, okay? We’ll be open until at least 8 tonight!\”"
     show nanneyo neutral with dissolve_f
