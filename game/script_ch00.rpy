@@ -8,6 +8,8 @@ label chapter_0:
 
     scene bg shuttle with dissolve
 
+    play sound escalator_airplane_ambient_loop loop fadein 1.0
+
     "The shuttle’s motion was smooth and comfortable."
 
     "Still, Kim could feel the faint, constant tremor as it moved, plummeting from the 
@@ -59,6 +61,8 @@ label chapter_0:
     "She repeated it like a mantra. Better that than let worries and details start 
     spinning in her head again."
 
+    stop sound fadeout 10.0
+
     "The shuttle slowed."
 
     # Sound: the drone tapers off to a halt. Mechanical sounds as the shuttle docks.
@@ -67,6 +71,8 @@ label chapter_0:
 
     # Sound: an airplane-like bing noise, followed by a ruckus of seatbelts and 
     # shuffling.
+
+    play sound airplane_ding
 
     "The crowd around Kim mobilized, eager to exit the stuffy shuttle."
 
@@ -245,6 +251,8 @@ label quickstart:
     show tansei happy with dissolve_f
     "With the kiosk now free, Kim sidled in for her own turn at printing a ticket."
 
+    play sound monorail_ticket
+
     "A few taps and scans, and she was on her way with a slip in hand."
 
     show tansei neutral with dissolve
@@ -358,6 +366,8 @@ label quickstart:
 
     e neutral @ neutral_talk "Emma, Emma Broderick. Nice to meet everybody!"
 
+    play sound monorail_arrival volume 0.5
+
     t happy_talk "You too!"
 
     # [Sprite: Tansei leans and looks into the distance.]
@@ -386,6 +396,7 @@ label quickstart:
     # [Background: monorail interior. Looks like the inside of a light rail or subway 
     # car, clean and well lit.]
 
+    stop sound fadeout 0.5
     show bg monorail with dissolve
 
     "The monorail interior was decently well kept, and more seats were available than 
@@ -632,11 +643,15 @@ label quickstart:
     "Kim checked around herself. Her carry-on was still on the seat next to her, and her 
     larger suitcase was still tucked under her seat, behind her feet."
 
+    play sound luggage_handle
+
     "She readied both in her hands and adjusted her weight in her seat, ready to stand 
     once the monorail came to its next stop."
 
     # [Sound: the droning hum of the monorail dies down; then a click and swish as the 
     # monorail doors open. Sprite: the characters disappear. 
+
+    play sound monorail_door_open volume 0.5
 
     hide nakoa
     hide tansei
@@ -649,9 +664,10 @@ label testytest:
     # point of the elevated monorail stop. Amidst a tree-lined neighborhood, the campus 
     # stands out with its swaths of red brick buildings and green fields.]
 
+    stop sound fadeout 1.0
     show bg school_station with dissolve
 
-    play music fresh_intro fadeout 0.5
+    play music fresh_intro fadeout 1.0
     queue music fresh_ext_loop
 
     "Tansei was right: the nondescript proper name of \“Vaniman\” didn’t do this station 
@@ -898,6 +914,8 @@ label hi_nan:
     "After a moment’s recollection over how she usually opened doors back home,{w=0.5} Kim 
     pressed her right, dominant hand to the scanner."
 
+    play sound door_scan
+    
     "With a flash and a blip, the reader did its work."
 
     ki "So my roommate hasn’t arrived yet?"
