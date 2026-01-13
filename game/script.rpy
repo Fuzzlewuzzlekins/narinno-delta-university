@@ -330,8 +330,8 @@ label start:
     # jump test_scene
     # jump outline
     # jump chapter_0
-    # jump quickstart
+    jump quickstart
     # jump testytest
-    jump hi_nan
+    # jump hi_nan
     # jump photoop
     # jump nvl_monologue_test

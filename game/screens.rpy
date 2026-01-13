@@ -146,10 +146,13 @@ style namebox:
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # background Frame("gui/namebox.png", Borders(20, 20, 20, 20), tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # background Solid(gui.interface_text_color)
     padding gui.namebox_borders.padding
 
 style say_label:
-    properties gui.text_properties("name", accent=True)
+    # properties gui.text_properties("name", accent=True)
+    properties gui.text_properties("name")
     xalign gui.name_xalign
     yalign 0.5
 
@@ -168,10 +171,11 @@ style multiple2_namebox:
 style multiple2_say_window:
     xfill False
     xsize 0.5
+    background Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0)
 style block1_multiple2_say_window:
-    xalign 0.0
+    xalign 0.1
 style block2_multiple2_say_window:
-    xalign 1.0
+    xalign 0.9
 style multiple2_say_dialogue:
     xpos gui.multiple2_dialogue_xpos
     xsize gui.multiple2_dialogue_width
@@ -321,7 +325,8 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        # textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -336,7 +341,8 @@ screen navigation():
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            # textbutton _("Help") action ShowMenu("help")
+            textbutton _("Controls") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
