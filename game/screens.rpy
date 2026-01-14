@@ -132,11 +132,13 @@ style namebox_label is say_label
 
 style window:
     xalign 0.5
-    xfill True
+    # xfill True
+    xsize gui.textbox_width
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    # background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -146,7 +148,6 @@ style namebox:
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    # background Frame("gui/namebox.png", Borders(20, 20, 20, 20), tile=gui.namebox_tile, xalign=gui.name_xalign)
     # background Solid(gui.interface_text_color)
     padding gui.namebox_borders.padding
 
@@ -167,17 +168,19 @@ style say_dialogue:
 
 ## Trying some custom multiple_say stuff here...
 style multiple2_namebox:
-    xpos gui.multiple2_name_xpos
+    xpos gui.name_xpos
 style multiple2_say_window:
     xfill False
-    xsize 0.5
+    # xsize 0.5
+    xsize gui.multiple2_textbox_width
     background Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0)
 style block1_multiple2_say_window:
-    xalign 0.1
+    xanchor 0.0
+    xpos 360
 style block2_multiple2_say_window:
-    xalign 0.9
+    xanchor 1.0
+    xpos 1560
 style multiple2_say_dialogue:
-    xpos gui.multiple2_dialogue_xpos
     xsize gui.multiple2_dialogue_width
 
 ## Input screen ################################################################
