@@ -150,6 +150,11 @@ default preferences.afm_time = 15
 
 define config.save_directory = "NarinnoDeltaUniversity-1690156150"
 
+## MINE - autosaves, quicksaves, and Ren'Py Sync
+define config.has_autosave = False
+define config.has_quicksave = False
+define config.has_sync = False
+
 
 ## Icon ########################################################################
 ##

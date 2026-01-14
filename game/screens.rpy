@@ -264,20 +264,37 @@ screen quick_menu():
 
     if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+        # hbox:
+        #     style_prefix "quick"
 
+        #     xalign 0.5
+        #     yalign 1.0
+
+        #     textbutton _("Back") action Rollback()
+        #     textbutton _("History") action ShowMenu('history')
+        #     textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+        #     textbutton _("Auto") action Preference("auto-forward", "toggle")
+        #     textbutton _("Save") action ShowMenu('save')
+        #     textbutton _("Q.Save") action QuickSave()
+        #     textbutton _("Q.Load") action QuickLoad()
+        #     textbutton _("Prefs") action ShowMenu('preferences')
+
+        style_prefix "quick"
+
+        frame:
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            hbox:
+                textbutton _("Back") action Rollback()
+                textbutton _("History") action ShowMenu('history')
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Save") action ShowMenu('save')
+                # textbutton _("Q.Save") action QuickSave()
+                # textbutton _("Q.Load") action QuickLoad()
+                textbutton _("Load") action ShowMenu("load")
+                textbutton _("Settings") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -287,9 +304,13 @@ init python:
 
 default quick_menu = True
 
+style quick_frame is default
 style quick_button is default
 style quick_button_text is button_text
 
+style quick_frame:
+    background Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile)
+    bottom_padding 6
 style quick_button:
     properties gui.button_properties("quick_button")
 
@@ -709,6 +730,7 @@ style page_label is gui_label
 style page_label_text is gui_label_text
 style page_button is gui_button
 style page_button_text is gui_button_text
+style page_triangle is page_button_text
 
 style slot_button is gui_button
 style slot_button_text is gui_button_text

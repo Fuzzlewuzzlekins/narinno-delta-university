@@ -225,6 +225,9 @@ define dissolveoutleft = ComposeTransition(dissolve, before=easeoutleft)
 define dissolveoutright = ComposeTransition(dissolve, before=easeoutright)
 define dissolveoutbottom = ComposeTransition(dissolve, before=easeoutbottom)
 
+define eyesopen = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64)
+define eyesclose = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64, reverse=True)
+
 # ???
 
 # define scootinleft = MoveTransition(0.5, enter=scootleft, time_warp=ease)
@@ -329,8 +332,8 @@ label start:
 
     # jump test_scene
     # jump outline
-    # jump chapter_0
-    jump quickstart
+    jump chapter_0
+    # jump quickstart
     # jump testytest
     # jump hi_nan
     # jump photoop

@@ -36,6 +36,7 @@ label chapter_0:
     "She closed her eyes instead."
 
     # Effect: eye-closing animation into black overlay.
+    show black with eyesclose
 
     "She had to be ready for the reality of what was coming."
 
@@ -43,6 +44,7 @@ label chapter_0:
     screens, except in front of her, in flesh and blood."
 
     # Effect: eyes open to the shuttle interior again.
+    hide black with eyesopen
 
     "{i}No, I’m overthinking this,{/i} she scolded herself."
 
@@ -73,6 +75,7 @@ label chapter_0:
     # shuffling.
 
     play sound airplane_ding
+    queue sound airplane_unbuckles volume 0.5 loop
 
     "The crowd around Kim mobilized, eager to exit the stuffy shuttle."
 
@@ -123,7 +126,8 @@ label chapter_0:
     # Art: shudders for a moment before suddenly disappearing. Sound: the music comes to 
     # a stop as ambient sound effects come back into focus. Background: the gate from 
     # Kim’s POV this time, blurred and indistinct now.
-    
+
+    play sound airport_ambience volume 0.6 loop
     show bg starport_gate with dissolve
 
     "Kim suddenly remembered that she was standing in the doorway."
@@ -152,7 +156,7 @@ label chapter_0:
 label quickstart:
 
     # Background: the monorail station elsewhere in the starport.
-
+    play sound monorail_station_ambience loop volume 0.25 fadeout 0.25 fadein 0.25
     show bg starport_station with dissolve
 
     "Eventually she and her two suitcases made it to the starport’s monorail station."
@@ -188,6 +192,7 @@ label quickstart:
 
     "Kim followed the stranger’s gaze to a pair of—"
 
+    # stop sound fadeout 1.0
     play music siblings_intro fadeout 0.5
     queue music siblings_loop
 
@@ -252,6 +257,7 @@ label quickstart:
     "With the kiosk now free, Kim sidled in for her own turn at printing a ticket."
 
     play sound monorail_ticket
+    queue sound monorail_station_ambience loop volume 0.1
 
     "A few taps and scans, and she was on her way with a slip in hand."
 
@@ -1049,6 +1055,7 @@ label chapter_0_b:
     # [Background: a bare living room interior populated with only boxes. Ash’s 
     # hibernator stands amidst them.]
 
+    play sound door_scan
     show bg nanneyo_moving with dissolve
 
     "Though she’d signed her lease and registered her palm scan with the landlord 

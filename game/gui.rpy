@@ -32,7 +32,8 @@ define gui.idle_color = '#707070'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#606060'
+# define gui.idle_small_color = '#606060'
+define gui.idle_small_color = '#808080'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#006666'
@@ -209,7 +210,8 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+# define gui.quick_button_text_size = 21
+define gui.quick_button_text_size = 18
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 
@@ -317,6 +319,10 @@ define gui.notify_frame_borders = Borders(24, 8, 60, 8)
 
 ## Should frame backgrounds be tiled?
 define gui.frame_tile = False
+
+## MINE - customizing the quick menu
+define gui.quick_menu_borders = Borders(10, 10, 10, 10)
+define gui.quick_menu_tile = 50
 
 
 ## Bars, Scrollbars, and Sliders ###############################################
