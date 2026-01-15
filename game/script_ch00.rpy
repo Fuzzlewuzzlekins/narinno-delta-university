@@ -156,7 +156,7 @@ label chapter_0:
 label quickstart:
 
     # Background: the monorail station elsewhere in the starport.
-    play sound monorail_station_ambience loop volume 0.25 fadeout 0.25 fadein 0.25
+    play sound monorail_station_ambience loop volume 0.2 fadeout 0.25 fadein 0.25
     show bg starport_station with dissolve
 
     "Eventually she and her two suitcases made it to the starport’s monorail station."
@@ -199,29 +199,26 @@ label quickstart:
     "...uh, feline folk. {i}Onkai,{/i} Kim corrected in her head. A pair of onkai who 
     had just perked up. One of them stood and approached the kiosk."
 
-    # Sprite: Tansei scoots closer to Emma.
+    # Proxy temporary characters to reduce clutter
+    define t_temp = Character("Onka 1", kind=c_base, image="tansei")
+    define nk_temp = Character("Onka 2", kind=c_base, image="nakoa")
+    # Don't know why Emma's quotes are bugged but whatever
+    define e_temp = Character("Human", type=c_base, what_prefix='“', what_suffix='”', image="emma")
 
-    show tansei neutral_talk at leftish_4 with ease
-    "Onka 1" "\“You looking for something?\”"
+    # Sprite: Tansei scoots closer to Emma.
+    show tansei neutral at leftish_4 with ease
+    t_temp @ neutral_talk "You looking for something?"
     
-    show tansei neutral with dissolve_f
-    show emma worried_talk with dissolve_f
-    "Human" "\“Uh, yes! Which stop is closest to the NDU Kimmings campus?\”"
+    e_temp @ worried_talk "Uh, yes! Which stop is closest to the NDU Kimmings campus?"
 
     # Sprite: Nakoa raises a hand and calls out.
-    show emma worried with dissolve_f
-    show nakoa stern with dissolve_f
-    "Onka 2" "\“You want Vaniman!\”"
+    nk_temp stern "You want Vaniman!"
 
-    show tansei neutral_talk with dissolve_f
-    "Onka 1" "\“...Vaniman Street, yes.\”"
+    t_temp @ neutral_talk "...Vaniman Street, yes."
 
-    show tansei neutral with dissolve_f
-    show emma neutral_talk with dissolve_f
-    "Human" "\“Thank you!\”"
+    e_temp neutral @ neutral_talk "Thank you!"
 
     # [Sprite: Emma slides away briefly.] 
-
     show emma at offscreenright with dissolveoutright
     show nakoa neutral 
     show tansei happy 
@@ -231,69 +228,57 @@ label quickstart:
     turned back to the kiosk, Kim hefted her bags in her hands and trotted towards the 
     interaction."
 
-    show nakoa neutral at leftish_2
-    show tansei happy at rightish_2
+    show nakoa at leftish_2
+    show tansei at rightish_2
     with ease
 
     ki "Hey, sorry! I think I’m looking for that stop too. Vaniman Street, you said?"
 
-    show tansei happy_talk with dissolve_f
-    "Onka 1" "\“Yep, that’s the one.\”"
+    t_temp @ happy_talk "Yep, that’s the one."
 
     # [Sprite: Emma reappears.]
-
-    show nakoa neutral at leftish_3
-    show tansei happy at center_1
-    show emma neutral_talk at rightish_3
+    show nakoa at leftish_3
+    show tansei at center_1
+    show emma at rightish_3
     with ease
 
-    "Human" "\“Alright, got it. Thank you so much!\”"
+    e_temp @ neutral_talk "Alright, got it. Thank you so much!"
 
-    show emma neutral with dissolve_f
-    show tansei happy_talk with dissolve_f
-    "Onka 1" "\“No problem.\”"
+    t_temp @ happy_talk "No problem."
 
-    show tansei happy with dissolve_f
     "With the kiosk now free, Kim sidled in for her own turn at printing a ticket."
 
     play sound monorail_ticket
     queue sound monorail_station_ambience loop volume 0.1
-
     "A few taps and scans, and she was on her way with a slip in hand."
 
     show tansei neutral with dissolve
     ki "You’d think they’d label it or something, right?"
 
-    show nakoa stern with dissolve_f
-    "Onka 2" "\“Yeah, seriously. You’re like the fifth or sixth group we’ve seen get 
-    confused, and we’ve only been here for ten minutes.\”"
+    nk_temp stern "Yeah, seriously. You’re like the fifth or sixth group we’ve seen get 
+    confused, and we’ve only been here for ten minutes."
 
     "The person—the onka—jerked a thumb towards the small crowd of other strangers 
     waiting further down the platform. There were a dozen or so in total, virtually 
     all young adults at a glance."
 
     show nakoa neutral with dissolve_f
-    show emma neutral_talk with dissolve_f
-    "Human" "\“Yeah, they should fix that, huh? Put a sticker on the wall, or 
-    something.\”"
+    e_temp @ neutral_talk "Yeah, they should fix that, huh? Put a sticker on the wall, or 
+    something."
 
-    show tansei neutral_talk with dissolve_f
-    show emma neutral with dissolve_f
-    "Onka 1" "\“Would be nice.\”"
+    t_temp @ neutral_talk "Would be nice."
 
     # [Sprite: Tansei points.]
-    show tansei neutral with dissolve_f
     "The taller of the onka pair gestured back towards the station benches."
 
-    show tansei gesture_talk with dissolve_f
-    "Onka 1" "\“Oh, please, do sit with us. Don’t mean to keep you all standing 
-    around.\”"
+    t_temp gesture @ gesture_talk "Oh, please, do sit with us. Don’t mean to keep you all 
+    standing around."
 
-    show tansei gesture with dissolve_f
+    # show tansei gesture with dissolve_f
     "With a few nods of agreement, the group moved back to the onkai’s original seat. 
     The bench was plenty long enough for the four of them."
 
-    show nakoa neutral at leftish_3_l
+    show nakoa at leftish_3_l
     show tansei neutral at center_1_l
     show emma at rightish_3_l
     with ease
@@ -312,7 +297,6 @@ label quickstart:
     "The word dropped from her lips. She failed to catch it until far too late."
 
     # [Sprite: Kim’s face close-up (if used) is suddenly flustered and sweating bullets.]
-
     ki "I-I-I mean, no, omigod, that came out wrong. I’m so sorry. You don’t all look 
     alike, I swear—"
 
@@ -322,21 +306,14 @@ label quickstart:
     with dissolve_f
     "But much to Kim’s surprise, the pair doubled over in laughter."
 
-    show tansei excited_talk with dissolve_f
-    "Onka 1" "\“Ha! You are, in fact, correct! This is—\”"
+    t_temp excited @ excited_talk "Ha! You are, in fact, correct! This is—"
 
-    show nakoa smug 
-    show tansei excited
-    with dissolve_f
-    "Onka 2" "\“Ohhh, man, that’s great.\”"
+    nk_temp smug "Ohhh, man, that’s great."
 
-    show tansei happy_talk with dissolve_f
-    "Onka 1" "\“This is my brother.\”"
+    t_temp happy @ happy_talk "This is my brother."
 
     # [Sprite: Nakoa waves.]
-    show nakoa friendly 
-    show tansei happy
-    with dissolve_f
+    show nakoa friendly with dissolve_f
     "{s}Onka 2{/s} {color=#f3947c}Nakoa{/color}" "\“Nakoa. Nakoa olu-Hani.\”"
 
     nk happy @ happy_talk "And this is the big sis, Tansei."
@@ -352,12 +329,14 @@ label quickstart:
     t @ stern_talk "I don’t have to ask you two if {i}you’re{/i} related to make a point?"
 
     # [Sprite: Emma recoils in embarrassment.]
+    # Note: Emma proxy character glitches here, keeping the old way
     
     show emma worried_talk with dissolve_f
 
     ki "No, we’re good!" (multiple=2)
 
     "Human" "\“Oh, no no no, we’re... yeah.\”" (multiple=2)
+    # e_temp @ worried_talk "Oh, no no no, we’re... yeah." (multiple=2)
 
     show emma worried with dissolve_f
 
@@ -409,7 +388,6 @@ label quickstart:
     she expected. Sitting with her new acquaintances seemed as good an idea as any."
 
     # [Sprite: the three others appear again.]
-
     show nakoa neutral at leftish_3
     show tansei neutral at center_1
     show emma neutral at rightish_3
@@ -458,7 +436,6 @@ label quickstart:
     ki "Oh, no, it’s okay! Go for it, I’m eager to hear about where you’re from."
 
     # [Sprite: Nakoa smirks in vindication as he continues. Tansei scowls slightly.]
-
     nk happy_talk "Tachil. Small town on the Sforollan coast, back on Tandoro."
 
     nk friendly "Not really well known, but the cute hometown vibes? Love it.{nw=0.5}"
@@ -484,7 +461,7 @@ label quickstart:
     show nakoa happy 
     show tansei happy
     with dissolve_f
-    t happy @ happy_talk "Anyway, enough of us. Who’s next?"
+    t @ happy_talk "Anyway, enough of us. Who’s next?"
 
     e neutral @ neutral_talk "Sure, I’ll go!"
 
@@ -823,6 +800,7 @@ label testytest:
 label hi_nan:
 
     $ nn_nametag = True
+    define nn_temp = Character("Volunteer", kind=c_base, image="nanneyo")
     # [Background: the spacious interior of Everett Hall. Tables and queues of students 
     # are visible.]
 
@@ -846,15 +824,13 @@ label hi_nan:
 
     # [Sprite: Nanneyo appears. A "Hello, my name is Nanneyo (she/her)" sticker is 
     # visible on her shirt.]
-
+    
     show nanneyo happy at center_1 with dissolveinbottom
 
     play music allegroinf_intro fadeout 0.5
     queue music allegroinf_loop
 
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“Heyas! Welcome to NDU, can I get your name?\”"
-    show nanneyo happy with dissolve_f
+    nn_temp @ happy_talk "Heyas! Welcome to NDU, can I get your name?"
 
     "Kim’s mental processes stalled for a moment, caught off guard by the perky greeting 
     from such an inhuman face."
@@ -865,27 +841,20 @@ label hi_nan:
 
     ki "Uh, Sorakawa. Kimiko."
 
-    show nanneyo thinking_talk with dissolve_f
-    "Volunteer" "\“Sorakawa, Sorakawa... ah, Kimiko, here we are!\”"
+    nn_temp thinking_talk "Sorakawa, Sorakawa... ah, Kimiko, here we are!"
 
-    show nanneyo friendly_talk with dissolve_f
-    "Volunteer" "\“Now that is a pretty name. Is that what you go by? Or do you prefer 
-    something else?\”"
-    show nanneyo friendly with dissolve_f
+    nn_temp friendly @ friendly_talk "Now that is a pretty name. Is that what you go by? 
+    Or do you prefer something else?"
 
     ki "Uh, I answer to it fine, but I like to go by Kim, for short."
 
-    show nanneyo friendly_talk with dissolve_f
-    "Volunteer" "\“Kim? Oh, that’s cute! I love it even better!\”"
+    nn_temp friendly_talk "Kim? Oh, that’s cute! I love it even better!"
 
-    show nanneyo thinking_talk with dissolve_f
-    "Volunteer" "\“So, Kim, I’ve got you listed here for Takhu Hall, room 204. That’s a 
-    double.\”"
+    nn_temp thinking_talk "So, Kim, I’ve got you listed here for Takhu Hall, room 204. 
+    That’s a double."
 
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“So let’s get you scanned into our system and get you all squared 
-    away!\”"
-    show nanneyo happy with dissolve_f
+    nn_temp happy @ happy_talk "So let’s get you scanned into our system and get you all 
+    squared away!"
 
     "The dubina nudged a palm reader and a box of hand wipes across the table. Kim 
     plucked a wipe and began to clean her hands."
@@ -893,56 +862,42 @@ label hi_nan:
     ki "Do you know if my roommate’s moved in yet?"
 
     # [Sprite: Nanneyo squints comically seriously at her device (a tab?).]
-    show nanneyo thinking_talk with dissolve_f
-    "Volunteer" "\“Ooh, no, not off the top of my head. Lemme see.\”"
-    show nanneyo thinking with dissolve_f
+    nn_temp thinking @ thinking_talk "Ooh, no, not off the top of my head. Lemme see."
 
     "The dubina fiddled with their—her?—spreadsheet for a few seconds, though Kim couldn’t make out 
     anything from this angle."
 
-    show nanneyo thinking_talk with dissolve_f
-    "Volunteer" "\“Oh, here we go. Takhu 204. Don’t have an arrival marked yet, but you 
-    should be rooming with an ‘Oshan, Luziim’ whenever they get in.\”"
+    nn_temp thinking_talk "Oh, here we go. Takhu 204.{w=0.5} Don’t have an arrival marked yet, 
+    but you should be rooming with an ‘Oshan, Luziim’ whenever they get in."
 
     # [Sprite: Nanneyo brightens up.]
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“...Oh, yes! Go ahead and put your hand on the scanner right there. 
-    Either hand is fine, whichever you’d rather use for door access.\”"
-    show nanneyo happy with dissolve_f
+    nn_temp happy @ happy_talk "...Oh, yes! Go ahead and put your hand on the scanner right there. 
+    Either hand is fine, whichever you’d rather use for door access."
 
     ki "Either one?"
 
-    show nanneyo neutral_talk with dissolve_f    
-    "Volunteer" "\“Yeah, it doesn’t matter. Some people like their dominant hand. Some 
-    people like their off hand, so they can save their dominant hand to carry stuff.\”"
-    show nanneyo neutral with dissolve_f
+    nn_temp neutral @ neutral_talk "Yeah, it doesn’t matter. Some people like their dominant hand. 
+    Some people like their off hand, so they can save their dominant hand to carry stuff."
 
     "After a moment’s recollection over how she usually opened doors back home,{w=0.5} Kim 
     pressed her right, dominant hand to the scanner."
 
     play sound door_scan
-    
     "With a flash and a blip, the reader did its work."
 
     ki "So my roommate hasn’t arrived yet?"
 
-    show nanneyo neutral_talk with dissolve_f
-    "Volunteer" "\“Doesn’t look like it. Is there an issue?\”"
-    show nanneyo neutral with dissolve_f
+    nn_temp @ neutral_talk "Doesn’t look like it. Is there an issue?"
 
     ki "Oh, no, no issue, just making small talk. Heh."
 
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“Ha, I getcha.\”"
+    nn_temp happy_talk "Ha, I getcha."
 
-    show nanneyo worried_talk with dissolve_f
-    "Volunteer" "\“But hey, if you do have trouble with your roommate for any reason 
-    during the year, bring it up to Student Services.\”"
+    nn_temp worried_talk "But hey, if you do have trouble with your roommate for any reason 
+    during the year, bring it up to Student Services."
 
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“They take reports of disruptive or incompatible behavior pretty 
-    seriously. I mean it, if you ever feel unsafe or whatever, they’ll hear you out.\”"
-    show nanneyo neutral with dissolve_f
+    nn_temp neutral @ neutral_talk "They take reports of disruptive or incompatible behavior 
+    pretty seriously. I mean it, if you ever feel unsafe or whatever, they’ll hear you out."
 
     ki "Well, thank you. That’s good to know."
 
@@ -950,14 +905,11 @@ label hi_nan:
     "The volunteer smiled, rapped together a small stack of papers, and handed it across 
     the table."
 
-    show nanneyo neutral_talk with dissolve_f
-    "Volunteer" "\“In here we’ve got lots of helpful notes for you: a copy of the 
-    orientation schedule, dorm policies, campus map, all that good stuff.\”"
+    nn_temp neutral_talk "In here we’ve got lots of helpful notes for you: a copy of the 
+    orientation schedule, dorm policies, campus map, all that good stuff."
 
-    show nanneyo happy_talk with dissolve_f
-    "Volunteer" "\“Please don’t hesitate to come back and ask us if you have any 
-    questions or issues, okay? We’ll be open until at least 8 tonight!\”"
-    show nanneyo neutral with dissolve_f
+    nn_temp neutral @ happy_talk "Please don’t hesitate to come back and ask us if you have 
+    any questions or issues, okay? We’ll be open until at least 8 tonight!"
 
     ki "Oh, awesome! Thank you so much, uh—"
 
@@ -987,6 +939,8 @@ label chapter_0_b:
     # POV: Nanneyo
     # [Background: the same Everett Hall as before.]
 
+    play music arbor_intro fadeout 1.0
+    queue music arbor_loop
     scene bg orientation_signin with fade
 
     "It felt good to be of service to the new students."

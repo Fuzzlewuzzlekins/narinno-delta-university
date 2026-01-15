@@ -13,12 +13,12 @@ label test_scene:
 
     # These display lines of dialogue.
     
-    show nakoa happy_talk at leftish_2
+    show nakoa happy idle at leftish_2
     show tansei neutral at rightish_2
 
     ki "Here we are as 2"
 
-    show nakoa happy_talk at leftish_3
+    show nakoa happy at leftish_3
     show tansei neutral at center_1
     show emma worried at rightish_3
 
@@ -29,7 +29,9 @@ label test_scene:
     show emma worried at rightish_4
     show nanneyo thinking_talk at right_4
 
-    nk "and as 4!"
+    nk -idle "and as 4!"
+
+    show nakoa happy idle
 
     jump test_game_3
 
