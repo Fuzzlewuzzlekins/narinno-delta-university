@@ -1,5 +1,6 @@
 # Start out by setting up character sprites and backgrounds.
-define frame_rate = 10.0
+# define frame_rate = 10.0
+define frame_rate = 8.0
 define anim_speed = 1.0 / frame_rate
 
 image testbg = "testgamebg.png"
@@ -40,23 +41,103 @@ image mg_kim f_idle = "sprites/minigame/kim_front_idle.png"
 image mg_kim b_idle = "sprites/minigame/kim_back_idle.png"
 image mg_kim l_idle = "sprites/minigame/kim_left_idle.png"
 image mg_kim r_idle = "sprites/minigame/kim_right_idle.png"
-image mg_nakoa f_idle = "sprites/minigame/nakoa_front_idle.png"
-image mg_nakoa b_idle = "sprites/minigame/nakoa_back_idle.png"
-image mg_nakoa l_idle = "sprites/minigame/nakoa_left_idle.png"
-image mg_nakoa r_idle = "sprites/minigame/nakoa_right_idle.png"
+
+# image mg_nakoa f_idle = "sprites/minigame/nakoa_front_idle.png"
+# image mg_nakoa b_idle = "sprites/minigame/nakoa_back_idle.png"
+image mg_nakoa f_b_idle_tails:
+    "sprites/minigame/nakoa_front_back_idle_tails1.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails5.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails6.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails7.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_back_idle_tails8.png"
+    pause anim_speed
+    repeat
+image mg_nakoa f_idle = Composite((200,300), (0,0), "mg_nakoa f_b_idle_tails", (0,0), "sprites/minigame/nakoa_front_idle_base.png")
+image mg_nakoa b_idle = Composite((200,300), (0,0), "sprites/minigame/nakoa_back_idle_base.png", (0,0), "mg_nakoa f_b_idle_tails")
+# image mg_nakoa l_idle = "sprites/minigame/nakoa_left_idle.png"
+image mg_nakoa l_idle_tails:
+    "sprites/minigame/nakoa_left_idle_tails1.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails5.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails6.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails7.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_left_idle_tails8.png"
+    pause anim_speed
+    repeat
+image mg_nakoa l_idle = Composite((200,300), (0,0), "mg_nakoa l_idle_tails", (0,0), "sprites/minigame/nakoa_left_idle_base.png")
+# image mg_nakoa r_idle = "sprites/minigame/nakoa_right_idle.png"
+image mg_nakoa r_idle_tails:
+    "sprites/minigame/nakoa_right_idle_tails1.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails5.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails6.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails7.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_right_idle_tails8.png"
+    pause anim_speed
+    repeat
+image mg_nakoa r_idle = Composite((200,300), (0,0), "mg_nakoa r_idle_tails", (0,0), "sprites/minigame/nakoa_right_idle_base.png")
+
 image mg_tansei f_idle = "sprites/minigame/tansei_front_idle.png"
 image mg_tansei b_idle = "sprites/minigame/tansei_back_idle.png"
 image mg_tansei l_idle = "sprites/minigame/tansei_left_idle.png"
 image mg_tansei r_idle = "sprites/minigame/tansei_right_idle.png"
-# Temp: use idles for walks because I haven't made frames yet
+
 image mg_kim f_walk = "sprites/minigame/kim_front_idle.png"
 image mg_kim b_walk = "sprites/minigame/kim_back_idle.png"
 image mg_kim l_walk = "sprites/minigame/kim_left_idle.png"
 image mg_kim r_walk = "sprites/minigame/kim_right_idle.png"
-image mg_nakoa f_walk = "sprites/minigame/nakoa_front_idle.png"
+
+# image mg_nakoa f_walk = "sprites/minigame/nakoa_front_idle.png"
+image mg_nakoa f_walk:
+    "sprites/minigame/nakoa_front_walk1.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk2.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk3.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk4.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk5.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk6.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk7.png"
+    pause anim_speed
+    "sprites/minigame/nakoa_front_walk8.png"
+    pause anim_speed
+    repeat
 image mg_nakoa b_walk = "sprites/minigame/nakoa_back_idle.png"
 image mg_nakoa l_walk = "sprites/minigame/nakoa_left_idle.png"
 image mg_nakoa r_walk = "sprites/minigame/nakoa_right_idle.png"
+
 image mg_tansei f_walk = "sprites/minigame/tansei_front_idle.png"
 image mg_tansei b_walk = "sprites/minigame/tansei_back_idle.png"
 image mg_tansei l_walk = "sprites/minigame/tansei_left_idle.png"
