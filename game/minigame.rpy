@@ -499,8 +499,8 @@ init python:
                         self.npcsprites[self.dialog_npc].lastbehaviorpause = pygame.time.get_ticks()
                         # Now build the dialog window.
                         self.dialog_open = True
-                        dialogtext = Text(self.npcsprites[self.dialog_npc].dialogue[0], size=20, xalign=0.5, yalign=0.5)
-                        self.dialog_object = Window(dialogtext, background='#ffffff', xsize=300, ysize=200)
+                        dialogtext = Text(self.npcsprites[self.dialog_npc].dialogue[0], size=20, color=gui.interface_text_color, xalign=0.5, yalign=0.5)
+                        self.dialog_object = Window(dialogtext, background=bubble.thoughtframe, xsize=300, ysize=200, padding=(20,20))
                         # Center the dialog box on the NPC sprite, above their head (may move later)
                         self.dialog_coords = [self.npcsprites[self.dialog_npc].spritex, 
                                         self.npcsprites[self.dialog_npc].spritey - (charsprites[self.dialog_npc][0].get_size()[1]) + 100]
@@ -518,8 +518,8 @@ init python:
             for i in range(len(self.npcsprites)):
                 # TODO: give NPCs a "cooldown" so they don't redisplay this idle text right after being spoken to
                 if self.npcsprites[i].behaviors[0]["text"] and not self.npcsprites[i].paused:
-                    dialogtext = Text(self.npcsprites[i].behaviors[0]["text"], size=16, xalign=0.5, yalign=0.5)
-                    self.bg_dialog_objects[i] = Window(dialogtext, background='#cccccc', xsize=240, ysize=160)
+                    dialogtext = Text(self.npcsprites[i].behaviors[0]["text"], size=18, color=gui.interface_text_color, xalign=0.5, yalign=0.5)
+                    self.bg_dialog_objects[i] = Window(dialogtext, background=bubble.thoughtframe, xsize=240, ysize=160, padding=(20,20))
                     self.bg_dialog_coords[i] = [self.npcsprites[i].spritex, self.npcsprites[i].spritey - (charsprites[i][0].get_size()[1]) + 100]
                 else:
                     self.bg_dialog_objects[i] = None
