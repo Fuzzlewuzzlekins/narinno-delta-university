@@ -105,10 +105,60 @@ image mg_nakoa r_idle_tails:
     repeat
 image mg_nakoa r_idle = Composite((200,300), (0,0), "mg_nakoa r_idle_tails", (0,0), "sprites/minigame/nakoa_right_idle_base.png")
 
-image mg_tansei f_idle = "sprites/minigame/tansei_front_idle.png"
-image mg_tansei b_idle = "sprites/minigame/tansei_back_idle.png"
-image mg_tansei l_idle = "sprites/minigame/tansei_left_idle.png"
-image mg_tansei r_idle = "sprites/minigame/tansei_right_idle.png"
+# image mg_tansei f_idle = "sprites/minigame/tansei_front_idle.png"
+# image mg_tansei b_idle = "sprites/minigame/tansei_back_idle.png"
+image mg_tansei f_b_idle_tails:
+    "sprites/minigame/tansei_front_back_idle_tails1.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails5.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails6.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails7.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_back_idle_tails8.png"
+    pause anim_speed
+    repeat
+image mg_tansei f_idle = Composite((200,300), (0,0), "mg_tansei f_b_idle_tails", (0,0), "sprites/minigame/tansei_front_idle_base.png")
+image mg_tansei b_idle = Composite((200,300), (0,0), "sprites/minigame/tansei_back_idle_base.png", (0,0), "mg_tansei f_b_idle_tails")
+# image mg_tansei l_idle = "sprites/minigame/tansei_left_idle.png"
+image mg_tansei l_idle_tails:
+    "sprites/minigame/tansei_left_idle_tails1.png"
+    alpha 1.0
+    pause anim_speed
+    "sprites/minigame/tansei_left_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/tansei_left_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/tansei_left_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/tansei_left_right_idle_tails5.png" 
+    alpha 0.0
+    pause anim_speed * 4
+    repeat
+image mg_tansei l_idle = Composite((200,300), (0,0), "mg_tansei l_idle_tails", (0,0), "sprites/minigame/tansei_left_idle_base.png")
+# image mg_tansei r_idle = "sprites/minigame/tansei_right_idle.png"
+image mg_tansei r_idle_tails:
+    "sprites/minigame/tansei_right_idle_tails1.png"
+    alpha 1.0
+    pause anim_speed
+    "sprites/minigame/tansei_right_idle_tails2.png"
+    pause anim_speed
+    "sprites/minigame/tansei_right_idle_tails3.png"
+    pause anim_speed
+    "sprites/minigame/tansei_right_idle_tails4.png"
+    pause anim_speed
+    "sprites/minigame/tansei_left_right_idle_tails5.png" 
+    alpha 0.0
+    pause anim_speed * 4
+    repeat
+image mg_tansei r_idle = Composite((200,300), (0,0), "mg_tansei r_idle_tails", (0,0), "sprites/minigame/tansei_right_idle_base.png")
 
 image mg_kim f_walk = "sprites/minigame/kim_front_idle.png"
 image mg_kim b_walk = "sprites/minigame/kim_back_idle.png"
@@ -138,7 +188,25 @@ image mg_nakoa b_walk = "sprites/minigame/nakoa_back_idle.png"
 image mg_nakoa l_walk = "sprites/minigame/nakoa_left_idle.png"
 image mg_nakoa r_walk = "sprites/minigame/nakoa_right_idle.png"
 
-image mg_tansei f_walk = "sprites/minigame/tansei_front_idle.png"
+# image mg_tansei f_walk = "sprites/minigame/tansei_front_idle.png"
+image mg_tansei f_walk:
+    "sprites/minigame/tansei_front_walk1.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk2.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk3.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk4.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk5.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk6.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk7.png"
+    pause anim_speed
+    "sprites/minigame/tansei_front_walk8.png"
+    pause anim_speed
+    repeat
 image mg_tansei b_walk = "sprites/minigame/tansei_back_idle.png"
 image mg_tansei l_walk = "sprites/minigame/tansei_left_idle.png"
 image mg_tansei r_walk = "sprites/minigame/tansei_right_idle.png"
