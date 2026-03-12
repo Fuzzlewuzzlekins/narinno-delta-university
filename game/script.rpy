@@ -6,6 +6,7 @@
 define c_base = Character("base", what_prefix='“', what_suffix='”')
 
 define a = Character("Ash", kind=c_base, who_color="#80ec80", image="ash")
+define a_y = Character("Ash", kind=c_base, who_color="#80ec80", image="youngash")
 define b = Character("Blake", kind=c_base, who_color="#f3c37c", image="blake")
 define f = Character("Fyorra", kind=c_base, who_color="#ad94f1", image="fyorra")
 define ka = Character("Karalún", kind=c_base, who_color="#bfee67", image="kara")
@@ -73,6 +74,33 @@ image kim stern talk = "sprites/kim_stern_talk.png"
 image kim suspicious = "sprites/kim_suspicious.png"
 image kim suspicious talk = "sprites/kim_suspicious_talk.png"
 image kim curious = "sprites/kim_curious.png"
+
+# Young Ash sprites: layered image
+layeredimage youngash:
+    group ears auto:
+        attribute neutral default
+        attribute neutral_talk: 
+            "youngash_ears_neutral"
+        attribute worried_talk: 
+            "youngash_ears_worried"
+        attribute happy_talk: 
+            "youngash_ears_happy"
+        attribute sleepy_talk: 
+            "youngash_ears_sleepy"
+        attribute confused_talk: 
+            "youngash_ears_confused"
+    attribute base1a default:
+        when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and not salute
+    attribute base1b default:
+        when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and salute
+    attribute base2 default:
+        when (sleepy or sleepy_talk or confused or confused_talk)
+    group face auto:
+        attribute neutral default
+    attribute salute:
+        "youngash_arm1b" when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk)
+    # attribute arm1b default:
+    #     when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and salute
 
 # Nakoa sprites: slouching
 image nakoa grumpy = "sprites/nakoa_grumpy.png"
@@ -334,7 +362,8 @@ label start:
     # jump outline
     # jump chapter_0
     # jump quickstart
-    jump testytest
+    # jump testytest
     # jump hi_nan
+    jump chapter_0_b
     # jump photoop
     # jump nvl_monologue_test

@@ -1044,19 +1044,24 @@ label chapter_0_b:
     # Background: the room again, but with the hibernator open and empty. 
     # Sprite: a drowsy young Ash appears slowly on the screen.]
 
-    show ash at center_1 with dissolveinbottom
+    show youngash sleepy at center_1 with Dissolve(1.0)
+    play music try_sting noloop fadeout 0.8
 
-    "Biot" "\“Bweh... huh?\”"
+    define a_temp = Character("Biot", kind=c_base, image="youngash")
+
+    a_temp sleepy_talk "Bweh...{nw=0.8}"
+    show youngash confused_talk
+    extend "Huh?"
 
     nn "Hello, Ash. How’s my favorite Biot doing?"
 
     # [Sprite: Ash visibly panics.]
 
-    a "Ah! Miss Nanneyo!"
+    a_y neutral_talk "Ah! Miss Nanneyo!"
 
     # [Sprite: Ash snaps a salute.]
 
-    a "Reporting for duty, ma’am!"
+    a_y salute happy @ happy_talk "Reporting for duty, ma’am!"
 
     # [Cutscene: the opening cinematic begins. Storyboard pending, but consider focusing 
     # on Ash and Kim most prominently, then expanding to the full cast. Could include 
