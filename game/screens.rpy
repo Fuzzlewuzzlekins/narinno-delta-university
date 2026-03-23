@@ -100,12 +100,16 @@ screen say(who, what):
 
     window:
         id "window"
+        if pov_character:
+            background Transform(Image("gui/textbox.png", xalign=0.5, yalign=1.0), matrixcolor=TintMatrix(character_colors[pov_character]))
 
         if who is not None:
 
             window:
                 id "namebox"
                 style "namebox"
+                if pov_character:
+                    background Transform(Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign), matrixcolor=TintMatrix(character_colors[pov_character]))
                 text who id "who"
 
         text what id "what"
@@ -137,7 +141,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    # background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
     # background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=0.5, yalign=1.0)
 
 style namebox:
@@ -147,7 +151,7 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     # background Solid(gui.interface_text_color)
     padding gui.namebox_borders.padding
 
@@ -166,14 +170,106 @@ style say_dialogue:
 
     adjust_spacing False
 
-## Trying some custom multiple_say stuff here...
+# ## Trying some custom multiple_say stuff here...
+# style multiple2_namebox:
+#     xpos gui.name_xpos
+# style multiple2_say_window:
+#     xfill False
+#     # xsize 0.5
+#     xsize gui.multiple2_textbox_width
+#     # background Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0)
+#     # background Transform(Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0), matrixcolor=TintMatrix(character_colors[pov_character]))
+# style block1_multiple2_say_window:
+#     xanchor 0.0
+#     xpos 360
+# style block2_multiple2_say_window:
+#     xanchor 1.0
+#     xpos 1560
+# style multiple2_say_dialogue:
+#     xsize gui.multiple2_dialogue_width
+
+## Multiple_say screen ##################################################################
+##
+## Take two! Trying multiple_say again, custom screen style!
+##
+## https://www.renpy.org/doc/html/multiple.html#the-multiple-say-screen
+
+screen multiple_say(who, what, multiple):
+    style_prefix "say"
+
+    window:
+        id "window"
+        if pov_character:
+            # Todo: make conditional variants for multiple3 and up. For now, assume multiple2.
+            background Transform(Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0), matrixcolor=TintMatrix(character_colors[pov_character]))
+
+        if who is not None:
+
+            window:
+                id "namebox"
+                style "namebox"
+                if pov_character:
+                    background Transform(Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign), matrixcolor=TintMatrix(character_colors[pov_character]))
+                text who id "who"
+
+        text what id "what"
+
+
+    ## If there's a side image, display it above the text. Do not display on the
+    ## phone variant - there's no room.
+    if not renpy.variant("small"):
+        add SideImage() xalign 0.0 yalign 1.0
+
+
+## Make the namebox available for styling through the Character object.
+init python:
+    config.character_id_prefixes.append('namebox')
+
+style window is default
+style say_label is default
+style say_dialogue is default
+style say_thought is say_dialogue
+
+style namebox is default
+style namebox_label is say_label
+
+
+style window:
+    xalign 0.5
+    # xfill True
+    xsize gui.textbox_width
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+style namebox:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    padding gui.namebox_borders.padding
+
+style say_label:
+    properties gui.text_properties("name")
+    xalign gui.name_xalign
+    yalign 0.5
+
+style say_dialogue:
+    properties gui.text_properties("dialogue")
+
+    xpos gui.dialogue_xpos
+    xsize gui.dialogue_width
+    ypos gui.dialogue_ypos
+
+    adjust_spacing False
+
+## Custom formatting for multiples goes here
 style multiple2_namebox:
     xpos gui.name_xpos
 style multiple2_say_window:
     xfill False
-    # xsize 0.5
     xsize gui.multiple2_textbox_width
-    background Image("gui/multiple2_textbox.png", xalign=0.5, yalign=1.0)
 style block1_multiple2_say_window:
     xanchor 0.0
     xpos 360
@@ -182,6 +278,7 @@ style block2_multiple2_say_window:
     xpos 1560
 style multiple2_say_dialogue:
     xsize gui.multiple2_dialogue_width
+
 
 ## Input screen ################################################################
 ##
@@ -284,6 +381,8 @@ screen quick_menu():
         frame:
             xalign 0.5
             yalign 1.0
+            if pov_character:
+                background Transform(Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile), matrixcolor=TintMatrix(character_colors[pov_character]))
 
             hbox:
                 textbutton _("Back") action Rollback()
@@ -309,7 +408,7 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_frame:
-    background Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile)
+    # background Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile)
     bottom_padding 6
 style quick_button:
     properties gui.button_properties("quick_button")

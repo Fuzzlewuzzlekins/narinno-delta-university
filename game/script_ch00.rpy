@@ -2,6 +2,7 @@ label chapter_0:
 
     # Chapter 0: Prologue
     # Scene 1 (POV: Kim)
+    $ pov_character = "Kim"
 
     # Background: interior of a vehicle with vertically arranged rows of seats, 
     # optionally a window or two showing space. Sound: a faint humming drone.
@@ -274,7 +275,6 @@ label quickstart:
     t_temp gesture @ gesture_talk "Oh, please, do sit with us. Don’t mean to keep you all 
     standing around."
 
-    # show tansei gesture with dissolve_f
     "With a few nods of agreement, the group moved back to the onkai’s original seat. 
     The bench was plenty long enough for the four of them."
 
@@ -934,14 +934,18 @@ label hi_nan:
 
     $ nn_nametag = False
 
+    stop music fadeout 2.0
+
 label chapter_0_b:
     
     # POV: Nanneyo
     # [Background: the same Everett Hall as before.]
 
-    play music arbor_intro fadeout 1.0
+    # $ pov_character = "Nanneyo"
+    scene bg orientation_signin with fade_scene
+    $ pov_character = "Nanneyo"
+    play music arbor_intro
     queue music arbor_loop
-    scene bg orientation_signin with fade
 
     "It felt good to be of service to the new students."
 
@@ -1044,8 +1048,8 @@ label chapter_0_b:
     # Background: the room again, but with the hibernator open and empty. 
     # Sprite: a drowsy young Ash appears slowly on the screen.]
 
-    show youngash sleepy at center_1 with Dissolve(1.0)
     play music try_sting noloop fadeout 0.8
+    show youngash sleepy at center_1 with Dissolve(1.0)
 
     define a_temp = Character("Biot", kind=c_base, image="youngash")
 

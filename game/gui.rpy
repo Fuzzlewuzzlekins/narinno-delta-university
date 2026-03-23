@@ -55,6 +55,22 @@ define gui.hover_muted_color = '#99c1c1'
 define gui.text_color = '#dddddd'
 define gui.interface_text_color = '#404040'
 
+## CUSTOM - colors used for character names and GUI tints.
+init python:
+    character_colors = {}
+    character_colors["Ash"] = '#80ec80'
+    character_colors["Blake"] = '#f3c37c'
+    character_colors["Fyorra"] = '#ad94f1'
+    character_colors["Karalún"] = '#bfee67'
+    character_colors["Kim"] = '#f1afca'
+    character_colors["Luziim"] = '#f3eb7c'
+    character_colors["Nakoa"] = '#f3947c'
+    character_colors["Nanneyo"] = '#88c3f3'
+    character_colors["Noah"] = '#b8aa9f'
+    character_colors["Nyarokhu"] = '#9496b1'
+    character_colors["Rohal"] = '#73d7e9'
+    character_colors["Tansei"] = '#db89eb'
+
 
 ## Fonts and Font Sizes ########################################################
 

@@ -1,36 +1,38 @@
 ﻿# The script of the game starts here with character inits.
 
 # Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# name of the character. (See gui.rpy for character_colors declarations)
 
 define c_base = Character("base", what_prefix='“', what_suffix='”')
 
-define a = Character("Ash", kind=c_base, who_color="#80ec80", image="ash")
-define a_y = Character("Ash", kind=c_base, who_color="#80ec80", image="youngash")
-define b = Character("Blake", kind=c_base, who_color="#f3c37c", image="blake")
-define f = Character("Fyorra", kind=c_base, who_color="#ad94f1", image="fyorra")
-define ka = Character("Karalún", kind=c_base, who_color="#bfee67", image="kara")
-define ki = Character("Kim", kind=c_base, who_color="#f1afca", image="kim")
-define l = Character("Luziim", kind=c_base, who_color="#f3eb7c", image="luziim")
-define nk = Character("Nakoa", kind=c_base, who_color="#f3947c", image="nakoa")
-define nn = Character("Nanneyo", kind=c_base, who_color="#88c3f3", image="nanneyo")
-define no = Character("Noah", kind=c_base, who_color="#b8aa9f", image="noah")
-define ny = Character("Nyarokhu", kind=c_base, who_color="#9496b1", image="nyarokhu")
-define r = Character("Rohal", kind=c_base, who_color="#73d7e9", image="rohal")
-define t = Character("Tansei", kind=c_base, who_color="#db89eb", image="tansei")
+define a = Character("Ash", kind=c_base, who_color=character_colors["Ash"], image="ash")
+define a_y = Character("Ash", kind=c_base, who_color=character_colors["Ash"], image="youngash")
+define b = Character("Blake", kind=c_base, who_color=character_colors["Blake"], image="blake")
+define f = Character("Fyorra", kind=c_base, who_color=character_colors["Fyorra"], image="fyorra")
+define ka = Character("Karalún", kind=c_base, who_color=character_colors["Karalún"], image="kara")
+define ki = Character("Kim", kind=c_base, who_color=character_colors["Kim"], image="kim")
+define l = Character("Luziim", kind=c_base, who_color=character_colors["Luziim"], image="luziim")
+define nk = Character("Nakoa", kind=c_base, who_color=character_colors["Nakoa"], image="nakoa")
+define nn = Character("Nanneyo", kind=c_base, who_color=character_colors["Nanneyo"], image="nanneyo")
+define no = Character("Noah", kind=c_base, who_color=character_colors["Noah"], image="noah")
+define ny = Character("Nyarokhu", kind=c_base, who_color=character_colors["Nyarokhu"], image="nyarokhu")
+define r = Character("Rohal", kind=c_base, who_color=character_colors["Rohal"], image="rohal")
+define t = Character("Tansei", kind=c_base, who_color=character_colors["Tansei"], image="tansei")
 
-define a_nvl = Character("Ash", kind=nvl, who_color="#80ec80")
-define b_nvl = Character("Blake", kind=nvl, who_color="#f3c37c")
-define f_nvl = Character("Fyorra", kind=nvl, who_color="#ad94f1")
-define ka_nvl = Character("Karalún", kind=nvl, who_color="#bfee67")
-define ki_nvl = Character("Kim", kind=nvl, who_color="#f1afca")
-define l_nvl = Character("Luziim", kind=nvl, who_color="#f3eb7c")
-define nk_nvl = Character("Nakoa", kind=nvl, who_color="#f3947c")
-define nn_nvl = Character("Nanneyo", kind=nvl, who_color="#88c3f3")
-define no_nvl = Character("Noah", kind=nvl, who_color="#b8aa9f")
-define ny_nvl = Character("Nyarokhu", kind=nvl, who_color="#9496b1")
-define r_nvl = Character("Rohal", kind=nvl, who_color="#73d7e9")
-define t_nvl = Character("Tansei", kind=nvl, who_color="#db89eb")
+define a_nvl = Character("Ash", kind=nvl, who_color=character_colors["Ash"])
+define b_nvl = Character("Blake", kind=nvl, who_color=character_colors["Blake"])
+define f_nvl = Character("Fyorra", kind=nvl, who_color=character_colors["Fyorra"])
+define ka_nvl = Character("Karalún", kind=nvl, who_color=character_colors["Karalún"])
+define ki_nvl = Character("Kim", kind=nvl, who_color=character_colors["Kim"])
+define l_nvl = Character("Luziim", kind=nvl, who_color=character_colors["Luziim"])
+define nk_nvl = Character("Nakoa", kind=nvl, who_color=character_colors["Nakoa"])
+define nn_nvl = Character("Nanneyo", kind=nvl, who_color=character_colors["Nanneyo"])
+define no_nvl = Character("Noah", kind=nvl, who_color=character_colors["Noah"])
+define ny_nvl = Character("Nyarokhu", kind=nvl, who_color=character_colors["Nyarokhu"])
+define r_nvl = Character("Rohal", kind=nvl, who_color=character_colors["Rohal"])
+define t_nvl = Character("Tansei", kind=nvl, who_color=character_colors["Tansei"])
+
+default pov_character = "Kim"
 
 image ash = "sprites/ash_temp.png"
 image blake = Placeholder("boy")
@@ -240,10 +242,11 @@ transform farright_h:
 transform farright_l:
     xalign 1.0 yalign 1.0 yoffset 40
 
-# Default 'dissolve' lasts 0.5 secs, let's make more
+# Custom dissolve and fade variants
 define dissolve_f = Dissolve(0.1)
 define dissolve_s = Dissolve(1.0)
 define flash = Fade(0.1, 0.0, 0.1, color="#ffffff")
+define fade_scene = Fade(1.0, 0.5, 1.0)
 
 define dissolveinleft = ComposeTransition(dissolve, after=easeinleft)
 define dissolveinright = ComposeTransition(dissolve, after=easeinright)
@@ -256,12 +259,7 @@ define dissolveoutbottom = ComposeTransition(dissolve, before=easeoutbottom)
 define eyesopen = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64)
 define eyesclose = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64, reverse=True)
 
-# ???
-
-# define scootinleft = MoveTransition(0.5, enter=scootleft, time_warp=ease)
-# define fadeinleft = ComposeTransition(dissolve, after=scootinleft)
-
-# TRYING A NEW THING
+# Custom character in/out transitions that combine a 50-pixel move with a dissolve.
 
 transform scootoutleft:
     easeout 0.5 xoffset -50
@@ -289,68 +287,6 @@ transform scootinright:
 define scootinright2 = MoveTransition(0.5, enter=scootinright, old=False)
 define fadeinright = ComposeTransition(dissolve, scootoutright2, scootinright2)
 
-# Old way (transforms instead of transitions)
-
-# transform subtleinleft:
-#     alpha 0.0 xoffset -50
-#     parallel:
-#         easein 0.5 xoffset 0
-#     parallel:
-#         linear 0.5 alpha 1.0
-
-transform subtleoutleft:
-    alpha 1.0 xoffset 0
-    parallel:
-        easeout 0.5 xoffset -50
-    parallel:
-        linear 0.5 alpha 0.0
-
-transform subtleinright:
-    alpha 0.0 xoffset 50
-    parallel:
-        easein 0.5 xoffset 0
-    parallel:
-        linear 0.5 alpha 1.0
-
-transform subtleoutright:
-    alpha 1.0 xoffset 0
-    parallel:
-        easeout 0.5 xoffset 50
-    parallel:
-        linear 0.5 alpha 0.0
-
-# What if I did ATL transitions?
-
-# transform subtleinleft(duration=0.5, new_widget=None, old_widget=None):
-#     delay duration
-#     xoffset -50
-#     parallel:
-#         old_widget
-#         alpha 1.0
-#         events False
-#         parallel:
-#             easein 0.5 xoffset 0
-#         parallel:
-#             linear 0.5 alpha 0.0
-#     parallel:
-#         new_widget
-#         alpha 0.0
-#         events True
-#         parallel:
-#             easein 0.5 xoffset 0
-#         parallel:
-#             linear 0.5 alpha 1.0
-
-transform newscootinleft(duration=0.5, new_widget=None, old_widget=None):
-    delay duration
-    old_widget
-    xoffset -50
-    easeout (duration/2) xoffset -25
-    new_widget
-    easein (duration/2) xoffset 0
-
-define newfadeinleft = ComposeTransition(dissolve, before=newscootinleft, after=newscootinleft)
-
 # The game starts here.
 
 label start:
@@ -366,4 +302,5 @@ label start:
     # jump hi_nan
     jump chapter_0_b
     # jump photoop
+    # jump chapter_1_b
     # jump nvl_monologue_test

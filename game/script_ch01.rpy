@@ -5,7 +5,8 @@ label chapter_1:
 
     # [Art: a black screen.]
 
-    scene black with fade
+    scene black with fade_scene
+    $ pov_character = "Kim"
     # scene bg kim_luziim_dorm 
     # show black with fade
 
@@ -543,7 +544,8 @@ label chapter_1_b:
 
     # POV: Nanneyo
     # [Background: Nanneyo’s bedroom walls, tackily half-decorated.]
-    scene bg nanneyo_bedroom with fade
+    scene bg nanneyo_bedroom with fade_scene
+    $ pov_character = "Nanneyo"
 
     "Nanneyo had not yet set up a morning alarm."
 
@@ -668,22 +670,22 @@ label chapter_1_b:
 
     # [Sprite: Ash appears, looking refreshed, and salutes.]
 
-    show ash at center_1 with dissolve
+    show youngash happy at center_1 with dissolve
 
-    a "Good morning, Miss Nanneyo, ma’am!"
+    a_y salute @ happy_talk "Good morning, Miss Nanneyo, ma’am!"
 
     nn "Hey, Ash! I’d like you to help me with some more cleanup today. Ready?"
 
-    a "Awaiting orders, ma’am!"
+    a_y @ happy_talk "Awaiting orders, ma’am!"
 
     nn "Those two boxes there, with ‘kitchen’ written on them? Take them to the kitchen, 
     please."
 
-    a "Yes, ma’am!"
+    a_y -salute @ happy_talk "Yes, ma’am!"
 
     "He hefted the topmost of the two boxes into his arms and trotted off to the kitchen."
 
-    hide ash with fadeoutright
+    hide youngash with fadeoutright
 
     "Goodness, but Biots were helpful things to have around. Ash was hands down the most 
     useful gift she’d ever received, not to mention the cutest."
@@ -694,18 +696,18 @@ label chapter_1_b:
     "Ash could be heard returning at a brisk trot for the second kitchen box, leaving the 
     room with it, and then returning again."
 
-    show ash at center_1 with fadeinright
+    show youngash happy at center_1 with fadeinright
 
-    a "Anything else, ma’am?"
+    a_y @ happy_talk "Anything else, ma’am?"
 
     nn "Uh, no, I don’t think I have time for much else right now. I’ve got friends 
     coming over in a minute and shouldn’t start another project."
 
     # [Sprite: Ash perks up curiously.]
 
-    a "Oh! We’re having company, ma’am?"
+    a_y neutral_talk "Oh! We’re having company, ma’am?"
 
-    a "May I do anything to prepare? I-I could scavenge for some snacks, groom myself a 
+    a_y confused @ confused_talk "May I do anything to prepare? I-I could scavenge for some snacks, groom myself a 
     bit…"
 
     nn "Oh, no, no, you’ve done just what I wanted! We’ll be heading out to eat right 
@@ -716,7 +718,7 @@ label chapter_1_b:
     "Nanneyo rose to her feet and made for the kitchen to prepare Ash’s food and water 
     bowls."
 
-    hide ash with fadeoutleft
+    hide youngash with fadeoutleft
 
     "Not that such a self-sufficient being couldn’t feed himself—he definitely had 
     before—but owning a pet was a responsibility, and Nanneyo was loath to feel that 
