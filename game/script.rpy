@@ -289,6 +289,8 @@ define fadeinright = ComposeTransition(dissolve, scootoutright2, scootinright2)
 
 # The game starts here.
 
+window auto True
+
 label start:
 
     # All actual scripts of the game will be handled in separate files, 
@@ -296,11 +298,11 @@ label start:
 
     # jump test_scene
     # jump outline
-    # jump chapter_0
+    jump chapter_0
     # jump quickstart
     # jump testytest
     # jump hi_nan
-    jump chapter_0_b
+    # jump chapter_0_b
     # jump photoop
     # jump chapter_1_b
     # jump nvl_monologue_test

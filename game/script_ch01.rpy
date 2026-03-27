@@ -82,8 +82,8 @@ label chapter_1:
     "It was a little unusual, but exciting."
 
     "She dressed quickly, then double-checked the small backpack she’d set aside for 
-    toiletries and spare clothes. Toothbrush, toothpaste, deodorant, sunscreen… all was 
-    accounted for."
+    toiletries, pajamas, and spare clothes. Toothbrush, toothpaste, deodorant, sunscreen… 
+    all was accounted for."
 
     l "What’s that stuff?"
 

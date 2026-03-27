@@ -119,6 +119,9 @@ screen say(who, what):
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
+    
+    # custom: moving the quick menu here
+    use quick_menu
 
 
 ## Make the namebox available for styling through the Character object.
@@ -219,6 +222,9 @@ screen multiple_say(who, what, multiple):
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
+
+    # custom: moving the quick menu here
+    use quick_menu
 
 
 ## Make the namebox available for styling through the Character object.
@@ -381,6 +387,7 @@ screen quick_menu():
         frame:
             xalign 0.5
             yalign 1.0
+            # background Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile)
             if pov_character:
                 background Transform(Frame("gui/quick_menu.png", gui.quick_menu_borders, tile=gui.quick_menu_tile), matrixcolor=TintMatrix(character_colors[pov_character]))
 
@@ -396,10 +403,10 @@ screen quick_menu():
                 textbutton _("Settings") action ShowMenu('preferences')
 
 
-## This code ensures that the quick_menu screen is displayed in-game, whenever
-## the player has not explicitly hidden the interface.
-init python:
-    config.overlay_screens.append("quick_menu")
+# ## This code ensures that the quick_menu screen is displayed in-game, whenever
+# ## the player has not explicitly hidden the interface.
+# init python:
+#     config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
 
@@ -1470,6 +1477,9 @@ screen nvl(dialogue, items=None):
                 style "nvl_button"
 
     add SideImage() xalign 0.0 yalign 1.0
+
+    # custom: moving the quick menu here
+    use quick_menu
 
 
 screen nvl_dialogue(dialogue):

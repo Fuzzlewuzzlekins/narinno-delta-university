@@ -2,12 +2,12 @@ label chapter_0:
 
     # Chapter 0: Prologue
     # Scene 1 (POV: Kim)
-    $ pov_character = "Kim"
 
     # Background: interior of a vehicle with vertically arranged rows of seats, 
     # optionally a window or two showing space. Sound: a faint humming drone.
 
     scene bg shuttle with dissolve
+    $ pov_character = "Kim"
 
     play sound escalator_airplane_ambient_loop loop fadein 1.0
 
@@ -681,13 +681,11 @@ label testytest:
     "She’d stopped walking to take in the view. Now her legs apparently hadn’t received 
     any neural message to continue."
 
-    # TODO: add minigame tutorial here
+    # Minigame tutorial
 
-    window hide
     $ quick_menu = False
     $ renpy.suspend_rollback(True)
 
-    # call screen minigame("sprites/dummy_front_idle.png")
     call screen minigame(bg="testbg", hero=("mg_kim", 960, 300), npcs=[
                     (
                         "dummy", 650, 600, [
@@ -726,7 +724,6 @@ label testytest:
 
     $ quick_menu = True
     $ renpy.suspend_rollback(False)
-    window show
 
     # # Alt dialogue in case I can't get the minigame up and running:
 
