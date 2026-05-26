@@ -624,7 +624,7 @@ label quickstart:
     t happy @ happy_talk "Everyone got your luggage?"
 
     "Kim checked around herself. Her carry-on was still on the seat next to her, and her 
-    larger suitcase was still tucked under her seat, behind her feet."
+    larger suitcase was still on the floor by her feet."
 
     play sound luggage_handle
 

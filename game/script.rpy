@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character. (See gui.rpy for character_colors declarations)
 
-define c_base = Character("base", what_prefix='“', what_suffix='”')
+define c_base = Character("base", what_prefix='“', what_suffix='”', ctc_position="fixed")
 
 define a = Character("Ash", kind=c_base, who_color=character_colors["Ash"], image="ash")
 define a_y = Character("Ash", kind=c_base, who_color=character_colors["Ash"], image="youngash")
@@ -160,6 +160,11 @@ image khurrayo = Placeholder("boy")
 image allira = Placeholder("girl")
 image nami = Placeholder("girl")
 
+image bg starport_gate = "backgrounds/bg_starport_gate.png"
+image bg starport_baggage = "backgrounds/bg_starport_baggage.png"
+image bg starport_station = "backgrounds/bg_starport_station.png"
+image bg monorail = "backgrounds/bg_monorail.png"
+
 # Declare (default) narrative flags here.
 default kim_walk_pick = None
 
@@ -298,11 +303,11 @@ label start:
 
     # jump test_scene
     # jump outline
-    # jump chapter_0
+    jump chapter_0
     # jump quickstart
     # jump testytest
     # jump hi_nan
-    jump chapter_0_b
+    # jump chapter_0_b
     # jump photoop
     # jump chapter_1_b
     # jump nvl_monologue_test

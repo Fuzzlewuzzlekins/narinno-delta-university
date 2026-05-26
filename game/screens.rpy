@@ -1401,6 +1401,41 @@ style skip_triangle:
     font "DejaVuSans.ttf"
 
 
+## Click-to-continue screen #######################################################
+##
+## Blinking icon that invites the player to keep clicking after dialogue. Trying
+## things out here...
+##
+## https://www.renpy.org/doc/html/screen_special.html#ctc-click-to-continue
+## https://www.renpy.org/doc/html/gui.html#screens-click-to-continue
+
+screen ctc(arg=None):
+
+    zorder 100
+
+    hbox:
+        at ctc_appear
+        xalign 0.79
+        yalign 0.98
+
+        add arg
+
+        # text _("Click to Continue"):
+        text "▸":
+            ## We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
+            ## glyph in it.
+            font "DejaVuSans.ttf"
+            size 32
+
+transform ctc_appear:
+    alpha 0.0
+    pause 1.0
+    block:
+        linear 0.75 alpha 1.0
+        linear 0.75 alpha 0.0
+        repeat
+
+
 ## Notify screen ###############################################################
 ##
 ## The notify screen is used to show the player a message. (For example, when
