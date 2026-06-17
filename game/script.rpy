@@ -164,6 +164,7 @@ image bg starport_gate = "backgrounds/bg_starport_gate.png"
 image bg starport_baggage = "backgrounds/bg_starport_baggage.png"
 image bg starport_station = "backgrounds/bg_starport_station.png"
 image bg monorail = "backgrounds/bg_monorail.png"
+image bg school_station = "backgrounds/bg_school_station.png"
 
 # Declare (default) narrative flags here.
 default kim_walk_pick = None
@@ -292,6 +293,34 @@ transform scootinright:
 define scootinright2 = MoveTransition(0.5, enter=scootinright, old=False)
 define fadeinright = ComposeTransition(dissolve, scootoutright2, scootinright2)
 
+# Slower variants. TODO: make these general instead of copying and pasting, if possible
+
+transform scootoutleft_s:
+    easeout 0.8 xoffset -150
+
+define scootoutleft2_s = MoveTransition(0.8, leave=scootoutleft_s, old=True)
+define fadeoutleft_s = ComposeTransition(dissolve, scootoutleft2_s, Pause(0.8))
+
+transform scootinleft_s:
+    xoffset -150
+    easein 0.8 xoffset 0
+
+define scootinleft2_s = MoveTransition(0.8, enter=scootinleft_s, old=False)
+define fadeinleft_s = ComposeTransition(dissolve, scootoutleft2_s, scootinleft2_s)
+
+transform scootoutright_s:
+    easeout 0.8 xoffset 150
+
+define scootoutright2_s = MoveTransition(0.8, leave=scootoutright_s, old=True)
+define fadeoutright_s = ComposeTransition(dissolve, scootoutright2_s, Pause(0.8))
+
+transform scootinright_s:
+    xoffset 150
+    easein 0.8 xoffset 0
+
+define scootinright2_s = MoveTransition(0.8, enter=scootinright_s, old=False)
+define fadeinright_s = ComposeTransition(dissolve, scootoutright2_s, scootinright2_s)
+
 # The game starts here.
 
 window auto True
@@ -303,8 +332,8 @@ label start:
 
     # jump test_scene
     # jump outline
-    jump chapter_0
-    # jump quickstart
+    # jump chapter_0
+    jump quickstart
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b

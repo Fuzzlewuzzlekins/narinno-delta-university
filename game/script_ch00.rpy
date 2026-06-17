@@ -639,7 +639,13 @@ label quickstart:
     hide nakoa
     hide tansei
     hide emma
-    with fadeoutleft
+    # with fadeoutleft
+    with MultipleTransition([
+        False, Pause(0.2),
+        False, fadeoutleft_s,
+        True, Pause(0.5),
+        True
+    ])
 
 label testytest:
 
@@ -648,7 +654,7 @@ label testytest:
     # stands out with its swaths of red brick buildings and green fields.]
 
     stop sound fadeout 1.0
-    show bg school_station with dissolve
+    show bg school_station with dissolve_s
 
     play music fresh_intro fadeout 1.0
     queue music fresh_ext_loop
@@ -660,10 +666,8 @@ label testytest:
     panoramic view of what could only be the Narinno Delta University: Kimmings campus, 
     front and center."
 
-    "A patchwork quilt of green fields and red brick, a beacon shining amidst the carpet 
-    of residences hugging its borders."
-
-    "Not that the surrounding tree-studded neighborhood looked remotely unpleasant, either."
+    "A patchwork quilt of lush trees, green fields, and red brick, a beacon shining amidst 
+    the carpet of residences hugging its borders."
 
     nk "Oh, man, this view is something else."
 
@@ -673,8 +677,8 @@ label testytest:
 
     ki "Ha! Yeah, a shame."
 
-    "Alas, they couldn’t ogle the nice view forever. They actually had to arrive on 
-    campus and check in as new students before day’s end, whatever that entailed."
+    "Alas, they couldn’t ogle the nice view forever. They actually had to check in on campus 
+    as new students before day’s end, whatever that entailed."
 
     "...So why wasn’t Kim moving?"
 
@@ -751,7 +755,7 @@ label testytest:
 
     show bg school_exterior with dissolve
 
-    "The apparent main entrance to campus was clearly marked, but Kim’s eyes only 
+    "The apparent \“main entrance\” of the campus was visually obvious, but Kim’s eyes only 
     lingered on the school sign for a moment; the bustle up ahead was much more eye-catching."
 
     "One of the campus buildings had its doors propped open, a welcome banner strung 
