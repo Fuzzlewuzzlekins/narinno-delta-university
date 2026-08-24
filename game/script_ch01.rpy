@@ -326,114 +326,123 @@ label photoop:
     hide kara
     with dissolveoutright
 
-    show noah at center_1 with dissolveinleft
+    $ no_nametag = True
+    define no_temp = Character("Leader", kind=c_base, image="noah")
 
-    "Leader" "\“Alright, Team Cobalt! Can I get a sanity check, everyone here is on Team 
-    Cobalt? Quick show of hands.\”"
+    show noah happy at center_1 with dissolveinleft
+
+    no_temp @ happy_talk "Alright, Team Cobalt! Can I get a sanity check, everyone here is on Team 
+    Cobalt? Quick show of hands."
 
     "Kim raised her hand, as did the hands of Nakoa, the timid Jorgoan, and three other 
     students sitting nearby."
 
-    "Leader" "\“One, two, three, four, five, six of you! Good, we’re right on track, 
-    then.\”"
+    no_temp smug "One, two, three, four, five, six of you! Good, we’re right on track, 
+    then."
 
-    "Leader" "\“That means it’s time for us to do roll call so we can put faces and 
-    pronouns to names.\”"
+    no_temp happy_talk "That means it’s time for us to do roll call so we can put faces and 
+    pronouns to names."
 
-    "Leader" "\“My name’s Noah, he/him, I’m a sophomore, and I’m here to answer all your 
-    questions as we head out to Resshan Peak and back.\”"
+    no_temp neutral_talk "My name’s Noah, he/him, I’m a sophomore, and I’m here to answer all your 
+    questions as we head out to Resshan Peak and back."
 
-    no "Sooo, first up—and please correct your name if I get it wrong or you want to be 
+    no happy @ happy_talk "Sooo, first up—and please correct your name if I get it wrong or you want to be 
     called something else—Nami!"
 
     "An onka sitting a few spaces down raised a hand."
 
     show nami at left_4 with easeinleft
-    "Nami" "\“She/her!\”"
+    nm @ neutral_talk "She/her!"
     hide nami with easeoutleft
 
-    no "Khurrayo?"
+    no @ happy_talk "Khurrayo?"
 
     show khurrayo at left_4 with easeinleft
-    "Khurrayo" "\“That’s me. Ey/em.\”"
+    kr @ neutral_talk "That’s me. Ey/em."
     hide khurrayo with easeoutleft
 
-    no "Nakoa."
+    no neutral @ neutral_talk "Nakoa."
 
     show nakoa happy_talk at right_4 with easeinright
     nk "Right here. He/him."
     hide nakoa with easeoutright
 
-    no "Allira."
+    no @ neutral_talk "Allira."
 
     show allira at left_4 with easeinleft
-    "Allira" "\“Ey/em.\”"
+    al @ neutral_talk "Ey/em."
     hide allira with easeoutleft
 
-    no "Karalún."
+    no @ neutral_talk "Karalún."
 
     show kara worried talk at right_4 with easeinright
     ka "Here. Ah, she/her."
     hide kara with easeoutright
 
-    no "Aaaaand Kimiko."
+    no @ neutral_talk "Aaaaand Kimiko."
 
     ki "Kim is fine. She/her."
 
-    no "Noted! Kim… for… short… Alright, that’s everyone."
+    no @ neutral_talk "Kim for short, noted. Alright, that’s everyone."
 
-    no "Now! You know what happens next?"
+    no happy_talk "Now! You know what happens next?"
 
-    no "What happens next is all o’ those names fall right outta my brain like a sieve, 
+    no smug "What happens next is all o’ those names fall right outta my brain like a sieve, 
     ’cause I’m terrible at names."
 
     "The circle laughed. Nami in particular practically cackled."
 
-    no "So we’re gonna go again, and we’re gonna play a game. This time we’ll all 
+    no happy_talk"So we’re gonna go again, and we’re gonna play a game. This time we’ll all 
     introduce ourselves, and don’t just give yourself a name; give yourself a title."
 
-    no "A badass title, like… ‘Noah the Magnificent’, or ‘Noah of the Three Nations,’ or 
+    no smug "A badass title, like… ‘Noah the Magnificent’, or ‘Noah of the Three Nations,’ or 
     ‘Noah the Quadrilingual,’ or ‘Noah Who Goes Bump in the Night,’ or whatever you like!"
     
-    no "Silly or serious, public or private, ’s all good."
+    no happy_talk "Silly or serious, public or private, ’s all good."
 
-    no "Then as we go around the circle, we’ll repeat who came before us, so by the time 
+    no neutral_talk "Then as we go around the circle, we’ll repeat who came before us, so by the time 
     we go all the way around the circle, they’re etched irreparably into our brains."
 
-    no "So! I’ll start. I’ll go with…{nw=0.5}"
+    no happy_talk "So! I’ll start. I’ll go with…{nw=0.5}"
 
+    show noah thinking
     no "So! I’ll start. I’ll go with…{fast} hmm, Noah the Quadrilingual. Take a little 
     unwarranted pride in that."
 
     nk "Oh, you were serious about that? Nice, man!"
 
-    no "Well, by a certain stretch of the definition. But shh, don’t tell anyone I only 
+    no neutral_talk "Well, by a certain stretch of the definition. But shh, don’t tell anyone I only 
     remember a few words in Welsh. Now’s the time to brag, yeah?"
 
-    no "So, Khurrayo! You’re up first. Repeat my name and title, then announce your own."
+    no happy @ happy_talk "So, Khurrayo! You’re up first. Repeat my name and title, then announce your own."
 
     hide noah with fadeoutright
-    show khurrayo at center_1 with fadeinleft
-    "Khurrayo" "\“Okay! So, Noah the Quadrilingual.\”"
+    show khurrayo happy at center_1 with fadeinleft
+    kr happy_talk "Okay! So, Noah the Quadrilingual."
 
-    "Khurrayo" "\“And I’m… Khurrayo the Dungeonmaster.\”"
+    kr neutral_talk "And I’m… {nw=0.5}"
+    show khurrayo happy_talk
+    kr "And I’m… {fast}Khurrayo the Dungeonmaster."
+    show khurrayo happy with dissolve_f
 
     no "Oooh, I like the sound of that. Allira?"
 
     hide khurrayo with fadeoutright
     show allira at center_1 with fadeinleft
-    "Allira" "\“Yep! So, Noah the Quadrilingual… Khurrayo the Dungeonmaster… and Allira, 
-    Lord of Candles.\”"
+    al @ neutral_talk "Yep! So, Noah the Quadrilingual… Khurrayo the Dungeonmaster… and Allira, 
+    Lord of Candles."
 
     "Some nods and a murmur of approval."
 
     hide allira with fadeoutright
     show nami at center_1 with fadeinleft
-    "Nami" "\“Arright! Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord 
-    of Candles.{nw=0.5}\”"
+    nm neutral_talk "Arright! Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord 
+    of Candles.{nw=0.5}"
     # [Sprite: Nami points to herself.]
-    "Nami" "\“Arright! Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord 
-    of Candles.{fast} Nami Who Likes Salami.\”"
+    show nami smug_talk
+    nm "Arright! Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord 
+    of Candles.{fast} Nami Who Likes Salami."
+    show nami smug with dissolve_f
 
     "The group collectively chuckled at that one."
 
@@ -443,13 +452,13 @@ label photoop:
 
     ki "And I’mmm… Kim the Karaoke Queen."
 
-    "A few pronounced nods and \"oooh\"s told her that she’d chosen something 
+    "A few pronounced nods and \“oooh\”s told her that she’d chosen something 
     sufficiently interesting. Phew!"
 
     # [Sprite: Nakoa rubs his hands together.]
 
     show nakoa grin at center_1 with fadeinright
-    nk "Okay okay okay, I got this."
+    nk grin_talk "Okay okay okay, I got this."
 
     nk friendly "Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord of Candles. Nami 
     Who Likes Salami. Kim the Karaoke Queen."
@@ -460,8 +469,8 @@ label photoop:
 
     no "Nice, nice."
 
-    "Khurrayo" "\“I feel like the farther you are down the line, the harder you have to 
-    work, but the cooler name you get time to think of for it.\”"
+    kr "I feel like the farther you are down the line, the harder you have to 
+    work, but the cooler name you get time to think of for it."
 
     "Allira" "\“Says the person who went first.\”"
 
@@ -504,29 +513,29 @@ label photoop:
     show noah at leftish_2
     show kara neutral at rightish_2
     with fadeinleft
-    no "Chasm-Darter! As in, like, She-Who-Darts-Through-Chasms?"
+    no happy @ happy_talk "Chasm-Darter! As in, like, She-Who-Darts-Through-Chasms?"
 
     ka @ talk "Yes, like that."
 
-    no "Very cool! I might have to ask you the story behind that one."
+    no @ happy_talk "Very cool! I might have to ask you the story behind that one."
 
     hide kara with fadeoutright
     show noah at center_1 with easeinleft    
 
-    no "So! Noah the Quadrilingual; Khurrayo the Dungeonmaster; Allira, Lord of Candles; 
+    no happy_talk "So! Noah the Quadrilingual; Khurrayo the Dungeonmaster; Allira, Lord of Candles; 
     Nami Who Likes Salami; Kim the Karaoke Queen; Nakoa of the Eight Bits; and Kim the 
     Chasm-Darter!"
 
     # [Sound: inspirational/heroic music plays.]
 
-    no "How’s that for a crew? Yeah? I think Team Cobalt’s got enough star quality to 
+    no smug "How’s that for a crew? Yeah? I think Team Cobalt’s got enough star quality to 
     knock this trip outta the park!"
 
-    no "Now who’s ready to show Resshan Peak who’s boss?"
+    no happy @ happy_talk "Now who’s ready to show Resshan Peak who’s boss?"
 
     "The group cheered."
 
-    no "Now let’s go! There’s a van with our name on it!"
+    no @ happy_talk "Now let’s go! There’s a van with our name on it!"
 
     "Everyone surged to their feet, or at least attempted to. It took a moment longer for 
     everyone to collect their backpacks."
@@ -534,7 +543,7 @@ label photoop:
     # [Sprite: Nakoa raises a fist in the air or cups his hands around his mouth.]
 
     show nakoa grin at right_4 with easeinright
-    nk "Co-balt! Co-balt!"
+    nk @ grin_talk "Co-balt! Co-balt!"
 
     ki "Co-balt! Co-balt!"
 

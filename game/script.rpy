@@ -38,7 +38,6 @@ image ash = "sprites/ash_temp.png"
 image blake = Placeholder("boy")
 image fyorra = "sprites/fyorra_temp.png"
 image luziim = Placeholder("girl")
-image noah = Placeholder("boy")
 image nyarokhu = Placeholder("boy")
 image rohal = "sprites/rohal_temp.png"
 
@@ -130,6 +129,25 @@ layeredimage nanneyo:
     if nn_nametag:
         "nanneyo_nametag2" when (flirting or flirting_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
 
+# Noah sprites: layered image
+layeredimage noah:
+    attribute base1 default:
+        when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
+    attribute base2 default:
+        when (thinking or smug)
+    group face auto:
+        attribute neutral default
+    if no_nametag:
+        "noah_nametag1" when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
+    if no_nametag:
+        "noah_nametag2" when (thinking or smug)
+    attribute glasses1 default:
+        when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
+    attribute glasses2 default:
+        when (thinking or smug)
+    attribute arm2 default:
+        when (thinking or smug)
+
 # Tansei sprites: profile
 image tansei pensive = "sprites/tansei_pensive.png"
 image tansei crying = "sprites/tansei_crying.png"
@@ -156,15 +174,29 @@ layeredimage emma:
     attribute base default
     group face auto:
         attribute neutral default
-image khurrayo = Placeholder("boy")
-image allira = Placeholder("girl")
-image nami = Placeholder("girl")
+define kr = Character("Khurrayo", kind=c_base, image="khurrayo")
+layeredimage khurrayo:
+    attribute base default
+    group face auto:
+        attribute neutral default
+define nm = Character("Nami", kind=c_base, image="nami")
+layeredimage nami:
+    attribute base default
+    group face auto:
+        attribute neutral default
+# image allira = Placeholder("girl")
+define al = Character("Allira", kind=c_base, image="allira")
+layeredimage allira:
+    attribute base default
+    group face auto:
+        attribute neutral default
 
 image bg starport_gate = "backgrounds/bg_starport_gate.png"
 image bg starport_baggage = "backgrounds/bg_starport_baggage.png"
 image bg starport_station = "backgrounds/bg_starport_station.png"
 image bg monorail = "backgrounds/bg_monorail.png"
 image bg school_station = "backgrounds/bg_school_station.png"
+image bg school_exterior = "backgrounds/bg_school_exterior.png"
 
 # Declare (default) narrative flags here.
 default kim_walk_pick = None
@@ -333,10 +365,10 @@ label start:
     # jump test_scene
     # jump outline
     # jump chapter_0
-    jump quickstart
+    # jump quickstart
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
-    # jump photoop
+    jump photoop
     # jump chapter_1_b
     # jump nvl_monologue_test
