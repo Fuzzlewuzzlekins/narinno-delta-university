@@ -32,7 +32,7 @@ define ny_nvl = Character("Nyarokhu", kind=nvl, who_color=character_colors["Nyar
 define r_nvl = Character("Rohal", kind=nvl, who_color=character_colors["Rohal"])
 define t_nvl = Character("Tansei", kind=nvl, who_color=character_colors["Tansei"])
 
-default pov_character = "Kim"
+# Declare main character sprites.
 
 image ash = "sprites/ash_temp.png"
 image blake = Placeholder("boy")
@@ -135,18 +135,26 @@ layeredimage noah:
         when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
     attribute base2 default:
         when (thinking or smug)
+    attribute base3 default:
+        when (grin or grin_talk or angry or angry_talk)
     group face auto:
         attribute neutral default
     if no_nametag:
         "noah_nametag1" when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
     if no_nametag:
         "noah_nametag2" when (thinking or smug)
+    if no_nametag:
+        "noah_nametag3" when (grin or grin_talk or angry or angry_talk)
     attribute glasses1 default:
         when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
     attribute glasses2 default:
         when (thinking or smug)
+    attribute glasses3 default:
+        when (grin or grin_talk or angry or angry_talk)
     attribute arm2 default:
         when (thinking or smug)
+    attribute arm3 default:
+        when (grin or grin_talk or angry or angry_talk)
 
 # Tansei sprites: profile
 image tansei pensive = "sprites/tansei_pensive.png"
@@ -169,6 +177,8 @@ layeredimage tansei:
     attribute hair3 default:
         when (excited or excited_talk or laughing or shy or shy_talk)
 
+# Declare minor characters and sprites.
+
 define e = Character("Emma", kind=c_base, image="emma")
 layeredimage emma:
     attribute base default
@@ -184,12 +194,13 @@ layeredimage nami:
     attribute base default
     group face auto:
         attribute neutral default
-# image allira = Placeholder("girl")
 define al = Character("Allira", kind=c_base, image="allira")
 layeredimage allira:
     attribute base default
     group face auto:
         attribute neutral default
+
+# Declare backgrounds.
 
 image bg starport_gate = "backgrounds/bg_starport_gate.png"
 image bg starport_baggage = "backgrounds/bg_starport_baggage.png"
@@ -199,6 +210,9 @@ image bg school_station = "backgrounds/bg_school_station.png"
 image bg school_exterior = "backgrounds/bg_school_exterior.png"
 
 # Declare (default) narrative flags here.
+default pov_character = "Kim"
+default nn_nametag = False
+default no_nametag = False
 default kim_walk_pick = None
 
 # Define transforms and transitions here.
@@ -297,7 +311,7 @@ define dissolveoutbottom = ComposeTransition(dissolve, before=easeoutbottom)
 define eyesopen = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64)
 define eyesclose = ImageDissolve("imagedissolve_eyes.png", 0.5, ramplen=64, reverse=True)
 
-# Custom character in/out transitions that combine a 50-pixel move with a dissolve.
+# Custom character in/out transitions that combine a 50-pixel ease with a dissolve.
 
 transform scootoutleft:
     easeout 0.5 xoffset -50

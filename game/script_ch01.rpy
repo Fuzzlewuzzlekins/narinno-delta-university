@@ -351,14 +351,14 @@ label photoop:
 
     "An onka sitting a few spaces down raised a hand."
 
-    show nami at left_4 with easeinleft
-    nm @ neutral_talk "She/her!"
+    show nami neutral_talk at left_4 with easeinleft
+    nm "She/her!"
     hide nami with easeoutleft
 
     no @ happy_talk "Khurrayo?"
 
-    show khurrayo at left_4 with easeinleft
-    kr @ neutral_talk "That’s me. Ey/em."
+    show khurrayo neutral_talk at left_4 with easeinleft
+    kr "That’s me. Ey/em."
     hide khurrayo with easeoutleft
 
     no neutral @ neutral_talk "Nakoa."
@@ -369,8 +369,8 @@ label photoop:
 
     no @ neutral_talk "Allira."
 
-    show allira at left_4 with easeinleft
-    al @ neutral_talk "Ey/em."
+    show allira neutral_talk at left_4 with easeinleft
+    al "Ey/em."
     hide allira with easeoutleft
 
     no @ neutral_talk "Karalún."
@@ -392,10 +392,10 @@ label photoop:
 
     "The circle laughed. Nami in particular practically cackled."
 
-    no happy_talk"So we’re gonna go again, and we’re gonna play a game. This time we’ll all 
+    no happy_talk "So we’re gonna go again, and we’re gonna play a game. This time we’ll all 
     introduce ourselves, and don’t just give yourself a name; give yourself a title."
 
-    no smug "A badass title, like… ‘Noah the Magnificent’, or ‘Noah of the Three Nations,’ or 
+    no grin_talk "A badass title, like… ‘Noah the Magnificent’, or ‘Noah of the Three Nations,’ or 
     ‘Noah the Quadrilingual,’ or ‘Noah Who Goes Bump in the Night,’ or whatever you like!"
     
     no happy_talk "Silly or serious, public or private, ’s all good."
@@ -404,19 +404,21 @@ label photoop:
     we go all the way around the circle, they’re etched irreparably into our brains."
 
     no happy_talk "So! I’ll start. I’ll go with…{nw=0.5}"
-
     show noah thinking
     no "So! I’ll start. I’ll go with…{fast} hmm, Noah the Quadrilingual. Take a little 
     unwarranted pride in that."
 
     nk "Oh, you were serious about that? Nice, man!"
 
-    no neutral_talk "Well, by a certain stretch of the definition. But shh, don’t tell anyone I only 
+    no "Well, by a certain stretch of the definition. {nw=0.5}"
+    show noah smug
+    no "Well, by a certain stretch of the definition. {fast}But shh, don’t tell anyone I only 
     remember a few words in Welsh. Now’s the time to brag, yeah?"
 
     no happy @ happy_talk "So, Khurrayo! You’re up first. Repeat my name and title, then announce your own."
 
     hide noah with fadeoutright
+
     show khurrayo happy at center_1 with fadeinleft
     kr happy_talk "Okay! So, Noah the Quadrilingual."
 
@@ -469,17 +471,31 @@ label photoop:
 
     no "Nice, nice."
 
+    show khurrayo at farleft with easeinleft
     kr "I feel like the farther you are down the line, the harder you have to 
     work, but the cooler name you get time to think of for it."
 
-    "Allira" "\“Says the person who went first.\”"
+    # hide khurrayo with easeoutleft_f
+    show khurrayo:
+        easeout 0.5 offscreenleft
+    show allira neutral_talk at farleft with easeinleft
+    hide khurrayo
+    al "Says the person who went first."
 
+    show allira:
+        easeout 0.5 offscreenleft
+    show noah stern_talk at farleft with easeinleft
+    hide allira
     no "Hey, now, let’s let everyone have their turn before we start the trash talk.{nw=0.5}"
     # [Sprite: he turns to his right, or otherwise visibly shifts target.]
+    show noah happy_talk
     no "Hey, now, let’s let everyone have their turn before we start the trash talk.{fast} 
     Go ahead."
-
+    
+    show noah:
+        easeout 0.5 offscreenleft
     hide nakoa with fadeoutright
+    hide noah
     show kara neutral at center_1 with fadeinleft
     "The Jorgoan was last. Karalún took a quiet moment to think, her large eyes roving 
     around the circle. Kim could almost see the cogs turning in her head."
@@ -510,9 +526,11 @@ label photoop:
 
     "There was a moment of hesitant silence after she finished." 
 
-    show noah at leftish_2
-    show kara neutral at rightish_2
-    with fadeinleft
+    show kara:
+        "kara_neutral" with dissolve_f
+        ease 0.5 rightish_2
+            
+    show noah at leftish_2 with fadeinleft
     no happy @ happy_talk "Chasm-Darter! As in, like, She-Who-Darts-Through-Chasms?"
 
     ka @ talk "Yes, like that."
@@ -531,11 +549,11 @@ label photoop:
     no smug "How’s that for a crew? Yeah? I think Team Cobalt’s got enough star quality to 
     knock this trip outta the park!"
 
-    no happy @ happy_talk "Now who’s ready to show Resshan Peak who’s boss?"
+    no grin @ grin_talk "Now who’s ready to show Resshan Peak who’s boss?"
 
     "The group cheered."
 
-    no @ happy_talk "Now let’s go! There’s a van with our name on it!"
+    no happy @ happy_talk "Now let’s go! There’s a van with our name on it!"
 
     "Everyone surged to their feet, or at least attempted to. It took a moment longer for 
     everyone to collect their backpacks."
