@@ -41,13 +41,13 @@ image luziim = Placeholder("girl")
 image nyarokhu = Placeholder("boy")
 image rohal = "sprites/rohal_temp.png"
 
-# Karalún sprites: main
-image kara neutral = "sprites/kara_neutral.png"
-image kara neutral talk = "sprites/kara_neutral_talk.png"
-image kara worried = "sprites/kara_worried.png"
-image kara worried talk = "sprites/kara_worried_talk.png"
-image kara happy = "sprites/kara_happy.png"
-image kara grin = "sprites/kara_grin.png"
+# # Karalún sprites: main
+# image kara neutral = "sprites/kara_neutral.png"
+# image kara neutral talk = "sprites/kara_neutral_talk.png"
+# image kara worried = "sprites/kara_worried.png"
+# image kara worried talk = "sprites/kara_worried_talk.png"
+# image kara happy = "sprites/kara_happy.png"
+# image kara grin = "sprites/kara_grin.png"
 # Karalún sprites: profile
 image kara pensive = "sprites/kara_pensive.png"
 image kara pensive talk = "sprites/kara_pensive_talk.png"
@@ -57,6 +57,12 @@ image kara grumpy talk = "sprites/kara_grumpy_talk.png"
 image kara startled = "sprites/kara_startled.png"
 image kara excited = "sprites/kara_excited.png"
 image kara angry = "sprites/kara_angry.png"
+# Karalún sprites: layered image
+layeredimage kara:
+    attribute base1 default:
+        when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk or grin or grin_talk)
+    group face auto:
+        attribute neutral default
 
 # Kim sprites: main
 image kim happy = "sprites/kim_happy.png"
@@ -383,6 +389,7 @@ label start:
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
-    jump photoop
+    # jump photoop
     # jump chapter_1_b
+    jump chapter_2
     # jump nvl_monologue_test

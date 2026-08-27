@@ -27,17 +27,19 @@ label chapter_2:
     # [SFX: footsteps. Sprite: an exhausted Nakoa trudges into the frame.]
     # TODO: neutral/thoughtful sprites for Nakoa, I'm using "stern" too much...
 
-    show nakoa worried_talk at center_1 with dissolve
+    show nakoa worried_talk at center_1_l with dissolve
 
     nk "Haah… haah…"
 
+    show nakoa at center_1 with ease
     nk "Please, you don’t have to keep stopping for me…"
+    show nakoa worried with dissolve_f
 
     ki "I promised I’d walk with you, didn’t I? Shorties gotta stick together."
 
     ki "I don’t mind. Really."
 
-    nk "If you’re sure."
+    nk worried_talk "If you’re sure."
 
     nk happy @ happy_talk "Oof… guess it’s my own fault…! Punishment for holing up in the mancave."
 
@@ -252,11 +254,11 @@ label chapter_2:
 
     ki "Hey!"
 
-    ka @ neutral talk "Hello, is all well?"
+    ka @ neutral_talk "Hello, is all well?"
 
     ki "Ah, sorry, are we going too slow?"
 
-    ka worried @ worried talk "No, it’s fine! Noah asked that I check on you."
+    ka worried @ worried_talk "No, it’s fine! Noah asked that I check on you."
 
     nk @ happy_talk "Eh, we’re plugging along, don’t worry."
 
@@ -264,7 +266,7 @@ label chapter_2:
 
     # [Sprite: Karalún grins.]
 
-    ka grin "No, all’s well! Don’t worry."
+    ka grin @ grin_talk "No, all’s well! Don’t worry."
 
     "Kim flinched unbidden at that mouthful of Jorgoan teeth. That was a passive-aggressive 
     smile, she was sure of it."
@@ -304,11 +306,11 @@ menu chapter_1_walk_choice:
 
         # Kim goes ahead of Kara:
 
-        ka worried @ talk "Oh, it’s okay, there is no need to rush!"
+        ka worried @ worried_talk "Oh, it’s okay, there is no need to rush!"
 
         ki "You sure?"
 
-        ka happy @ grin "Please feel free to keep talking. I’ll listen."
+        ka happy @ grin_talk "Please feel free to keep talking. I’ll listen."
 
         "Well... she still couldn't tell if that grin was a threat, but now she felt stupid. And rude."
 
@@ -368,14 +370,14 @@ label chapter_1_after_walk_choice:
 
     show kara worried at rightish_2 with ease
 
-    ka worried talk "Oh, me? Hobbies?"
+    ka worried_talk "Oh, me? Hobbies?"
 
-    ka neutral @ talk "Well, I did… um, what do you call it? When you fight with your body, without 
+    ka neutral @ neutral_talk "Well, I did… um, what do you call it? When you fight with your body, without 
     weapons."
 
     nk happy @ happy_talk "Oooh, martial arts?"
 
-    ka grin "Martial arts, yes! Thank you!"
+    ka happy_talk "Martial arts, yes! Thank you!"
 
     ka excited "I enjoyed martial arts when I was a teenager. It has been many years."
 
@@ -385,9 +387,9 @@ label chapter_1_after_walk_choice:
 
     ki "Er, sorry, that’s rude."
 
-    ka worried talk "No, it’s fine! I am told that I’m older than the average freshman."
+    ka worried_talk "No, it’s fine! I am told that I’m older than the average freshman."
 
-    ka neutral @ talk "I am… twenty-four of your years old, if I remember the math correctly."
+    ka neutral @ neutral_talk "I am… twenty-four of your years old, if I remember the math correctly."
  
     ki "Alright, that makes sense. Cool."
 
@@ -395,27 +397,27 @@ label chapter_1_after_walk_choice:
 
     ki "We don’t have to keep asking her difficult questions—"
 
-    ka grin "No, it’s fine, it’s fine!"
+    ka happy_talk "No, it’s fine, it’s fine!"
 
-    ka neutral @ talk "I’ve lived in the Association for four years. I studied your history and 
+    ka neutral @ neutral_talk "I’ve lived in the Association for four years. I studied your history and 
     language. Now, for this year I have a college grant."
 
     nk @ stern "Four years ago... So the latest Avikran evacuation, back in ’32?"
 
     ki "Wow, your Standard’s really good for only four years! I’m impressed!"
 
-    ka happy @ grin "Oh, thank you! I try my best!"
+    ka happy @ happy_talk "Oh, thank you! I try my best!"
 
     ki "And how are you liking it here?"
 
-    ka worried talk "Ah. It’s… different. It’s hard to explain."
+    ka worried_talk "Ah. It’s… different. It’s hard to explain."
 
-    ka neutral @ talk "The rescue was relief, of course. A little strange, but relief."
+    ka neutral @ neutral_talk "The rescue from our penal colony was relief, of course. A little strange, but relief."
 
     nk @ worried_talk "Yeah, that’s not surprising. Return to civilization. That’s gotta be 
     disorienting."
 
-    ka @ talk "The cultures, though? Here, it is… louder. Brighter. More variety of things, 
+    ka @ neutral_talk "The cultures, though? Here, it is… louder. Brighter. More variety of things, 
     if I can say that." 
 
     # Kim lags behind:
@@ -430,21 +432,21 @@ label chapter_1_after_walk_choice:
     show nakoa happy at leftish_3
     show kara neutral at center_1
     with ease
-
-    show noah at rightish_3
+    
+    show noah happy at rightish_3
     with fadeinright
 
-    no "Ah, here we all are! Everything alright?"
+    no @ happy_talk "Ah, here we all are! Everything alright?"
 
     ki "Yes, we’re hanging in there! We didn’t mean to keep everyone waiting."
 
-    no "Oh, it’s fine. It’s my job to keep an eye on everyone, and I don’t think any of 
+    no @ happy_talk "Oh, it’s fine. It’s my job to keep an eye on everyone, and I don’t think any of 
     us minded a break, either."
 
     "From over Noah’s shoulder, the other students—Nami, Allira, and Khurrayo, if Kim 
     recalled—made assorted sounds and gestures of agreement."
 
-    no "We’ve got about a kilometer left, and a slight climb, then we’ll get to pitch 
+    no @ happy_talk "We’ve got about a kilometer left, and a slight climb, then we’ll get to pitch 
     our tents. Let’s do it!"
 
     show nakoa grumpy with dissolve_f
@@ -578,7 +580,7 @@ label nvl_monologue_test:
     "Now both Nakoa and Karalún were her rapt audience as she attempted to demonstrate what 
     “origami” was."
 
-    ka @ neutral talk "Like this?"
+    ka @ neutral_talk "Like this?"
 
     "The Jorgoan curled the edges of the paper timidly inwards, looking up at Kim for 
     guidance."
@@ -596,7 +598,7 @@ label nvl_monologue_test:
 
     ki "Do you need help with the paper? I can press the folds."
 
-    ka worried @ worried talk "No, it’s fine, it’s fine! I’d like to do it."
+    ka worried @ worried_talk "No, it’s fine, it’s fine! I’d like to do it."
 
     "She focused on the paper again—did her tendrils just flick?—and finished the crease 
     with a determined motion."
@@ -617,7 +619,7 @@ label nvl_monologue_test:
 
     nk happy @ happy_talk "Oh! Oh I get it, that’s super cool."
 
-    ka @ worried talk "I think I… like this…?"
+    ka @ worried_talk "I think I… like this…?"
 
     "The Jorgoan swung the paper upwards—"
 
@@ -632,7 +634,7 @@ label nvl_monologue_test:
     "The Jorgoan’s tendrils writhed. Her eyes were narrowed, her lips pulled back to expose 
     her mouth full of hook-teeth…"
 
-    ka worried @ worried talk "Ah, do we have a… medic… what do you call it? Medicine kit?"
+    ka worried @ worried_talk "Ah, do we have a… medic… what do you call it? Medicine kit?"
 
     ki "A… first-aid kit? I think… Noah, who has the first aid kit?"
 
@@ -642,36 +644,36 @@ label nvl_monologue_test:
     # [Noah slides in.]
 
     show kara worried at center_1_l with ease
-    show noah at rightish_3 with fadeinright
+    show noah neutral at rightish_3 with fadeinright
 
-    no "What’s up? Someone get a cut?"
+    no @ neutral_talk "What’s up? Someone get a cut?"
 
-    no "Oooh, paper cut. Those little buggers’ll get ya. Hold on."
+    no worried @ worried_talk "Oooh, paper cut. Those little buggers’ll get ya. Hold on."
 
     "He flipped the first aid kit open on the picnic table and rifled through it for a few 
     seconds before selecting a small pouch from within."
 
     "Karalún dutifully held her hand steady for Noah to tend to with a dab of ointment."
 
-    ka @ worried talk "Thank you."
+    ka @ worried_talk "Thank you."
 
-    no "Yeah, no problem. Shouldn’t be too serious, but let me know if it still stings 
+    no happy @ happy_talk "Yeah, no problem. Shouldn’t be too serious, but let me know if it still stings 
     later, and I’ll give you another dab."
 
     ki "Oh, do we not have a sealant?"
 
-    no "Supposedly you can’t seal Jorgoan skin, it messes with the mucous layer. Is that 
+    no neutral @ neutral_talk "Supposedly you can’t seal Jorgoan skin, it messes with the mucous layer. Is that 
     right?"
 
-    ka neutral @ neutral talk "Ah, I’m not very knowing of the topic, but I think so."
+    ka neutral @ neutral_talk "Ah, I’m not very knowing of the topic, but I think so."
 
     "Noah nodded."
 
-    no "Knowledgeable, by the way. Knowledgeable of the topic."
+    no happy @ happy_talk "Knowledgeable, by the way. Knowledgeable of the topic."
 
-    ka worried @ worried talk "Ah! Thank you, I’m sorry."
+    ka worried @ worried_talk "Ah! Thank you, I’m sorry."
 
-    no "No need to be sorry! You’re still learning. We’re all still constantly learning, 
+    no @ happy_talk "No need to be sorry! You’re still learning. We’re all still constantly learning, 
     really."
 
     nk happy @ happy_talk "Words of wisdom, my man."
@@ -679,8 +681,9 @@ label nvl_monologue_test:
     "Nakoa closed up the first aid kit and slid onto the bench next to Kim."
 
     show noah at rightish_3_l with ease
+    show kara neutral with dissolve_f
 
-    no "So how’re we all doing on this side of the camp? Any questions about the 
+    no @ happy_talk "So how’re we all doing on this side of the camp? Any questions about the 
     presentation earlier, anything about the school we might’ve missed?"
 
     ki "Hmm, nothing that jumps out at me."
@@ -696,15 +699,15 @@ label nvl_monologue_test:
 
     ki "Can you tell us about the choral music offerings at the school?"
 
-    no "Oooh, we’ve got choir kids in this group, huh? Now that’s an excellent question."
+    no smug "Oooh, we’ve got choir kids in this group, huh? Now that’s an excellent question."
 
-    no "NDU Kimmings has a pretty robust music program. The three main tracks of band, 
+    no happy_talk "NDU Kimmings has a pretty robust music program. The three main tracks of band, 
     orchestra, and choir all have multiple groups each, to cater to all skill levels."
 
-    no "I can’t give you a hundred-percent accurate list of them all off the top of my head, but I 
+    no neutral_talk "I can’t give you a hundred-percent accurate list of them all off the top of my head, but I 
     promise they’ve got you covered."
 
-    no "And there’re student groups too, which you should see at the Club Fair next 
+    no happy @ happy_talk "And there’re student groups too, which you should see at the Club Fair next 
     weekend."
 
     ki "Oh, that does sound useful."
@@ -712,42 +715,42 @@ label nvl_monologue_test:
     nk @ happy_talk "Hey, Karalún, maybe there’ll be a club for you too! Brush up on your 
     martial arts."
 
-    ka worried talk "Oh, I… yes, you’re right. I hadn’t thought of it."
+    ka worried_talk "Oh, I… yes, you’re right. I hadn’t thought of it."
 
-    ka neutral talk "I am not… sure that I want to resume martial arts? It’s been a long time."
+    ka neutral_talk "I am not… sure that I want to resume martial arts? It’s been a long time."
 
-    ka excited "Actually, I am interested in the same thing as Kim. I would like to try music."
+    ka happy @ happy_talk "Actually, I am interested in the same thing as Kim. I would like to try music."
 
-    no "Great! What kind? What do you play?"
+    no @ happy_talk "Great! What kind? What do you play?"
 
     # [sprite: Karalún raises her hand to her chest and makes a fist.]
 
-    ka worried @ worried talk "Uh, nothing. I do not… play anything. I will come to the group as a beginner."
+    ka worried @ worried_talk "Uh, nothing. I do not… play anything. I will come to the group as a beginner."
 
-    no "Hmm, an absolute beginner? That might be a bit of a tall order. I think all the 
+    no thinking "Hmm, an absolute beginner? That might be a bit of a tall order. I think all the 
     groups assume you can read music and know your way around your instrument."
 
-    no "In that case, I’d suggest picking an instrument you like and seeing to the music 
+    no neutral_talk "In that case, I’d suggest picking an instrument you like and seeing to the music 
     department for private lessons."
 
-    no "Unless…"
+    no thinking "Unless…"
 
     "Noah withdrew for a moment, stroking his chin in thought."
 
-    no "Let me talk to my friend first. He’s a music major, might be interested in giving 
+    no neutral @ neutral_talk"Let me talk to my friend first. He’s a music major, might be interested in giving 
     you some rudimentary knowledge first if you don’t have any."
 
-    ka happy @ grin "Oh! I, yes, I would like that. I am interested."
+    ka happy @ happy_talk "Oh! I, yes, I would like that. I am interested."
 
-    no "Brilliant. Mind if we swap contacts, then? I’ll talk to him over the weekend, then 
+    no happy @ happy_talk "Brilliant. Mind if we swap contacts, then? I’ll talk to him over the weekend, then 
     I can let you know how it goes."
 
-    ka @ grin "Sounds great!"
+    ka @ grin_talk "Sounds great!"
 
-    no "The same goes for all of you, by the way. I’m happy to give you my info, if 
+    no neutral_talk "The same goes for all of you, by the way. I’m happy to give you my info, if 
     you ever want to chat after this orientation’s over."
 
-    no "Not that I’ll be your leader anymore by that point. The RAs will have that handled. 
+    no happy @ happy_talk "Not that I’ll be your leader anymore by that point. The RAs will have that handled. 
     But it can’t hurt to stay acquaintances."
 
     nk @ happy_talk "Sure, why not? You seem alright."
@@ -757,25 +760,26 @@ label nvl_monologue_test:
     "They all took a minute to boot up their tabs, then tap wrists around the circle a pair 
     at a time to exchange contact data." 
 
-    no "Well, I should go check on the others again. See how Allira’s campfire project is 
+    show kara neutral with dissolve_f
+
+    no @ happy_talk "Well, I should go check on the others again. See how Allira’s campfire project is 
     going."
 
     ki "Ohh, is that what they’re doing over there? Trying to start the campfire?"
 
     nk smug "Aw, come now, have you no faith in the Lord of Candles to light a fire? For shame."
 
+    show kara happy with dissolve_f
     # "That earned a collective chortle from the group. Noah stood and sidled off."
-    "That earned a collective chortle from the group.{nw=0.2}"
+    "That earned a collective chortle from the group."
+
+    show noah at rightish_3 with ease
 
     show nakoa happy
     show kara neutral
     with dissolve_f
 
-    "That earned a collective chortle from the group.{fast} Noah stood and sidled off."
-    
-    show noah at rightish_3 with ease
-
-    no "I’d like to do s’mores if we can get the fire big enough, but if you’re tired, feel 
+    no @ happy_talk "I’d like to do s’mores if we can get the fire big enough, but if you’re tired, feel 
     free to turn in whenever. You know where the bathrooms are."
 
     hide noah with fadeoutright
@@ -796,21 +800,21 @@ label nvl_monologue_test:
 
     ki "Ha ha, that’s fair."
 
-    ka @ talk "Um, sorry, what is ‘s’mores’?"
+    ka @ neutral_talk "Um, sorry, what is ‘s’mores’?"
 
     ki "Oooh, you’ll love s’mores. They’re a Terran campfire tradition. You roast 
     marshmallows by the fire, then turn them into little dessert sandwiches."
 
-    ka @ talk "Roast… what?"
+    ka @ neutral_talk "Roast… what?"
 
     nk @ happy_talk "It’s a gooey dessert, that’s all you need to know. We’ll explain once we get there, 
     it’ll make more sense."
 
-    ka worried @ talk "R-right, I… I’m sorry."
+    ka worried @ worried_talk "R-right, I… I’m sorry."
 
     ki "Hey, no need to be sorry. It’s okay not to know things."
 
-    ka @ talk "I know… I know. I’m sor- I mean…"
+    ka @ worried_talk "I know… I know. I’m sor- I mean…"
 
     "The telltale symptoms of a guilt spiral were a little too familiar to Kim. She racked 
     her brains for a distraction."
@@ -827,12 +831,12 @@ label nvl_monologue_test:
 
     nk @ happy_talk "Though whether they stick with it is another question."
 
-    ka neutral talk "Oh, no, I did some music as a child. We sang anthems."
+    ka neutral_talk "Oh, no, I did some music as a child. We sang anthems."
 
     ka pensive talk "But I never learned how the music worked, or how to… well, read the code on a page 
     and turn it into music in your head. I just copied everyone else."
 
-    ka neutral talk "And now, here, in the Association, the music is so much {i}more{/i}. It all sounds so 
+    ka neutral_talk "And now, here, in the Association, the music is so much {i}more{/i}. It all sounds so 
     different, and it all sounds different from each other. In the music apps on my tab, I 
     see {i}millions{/i} of tracks. It stuns me."
 
@@ -847,7 +851,7 @@ label nvl_monologue_test:
     ki "I can’t imagine what it must’ve been like. To live somewhere so different, and end 
     up here."
 
-    ka neutral @ talk "Well, I’m still getting used to it. But I really like it here. I wouldn’t change 
+    ka neutral @ neutral_talk "Well, I’m still getting used to it. But I really like it here. I wouldn’t change 
     anything."
 
     ki "Heh. Well, we’re glad you’re enjoying it!"
@@ -856,7 +860,7 @@ label nvl_monologue_test:
 
     "Kim flinched—that {i}was{/i} a rude question!—but Karalún was already answering."
 
-    ka @ talk "Treason."
+    ka @ neutral_talk "Treason."
 
     nk @ worried_talk "...What kind of treason?"
 
@@ -866,12 +870,12 @@ label nvl_monologue_test:
 
     # [sprite: Karalún raises a fist to her chest.]
 
-    ka @ talk "Breaking and entering, and petty theft."
+    ka @ neutral_talk "Breaking and entering, and petty theft."
 
     nk worried @ worried_talk "...Like, burglary? Broke into someone’s house? Not sure why that’s treason, unless 
     it was someone important."
 
-    ka neutral talk "It was a government building. An archive."
+    ka neutral_talk "It was a government building. An archive."
 
     ka pensive @ talk "They did not want us to reveal what we found."
 
@@ -892,7 +896,7 @@ label nvl_monologue_test:
 
     ki "...You know, potentially threatening!"
 
-    ka @ talk "I am no threat to you, Kim. You may ask me whatever you like."
+    ka @ neutral_talk "I am no threat to you, Kim. You may ask me whatever you like."
 
     ki "Okay okay okay. So…"
 
@@ -900,19 +904,19 @@ label nvl_monologue_test:
 
     nk @ worried_talk "...Not weapons codes, right?"
 
-    ka neutral talk "No, nothing like that. We found… I believe you might call it a ‘museum.’"
+    ka neutral_talk "No, nothing like that. We found… I believe you might call it a ‘museum.’"
 
     ka pensive talk "Relics of the time before the Empire. Tools, textiles, inscriptions in lost 
     languages. Proof that we used to be {i}more{/i}. We used to be many."
 
-    ka neutral @ talk "I took as many photos as I could. And I paid the price. They caught me."
+    ka neutral @ neutral_talk "I took as many photos as I could. And I paid the price. They caught me."
 
     nk @ worried_talk "And exiled you for… finding history they wanted to keep a secret?"
 
     nk @ stern "Why would they keep all that stuff if they didn’t want the populace finding out? 
     You’d think they’d have, I dunno, destroyed it or something."
 
-    ka neutral talk "I don’t know. Maybe the government wants to preserve knowledge for itself that the 
+    ka neutral_talk "I don’t know. Maybe the government wants to preserve knowledge for itself that the 
     people can’t have. Or maybe it wants trophies of the past peoples that it dominated."
 
     ka pensive @ talk "I wish more than anything that I could go back in time. Finish what I started."
@@ -926,9 +930,9 @@ label nvl_monologue_test:
     ki "Could you go back now? I know the Empire splintered a few years ago, they lost a  
     couple of colonies to the Association, right? If the border has weakened—"
 
-    ka neutral talk "No. I am unwanted. {i}Avikran{/i}. An exile."
+    ka neutral_talk "No. I am unwanted. {i}Avikran{/i}. An exile."
 
-    ka worried talk "My family doesn’t even…"
+    ka worried_talk "My family doesn’t even…"
 
     show kara pensive with dissolve_f
 
@@ -944,11 +948,11 @@ label nvl_monologue_test:
 
     ka worried "..."
 
-    ka happy "Thank you."
+    ka happy @ happy_talk "Thank you."
 
     "They were quiet for a moment, nodding and smiling weakly in agreement."
 
-    ka neutral @ talk "So, um, what was that about a dessert?"
+    ka neutral @ neutral_talk "So, um, what was that about a dessert?"
 
     ki "Oooh, right! Let’s see if they’ve started the s’mores yet."
 

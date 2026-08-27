@@ -295,14 +295,18 @@ label photoop:
     "Kim looked towards the source of a new voice nearby, and very nearly flinched in 
     surprise."
 
-    show kara worried talk with dissolve_f
+    show kara worried_talk with dissolve_f
     "???" "\“Are you all Team Cobalt?\”"
 
     show kara worried with dissolve_f
     nk happy @ happy_talk "Yeah, that’s us."
 
     show kara happy with dissolve_f
-    "The amphibious individual smiled and nodded timidly, muttering \“thank you\” before 
+    "The amphibious individual smiled and nodded timidly, muttering {nw=0.2}"
+    show kara happy_talk
+    "The amphibious individual smiled and nodded timidly, muttering {fast}\“thank you\”{nw=0.5}"
+    show kara happy
+    "The amphibious individual smiled and nodded timidly, muttering \“thank you\”{fast} before 
     settling on the ground next to Nakoa."
 
     "Kim couldn’t help but notice the glint, however brief, of sharp teeth behind those 
@@ -363,7 +367,8 @@ label photoop:
 
     no neutral @ neutral_talk "Nakoa."
 
-    show nakoa happy_talk at right_4 with easeinright
+    show nakoa at right_4 with easeinright
+    show nakoa happy_talk
     nk "Right here. He/him."
     hide nakoa with easeoutright
 
@@ -375,7 +380,8 @@ label photoop:
 
     no @ neutral_talk "Karalún."
 
-    show kara worried talk at right_4 with easeinright
+    show kara worried at right_4 with easeinright
+    show kara worried_talk
     ka "Here. Ah, she/her."
     hide kara with easeoutright
 
@@ -383,7 +389,7 @@ label photoop:
 
     ki "Kim is fine. She/her."
 
-    no @ neutral_talk "Kim for short, noted. Alright, that’s everyone."
+    no neutral_talk "Kim for short, noted. Alright, that’s everyone."
 
     no happy_talk "Now! You know what happens next?"
 
@@ -393,7 +399,7 @@ label photoop:
     "The circle laughed. Nami in particular practically cackled."
 
     no happy_talk "So we’re gonna go again, and we’re gonna play a game. This time we’ll all 
-    introduce ourselves, and don’t just give yourself a name; give yourself a title."
+    introduce ourselves, and don’t just give yourself a name; {w=0.25}give yourself a title."
 
     no grin_talk "A badass title, like… ‘Noah the Magnificent’, or ‘Noah of the Three Nations,’ or 
     ‘Noah the Quadrilingual,’ or ‘Noah Who Goes Bump in the Night,’ or whatever you like!"
@@ -452,7 +458,7 @@ label photoop:
     ki "Hoo boy, okay, let’s see. Noah the Quadrilingual. Khurrayo the Dungeonmaster. 
     Allira, Lord of Candles. Nami Who Likes Salami."
 
-    ki "And I’mmm… Kim the Karaoke Queen."
+    ki "And I’mmm… {w=0.5}Kim the Karaoke Queen."
 
     "A few pronounced nods and \“oooh\”s told her that she’d chosen something 
     sufficiently interesting. Phew!"
@@ -500,22 +506,22 @@ label photoop:
     "The Jorgoan was last. Karalún took a quiet moment to think, her large eyes roving 
     around the circle. Kim could almost see the cogs turning in her head."
 
-    ka @ talk "Mmm, okay. Noah the Quad- uh. Quadra-lingual."
+    ka @ neutral_talk "Mmm, okay. Noah the Quad- uh. Quadra-lingual."
 
     no "Yeah, that’s right."
 
-    ka neutral talk "Khurrayo the Dungeonmaster. Allira, Lord of Candles. Nami Who Likes Salami."
+    ka neutral_talk "Khurrayo the Dungeonmaster. Allira, Lord of Candles. Nami Who Likes Salami."
 
     ka "Kim the… Kara-yokey Queen. Nakoa of Eight Bits."
 
     show kara neutral with dissolve_f
     nk "Of {i}the{/i} Eight Bits."
 
-    ka worried @ worried talk "Y-yes, I… I am sorry."
+    ka worried @ worried_talk "Y-yes, I… I am sorry."
 
     no "Hey now, let her finish."
 
-    ka neutral talk "Nakoa of the Eight Bits. And I am…"
+    ka neutral_talk "Nakoa of the Eight Bits. And I am…"
 
     # [sprite: Kara clutches her chest.]
 
@@ -533,7 +539,7 @@ label photoop:
     show noah at leftish_2 with fadeinleft
     no happy @ happy_talk "Chasm-Darter! As in, like, She-Who-Darts-Through-Chasms?"
 
-    ka @ talk "Yes, like that."
+    ka neutral @ neutral_talk "Yes, like that."
 
     no @ happy_talk "Very cool! I might have to ask you the story behind that one."
 
