@@ -528,12 +528,12 @@ label photoop:
     show kara pensive with dissolve_f
     "She paused to close her eyes and breathe in, seemingly summoning her nerve."
 
-    ka @ talk "Karalún, the Chasm-Darter."
+    ka @ pensive_talk "Karalún, the Chasm-Darter."
 
     "There was a moment of hesitant silence after she finished." 
 
+    show kara neutral with dissolve_f
     show kara:
-        "kara_neutral" with dissolve_f
         ease 0.5 rightish_2
             
     show noah at leftish_2 with fadeinleft

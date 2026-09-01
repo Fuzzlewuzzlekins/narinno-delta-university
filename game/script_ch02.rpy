@@ -4,7 +4,8 @@ label chapter_2:
     # POV 1: Kim
     # [Background: view of a wild landscape, from a vantage point.]
 
-    scene bg hiking with fade
+    scene bg hiking with fade_scene
+    $ pov_character = "Kim"
 
     "If the neighborhood surrounding the NDU campus was impressive, then the temperate 
     rainforest that made up Resshan National Park was breathtaking."
@@ -31,7 +32,7 @@ label chapter_2:
 
     nk "Haah… haah…"
 
-    show nakoa at center_1 with ease
+    show nakoa at center_1 with MoveTransition(0.2, time_warp=_warper.ease)
     nk "Please, you don’t have to keep stopping for me…"
     show nakoa worried with dissolve_f
 
@@ -585,6 +586,7 @@ label nvl_monologue_test:
     "The Jorgoan curled the edges of the paper timidly inwards, looking up at Kim for 
     guidance."
 
+    show nakoa angry with dissolve_f
     "Out of the corner of Kim’s eye, Nakoa was already meticulously pressing the crease with 
     an engineer’s precision. She focused on Karalún’s question."
 
@@ -593,6 +595,7 @@ label nvl_monologue_test:
 
     "Karalún patted the crease down one finger-press at a time."
     
+    show kara worried with dissolve_f
     "She’d done that for the prior folds too; this time Kim noticed the way the amphibian 
     grimaced in frustration when the paper stuck to her fingers."
 
@@ -603,9 +606,10 @@ label nvl_monologue_test:
     "She focused on the paper again—did her tendrils just flick?—and finished the crease 
     with a determined motion."
 
+    show kara neutral with dissolve_f
     ki "Yeah, there you go!"
 
-    nk @ happy_talk "Alright, step 4?"
+    nk happy @ happy_talk "Alright, step 4?"
 
     ki "Step 4, this is the fun part. Use the creases you just made to kind of… {i}hinge{/i} the 
     paper upwards, like this."
@@ -623,7 +627,9 @@ label nvl_monologue_test:
 
     "The Jorgoan swung the paper upwards—"
 
-    show kara angry with dissolve_f
+    show kara angry:
+        linear 0.1 rightish_2
+        linear 0.1 rightish_2_l
 
     "—then jolted upwards with a hiss."
 
@@ -646,7 +652,7 @@ label nvl_monologue_test:
     show kara worried at center_1_l with ease
     show noah neutral at rightish_3 with fadeinright
 
-    no @ neutral_talk "What’s up? Someone get a cut?"
+    no neutral_talk "What’s up? Someone get a cut?"
 
     no worried @ worried_talk "Oooh, paper cut. Those little buggers’ll get ya. Hold on."
 
@@ -833,7 +839,7 @@ label nvl_monologue_test:
 
     ka neutral_talk "Oh, no, I did some music as a child. We sang anthems."
 
-    ka pensive talk "But I never learned how the music worked, or how to… well, read the code on a page 
+    ka pensive_talk "But I never learned how the music worked, or how to… well, read the code on a page 
     and turn it into music in your head. I just copied everyone else."
 
     ka neutral_talk "And now, here, in the Association, the music is so much {i}more{/i}. It all sounds so 
@@ -841,6 +847,8 @@ label nvl_monologue_test:
     see {i}millions{/i} of tracks. It stuns me."
 
     ka angry "I want to know more. I want to know everything the Empire kept from me."
+
+    show nakoa worried with dissolve_f
 
     "There was intensity in her eyes, an eager tremor in her tendrils."
 
@@ -877,7 +885,7 @@ label nvl_monologue_test:
 
     ka neutral_talk "It was a government building. An archive."
 
-    ka pensive @ talk "They did not want us to reveal what we found."
+    ka pensive @ pensive_talk "They did not want us to reveal what we found."
 
     ki "I… wow."
 
@@ -906,7 +914,7 @@ label nvl_monologue_test:
 
     ka neutral_talk "No, nothing like that. We found… I believe you might call it a ‘museum.’"
 
-    ka pensive talk "Relics of the time before the Empire. Tools, textiles, inscriptions in lost 
+    ka pensive_talk "Relics of the time before the Empire. Tools, textiles, inscriptions in lost 
     languages. Proof that we used to be {i}more{/i}. We used to be many."
 
     ka neutral @ neutral_talk "I took as many photos as I could. And I paid the price. They caught me."
@@ -919,8 +927,9 @@ label nvl_monologue_test:
     ka neutral_talk "I don’t know. Maybe the government wants to preserve knowledge for itself that the 
     people can’t have. Or maybe it wants trophies of the past peoples that it dominated."
 
-    ka pensive @ talk "I wish more than anything that I could go back in time. Finish what I started."
+    ka worried_talk "I wish more than anything that I could go back in time. Finish what I started."
 
+    show kara crying with dissolve_f
     "Karalún’s face and voice pinched. She looked away with a sniffle."
 
     ki "Hey, it’s okay. You were very brave. That’s what matters, yeah?"
@@ -934,7 +943,7 @@ label nvl_monologue_test:
 
     ka worried_talk "My family doesn’t even…"
 
-    show kara pensive with dissolve_f
+    show kara crying with dissolve_f
 
     "She choked on the words. She dipped her head, then shook with a quiet sob."
 
@@ -963,7 +972,8 @@ label chapter_2_b:
     # POV 2: Noah
     # [background: exterior of a dorm building]
 
-    scene bg blake_noah_exterior with fade
+    scene bg blake_noah_exterior with fade_scene
+    $ pov_character = "Noah"
 
     "It was midday Sunday." 
 
@@ -1008,7 +1018,7 @@ label chapter_2_b:
 
     no "That’s my title now, huh?"
 
-    show blake at rightish_2 with ease
+    show blake at rightish_2 with MoveTransition(0.2, time_warp=_warper.ease)
 
     "But Blake was already bouncing down to ground level, arms already wide for a trademark 
     embrace."
@@ -1043,6 +1053,7 @@ label chapter_2_b:
     no "Oh, no, don’t worry about me. I’ll come along and help, I’ve got nothing better to 
     do."
 
+    show tansei neutral with dissolve_f
     b "Careful talkin’ like that, you’re letting me off easy."
 
     no "Fine, fine. I’ll get myself a cuppa and watch you two work, if that’s how you like 

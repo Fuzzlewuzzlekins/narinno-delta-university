@@ -41,26 +41,14 @@ image luziim = Placeholder("girl")
 image nyarokhu = Placeholder("boy")
 image rohal = "sprites/rohal_temp.png"
 
-# # Karalún sprites: main
-# image kara neutral = "sprites/kara_neutral.png"
-# image kara neutral talk = "sprites/kara_neutral_talk.png"
-# image kara worried = "sprites/kara_worried.png"
-# image kara worried talk = "sprites/kara_worried_talk.png"
-# image kara happy = "sprites/kara_happy.png"
-# image kara grin = "sprites/kara_grin.png"
-# Karalún sprites: profile
-image kara pensive = "sprites/kara_pensive.png"
-image kara pensive talk = "sprites/kara_pensive_talk.png"
-image kara grumpy = "sprites/kara_grumpy.png"
-image kara grumpy talk = "sprites/kara_grumpy_talk.png"
-# Karalún sprites: alert
-image kara startled = "sprites/kara_startled.png"
-image kara excited = "sprites/kara_excited.png"
-image kara angry = "sprites/kara_angry.png"
 # Karalún sprites: layered image
 layeredimage kara:
     attribute base1 default:
         when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk or grin or grin_talk)
+    attribute base2 default:
+        when (crying or crying_talk or pensive or pensive_talk or grumpy or grumpy_talk or scowl)
+    attribute base3 default:
+        when (startled or excited or angry)
     group face auto:
         attribute neutral default
 
