@@ -115,7 +115,7 @@ label chapter_2:
 
     nk worried_talk "—guys like me, yeah. That was part of it, at least."
 
-    nk grumpy talk "Mostly just wanted to get out of that house. It got worse after Tani left."
+    nk grumpy_talk "Mostly just wanted to get out of that house. It got worse after Tani left."
 
     # [Sprite: grumbly.]
     nk scowl "Favorite child…"
@@ -261,7 +261,7 @@ label chapter_2:
 
     ka worried @ worried_talk "No, it’s fine! Noah asked that I check on you."
 
-    nk @ happy_talk "Eh, we’re plugging along, don’t worry."
+    nk neutral @ neutral_talk "Eh, we’re plugging along, don’t worry."
 
     ki "We can pick up the pace a bit, if we need to."
 
@@ -295,7 +295,7 @@ menu chapter_1_walk_choice:
 
         "No, best not to risk angering the Jorgoan—{w=0.5}er, the {i}others{/i}."
 
-        show nakoa happy at left_4
+        show nakoa neutral at left_4
         show kara happy at center_1
         with ease
 
@@ -331,7 +331,7 @@ menu chapter_1_walk_choice:
 
         "She steeled herself. It took effort to resist the urge to please, but resist she did."
 
-        show nakoa happy at center_1
+        show nakoa neutral at center_1
         show kara neutral at right_4
         with ease
 
@@ -344,7 +344,7 @@ label chapter_1_after_walk_choice:
 
     # (Ideal) Dialogue if she stays in range of Nakoa:
 
-    nk @ happy_talk "Yeah, you were saying? Hobbies you’ve come back to more than once?"
+    nk happy @ happy_talk "Yeah, you were saying? Hobbies you’ve come back to more than once?"
 
     ki "Right, right! Let’s see."
 
@@ -403,7 +403,7 @@ label chapter_1_after_walk_choice:
     ka neutral @ neutral_talk "I’ve lived in the Association for four years. I studied your history and 
     language. Now, for this year I have a college grant."
 
-    nk @ stern "Four years ago... So the latest Avikran evacuation, back in ’32?"
+    nk neutral @ stern "Four years ago... So the latest Avikran evacuation, back in ’32?"
 
     ki "Wow, your Standard’s really good for only four years! I’m impressed!"
 
@@ -430,7 +430,7 @@ label chapter_1_after_walk_choice:
 
     # [Normal game UI resumes]
 
-    show nakoa happy at leftish_3
+    show nakoa neutral at leftish_3
     show kara neutral at center_1
     with ease
     
@@ -569,7 +569,7 @@ label nvl_monologue_test:
     # —
 
     # [Nakoa and Karalún appear.]
-    show nakoa happy at leftish_2_l
+    show nakoa neutral at leftish_2_l
     show kara neutral at rightish_2_l
     with dissolve
 
@@ -699,7 +699,7 @@ label nvl_monologue_test:
 
     ki "Oh, no, wait! That’s right!"
 
-    show nakoa happy 
+    show nakoa neutral 
     show kara neutral
     with dissolve_f
 
@@ -718,7 +718,7 @@ label nvl_monologue_test:
 
     ki "Oh, that does sound useful."
 
-    nk @ happy_talk "Hey, Karalún, maybe there’ll be a club for you too! Brush up on your 
+    nk happy @ happy_talk "Hey, Karalún, maybe there’ll be a club for you too! Brush up on your 
     martial arts."
 
     ka worried_talk "Oh, I… yes, you’re right. I hadn’t thought of it."
@@ -835,7 +835,7 @@ label nvl_monologue_test:
     ki "Nothing wrong with that, it’s just uncommon. Most kids in the Association start 
     doing music during primary school."
 
-    nk @ happy_talk "Though whether they stick with it is another question."
+    nk neutral @ neutral_talk "Though whether they stick with it is another question."
 
     ka neutral_talk "Oh, no, I did some music as a child. We sang anthems."
 
@@ -919,9 +919,9 @@ label nvl_monologue_test:
 
     ka neutral @ neutral_talk "I took as many photos as I could. And I paid the price. They caught me."
 
-    nk @ worried_talk "And exiled you for… finding history they wanted to keep a secret?"
+    nk worried_talk "And exiled you for… finding history they wanted to keep a secret?"
 
-    nk @ stern "Why would they keep all that stuff if they didn’t want the populace finding out? 
+    nk worried @ stern "Why would they keep all that stuff if they didn’t want the populace finding out? 
     You’d think they’d have, I dunno, destroyed it or something."
 
     ka neutral_talk "I don’t know. Maybe the government wants to preserve knowledge for itself that the 

@@ -97,16 +97,14 @@ layeredimage youngash:
     # attribute arm1b default:
     #     when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and salute
 
-# Nakoa sprites: slouching
-image nakoa grumpy = "sprites/nakoa_grumpy.png"
-image nakoa grumpy talk = "sprites/nakoa_grumpy_talk.png"
-image nakoa scowl = "sprites/nakoa_scowl.png"
 # Nakoa sprites: layered image
 layeredimage nakoa:
     attribute base1 default:
         when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or angry or angry_talk or grin or grin_talk or grimace or grimace_talk)
     attribute base2 default:
         when (friendly or smug or stern or offended or offended_talk)
+    attribute base3 default:
+        when (grumpy or grumpy_talk or scowl)
     group face auto:
         attribute neutral default
 
@@ -377,7 +375,8 @@ label start:
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
+    jump chapter_1
     # jump photoop
     # jump chapter_1_b
-    jump chapter_2
+    # jump chapter_2
     # jump nvl_monologue_test

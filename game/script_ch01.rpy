@@ -264,7 +264,7 @@ label chapter_1:
 
     ki "Oh! Nakoa! Hi!"
 
-    nk @ talk "I don’t like hiking."
+    nk @ grumpy_talk "I don’t like hiking."
 
     ki "Oh… I’m sorry?"
 
@@ -375,7 +375,7 @@ label photoop:
     no @ neutral_talk "Allira."
 
     show allira neutral_talk at left_4 with easeinleft
-    al "Ey/em."
+    al "Ey/she."
     hide allira with easeoutleft
 
     no @ neutral_talk "Karalún."
@@ -526,7 +526,7 @@ label photoop:
     # [sprite: Kara clutches her chest.]
 
     show kara pensive with dissolve_f
-    "She paused to close her eyes and breathe in, seemingly summoning her nerve."
+    "She paused to take a deep breath, seemingly summoning her nerve."
 
     ka @ pensive_talk "Karalún, the Chasm-Darter."
 
