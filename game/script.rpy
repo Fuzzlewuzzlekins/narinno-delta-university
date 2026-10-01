@@ -378,12 +378,12 @@ label start:
     # jump test_scene
     # jump outline
     # jump chapter_0
-    jump quickstart
+    # jump quickstart
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
     # jump chapter_1
-    # jump photoop
+    jump photoop
     # jump chapter_1_b
     # jump chapter_2
     # jump nvl_monologue_test
