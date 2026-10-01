@@ -37,7 +37,7 @@ define t_nvl = Character("Tansei", kind=nvl, who_color=character_colors["Tansei"
 image ash = "sprites/ash_temp.png"
 image blake = Placeholder("boy")
 image fyorra = "sprites/fyorra_temp.png"
-image luziim = Placeholder("girl")
+# image luziim = Placeholder("girl")
 image nyarokhu = Placeholder("boy")
 image rohal = "sprites/rohal_temp.png"
 
@@ -96,6 +96,13 @@ layeredimage youngash:
         "youngash_arm1b" when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk)
     # attribute arm1b default:
     #     when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and salute
+
+# Luziim sprites: layered image (NOT YET DONE)
+layeredimage luziim:
+    attribute base2 default:
+        when (happy or happy_talk or stern or stern_talk or amused or amused_talk or thinking or thinking_talk)
+    group face auto:
+        attribute happy default
 
 # Nakoa sprites: layered image
 layeredimage nakoa:
@@ -371,11 +378,11 @@ label start:
     # jump test_scene
     # jump outline
     # jump chapter_0
-    # jump quickstart
+    jump quickstart
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
-    jump chapter_1
+    # jump chapter_1
     # jump photoop
     # jump chapter_1_b
     # jump chapter_2

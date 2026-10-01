@@ -37,7 +37,7 @@ label chapter_1:
     # scene bg kim_luziim_dorm 
     hide black
     show bg kim_luziim_dorm
-    show luziim at center_1
+    show luziim stern at center_1
     with dissolve
 
     "It was brighter than she wanted it to be, but she couldn’t ignore that her roommate, 
@@ -45,25 +45,26 @@ label chapter_1:
 
     ki "Oh, jeez, what time is it?"
 
-    l "About nine-thirty. Not late yet, but you might wanna get those legs of yours 
+    l happy @ happy_talk "About nine-thirty. Not late yet, but you might wanna get those legs of yours 
     moving."
 
     ki "Do my legs seriously make me that much faster than you?"
 
     # [Sprite: Luziim makes a show of scowling animatedly over all this.]
 
-    l "God, I hope not.{nw=0.5}"
+    l happy_talk "God, I hope not.{nw=0.5}"
     # [Sprite: Luziim jerks a thumb over her shoulder.] 
+    show luziim stern_talk
     l "God, I hope not.{fast} I was a sprint record holder in high school, back on 
     Anaziim! I’d never live it down!"
 
-    l "‘Yo, whatever happened to Luziim Oshan?’ ‘Oh, she went off-world and got beat by 
+    l thinking_talk "‘Yo, whatever happened to Luziim Oshan?’ ‘Oh, she went off-world and got beat by 
     the first schmuck she met with {i}legs{/i}.’"
 
-    l "Nope, ain’t gonna let that happen."
+    l stern_talk "Nope, ain’t gonna let that happen."
 
     # [Sprite: after a beat, she cracks a smile.]
-    l "...Pff, I’m teasing. If you’re faster than me, I’ll accept gracious defeat. 
+    l amused @ amused_talk "...Pff, I’m teasing. If you’re faster than me, I’ll accept gracious defeat. 
     Promise."
 
     ki "Tch. If it makes you feel any better, legs won’t help me get dressed any faster."
