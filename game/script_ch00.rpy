@@ -6,7 +6,8 @@ label chapter_0:
     # Background: interior of a vehicle with vertically arranged rows of seats, 
     # optionally a window or two showing space. Sound: a faint humming drone.
 
-    scene bg shuttle with dissolve
+    # scene bg shuttle with dissolve
+    scene bg shuttle with fade_scene
     $ pov_character = "Kim"
 
     play sound escalator_airplane_ambient_loop loop fadein 1.0

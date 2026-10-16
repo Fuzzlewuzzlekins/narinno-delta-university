@@ -122,13 +122,13 @@ layeredimage nanneyo:
     attribute base1 default:
         when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
     attribute base2 default:
-        when (flirting or flirting_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
+        when (flirty or flirty_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
     group face auto:
         attribute neutral default
     if nn_nametag:
         "nanneyo_nametag1" when (neutral or neutral_talk or happy or happy_talk or worried or worried_talk or stern or stern_talk)
     if nn_nametag:
-        "nanneyo_nametag2" when (flirting or flirting_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
+        "nanneyo_nametag2" when (flirty or flirty_talk or angry or angry_talk or thinking or thinking_talk or friendly or friendly_talk or laughing or laughing_talk)
 
 # Noah sprites: layered image
 layeredimage noah:
@@ -384,8 +384,9 @@ label start:
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
-    jump chapter_1
+    # jump chapter_1
     # jump photoop
     # jump chapter_1_b
     # jump chapter_2
     # jump nvl_monologue_test
+    jump chapter_3
