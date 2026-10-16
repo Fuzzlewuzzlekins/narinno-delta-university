@@ -52,10 +52,10 @@ label chapter_1:
 
     # [Sprite: Luziim makes a show of scowling animatedly over all this.]
 
-    l happy_talk "God, I hope not.{nw=0.5}"
+    l stern_talk "God, I hope not.{nw=0.5}"
     # [Sprite: Luziim jerks a thumb over her shoulder.] 
-    show luziim stern_talk
-    l "God, I hope not.{fast} I was a sprint record holder in high school, back on 
+    show luziim angry_talk
+    extend " I was a sprint record holder in high school, back on 
     Anaziim! I’d never live it down!"
 
     l thinking_talk "‘Yo, whatever happened to Luziim Oshan?’ ‘Oh, she went off-world and got beat by 
@@ -100,42 +100,45 @@ label chapter_1:
 
     # [Sprite: Luziim quirks a brow.]
 
-    l "Your skin is flammable in sunlight?"
+    l @ neutral_talk "Your skin is flammable in sunlight?"
 
     ki "I- what? No, no, we don’t catch fire! That’d be silly—"
 
     # [Sprite: Luziim laughs.]
-
+    show luziim laughing with dissolve_f
     "Luziim burst into a cackle."
 
-    l "Pahahaha! Nah, nah, I’m teasing! Had you for a good sec, though."
+    l amused @ amused_talk "Pahahaha! Nah, nah, I’m teasing! Had you for a good sec, though."
 
     ki "Hoo, boy, you got me. Should’ve known you were pulling my leg."
 
-    l "Pulling your what?"
+    l neutral @ neutral_talk "Pulling your what?"
 
     ki "Oh, sorry, that’s an idiom. For, like, messing with someone, leading them on as a 
     joke. ‘Pulling their leg,’ is the phrase."
 
-    l "Why the leg?"
+    l @ neutral_talk "Why the leg?"
 
     ki "Uh, I dunno. I think that’s of English origin, or something."
 
-    l "Psh. Always you people with the legs. Are legs your favorite body part or 
+    l stern @ stern_talk "Psh. Always you people with the legs. Are legs your favorite body part or 
     something? Is the soul stored in the legs?"
 
     ki "No, no, that’s—"
 
-    l "Are we zanduul doomed soulless beasts, with no legs to pull?"
+    l stern @ stern_talk "Are we zanduul doomed soulless beasts, with no legs to pull?"
 
     ki "I— no, no!"
 
-    l "Ha ha! Okay, you’re way too easy to fluster, Kim."
+    l laughing "Ha ha! {nw=0.5}"
+    show luziim amused_talk
+    extend "Okay, you’re way too easy to fluster, Kim."
+    show luziim amused with dissolve_f
 
     ki "H-hey! I don’t want to offend people, and if I get called out I’ll quickly correct 
     it."
 
-    l "Alright, alright. It’s all good. Good to be aware, I’ll say."
+    l happy @ happy_talk "Alright, alright. It’s all good. Good to be aware, I’ll say."
 
     ki "I try, at least."
 
@@ -143,9 +146,9 @@ label chapter_1:
 
     ki "Anyway, I’m ready. You ready to go?"
 
-    l "Aw, hell yeah!"
+    l amused_talk "Aw, hell yeah!"
 
-    l "Seriously, a hiking and camping trip during orientation? I’ve been hyped for 
+    l happy @ happy_talk "Seriously, a hiking and camping trip during orientation? I’ve been hyped for 
     months."
 
     ki "I know, right? Me too!"
@@ -159,11 +162,11 @@ label chapter_1:
 
     "They latched their door behind them and made for the stairwell."
 
-    "Or at least, Kim mistakenly expected there to be a stairwell here, before she 
-    arrived and was reminded that there was a ramp here instead."
+    "Or at least, Kim made for the inner circuit of the stairwell. It was larger than she 
+    remembered, thanks to the inclusion of a full ramp around the outside of the spiral."
 
-    "Luziim took to the ramp without hesitating. Kim realized after a moment that that 
-    made plenty of sense."
+    "Luziim took to the outer ramp without hesitating. Kim realized after a moment that 
+    that made plenty of sense."
 
     "Jokes about legs or lack thereof aside, Luziim’s species, the {i}zanduul{/i} of the planet 
     Anaziim, was distinctive." 
@@ -175,7 +178,7 @@ label chapter_1:
     endangered species. It was some luck of the draw that Kim had received one as a 
     roommate."
 
-    "Not that Kim expected any obstacles, at least on Luziim’s end. The other girl was 
+    "Not that Kim expected any social obstacles, at least on Luziim’s end. The other girl was 
     exuberantly friendly. Almost too friendly."
 
     "Kim planned to keep her wits about her regardless, but at least so far, the chances 
@@ -191,7 +194,7 @@ label chapter_1:
     "The lawn bustled with students, most of whom indeed looked to be freshmen with 
     backpacks in tow."
 
-    "Scattered among them were older student volunteers, wearing the school colors and 
+    "Scattered among them were older student volunteers, wearing nametags and 
     holding what seemed to be signs, handwritten in large block letters in colored 
     marker."
 
@@ -199,48 +202,50 @@ label chapter_1:
 
     show luziim at center_1 with dissolve
 
-    l "What team are you looking for?"
+    l @ neutral_talk "What team are you looking for?"
 
     ki "I’m on Team Cobalt."
 
-    l "Oh, lucky. I got something unpronounceable."
+    l worried @ worried_talk "Oh, lucky. I got something unpronounceable."
 
     ki "Oh, what was that?"
 
-    l "Team…"
+    l neutral_talk "Team…"
 
-    "She checked her papers."
+    # "She checked her papers."
 
-    l "Char-treh-ooh-seh."
+    l thinking @ thinking_talk "'Char-treh-ooh-seh'?"
 
     "Kim mouthed the nonsense word, trying to piece letters together in her head. Then it 
     clicked."
 
     ki "Oh, {i}chartreuse!{/i} Team Chartreuse."
 
-    l "...Shar-trooze? The fuck? Standard is dumb."
+    l stern @ stern_talk "...Shar-trooze? The fuck? {fast}Standard is dumb."
 
     ki "I’m pretty sure that’s a French loanword."
 
-    l "Standard’s still dumb for taking it."
+    l @ stern_talk "Standard’s still dumb for taking it."
 
     ki "What, a creole language can’t be a huge pile of loadwords? What else is it 
     supposed to be?"
 
-    l "It could be a creole without twenty thousand pronunciation rules! At least unify 
-    the spelling, sheesh."
+    l stern_talk "It could be a creole without twenty thousand pronunciation rules! {nw=0.5}"
+    show luziim thinking_talk
+    extend "At least unify the spelling, sheesh."
+    show luziim thinking with dissolve_f
 
     ki "I’m not sure it works like that."
 
-    l "Eh, well, enough of my griping. We’ve got groups to schmooze with."
+    l happy_talk "Eh, well, enough of my griping. We’ve got groups to schmooze with."
 
-    l "See ya ’round, yeah?"
+    l amused @ amused_talk "See ya ’round, yeah?"
 
     ki "Yeah, see you around!"
 
     # [Sprite: Luziim slides offscreen.]
 
-    hide luziim with fadeoutleft
+    hide luziim with fadeoutright
 
     "As Luziim peeled away towards Team Chartreuse, Kim resumed scanning the field full of students."
 
@@ -305,10 +310,9 @@ label photoop:
     show kara happy with dissolve_f
     "The amphibious individual smiled and nodded timidly, muttering {nw=0.2}"
     show kara happy_talk
-    "The amphibious individual smiled and nodded timidly, muttering {fast}\“thank you\”{nw=0.5}"
+    extend "\“thank you\”{nw=0.5}"
     show kara happy
-    "The amphibious individual smiled and nodded timidly, muttering \“thank you\”{fast} before 
-    settling on the ground next to Nakoa."
+    extend " before settling on the ground next to Nakoa."
 
     "Kim couldn’t help but notice the glint, however brief, of sharp teeth behind those 
     lips. Her eyes lingered on the stranger a moment too long."
@@ -412,15 +416,13 @@ label photoop:
 
     no happy_talk "So! I’ll start. I’ll go with…{nw=0.5}"
     show noah thinking
-    no "So! I’ll start. I’ll go with…{fast} hmm, Noah the Quadrilingual. Take a little 
-    unwarranted pride in that."
+    extend " hmm, Noah the Quadrilingual. Take a little unwarranted pride in that."
 
     nk "Oh, you were serious about that? Nice, man!"
 
     no "Well, by a certain stretch of the definition. {nw=0.5}"
     show noah smug
-    no "Well, by a certain stretch of the definition. {fast}But shh, don’t tell anyone I only 
-    remember a few words in Welsh. Now’s the time to brag, yeah?"
+    extend "But shh, don’t tell anyone I only remember a few words in Welsh. Now’s the time to brag, yeah?"
 
     no happy @ happy_talk "So, Khurrayo! You’re up first. Repeat my name and title, then announce your own."
 
@@ -431,7 +433,7 @@ label photoop:
 
     kr neutral_talk "And I’m… {nw=0.5}"
     show khurrayo happy_talk
-    kr "And I’m… {fast}Khurrayo the Dungeonmaster."
+    extend "Khurrayo the Dungeonmaster."
     show khurrayo happy with dissolve_f
 
     no "Oooh, I like the sound of that. Allira?"
@@ -449,8 +451,7 @@ label photoop:
     of Candles.{nw=0.5}"
     # [Sprite: Nami points to herself.]
     show nami smug_talk
-    nm "Arright! Noah the Quadrilingual. Khurrayo the Dungeonmaster. Allira, Lord 
-    of Candles.{fast} Nami Who Likes Salami."
+    extend " Nami Who Likes Salami."
     show nami smug with dissolve_f
 
     "The group collectively chuckled at that one."
@@ -496,8 +497,7 @@ label photoop:
     no "Hey, now, let’s let everyone have their turn before we start the trash talk.{nw=0.5}"
     # [Sprite: he turns to his right, or otherwise visibly shifts target.]
     show noah happy_talk
-    no "Hey, now, let’s let everyone have their turn before we start the trash talk.{fast} 
-    Go ahead."
+    extend " Go ahead."
     
     show noah:
         easeout 0.5 offscreenleft
@@ -538,6 +538,15 @@ label photoop:
         ease 0.5 rightish_2
             
     show noah at leftish_2 with fadeinleft
+
+    # show kara at rightish_2
+    # show noah at leftish_2
+    # with fadeinleft
+    # show kara neutral with dissolve_f
+
+    # show kara neutral at rightish_2
+    # show noah at leftish_2
+    # with fadeinleft
     no happy @ happy_talk "Chasm-Darter! As in, like, She-Who-Darts-Through-Chasms?"
 
     ka neutral @ neutral_talk "Yes, like that."
@@ -822,8 +831,7 @@ label chapter_1_b:
     nn "For sure. How was the travel? Okay?"
 
     f "Eh, it was fine? Uneventful.{nw=0.5}"
-
-    f "Eh, it was fine? Uneventful.{fast} Which is good for a trip, come to think of it."
+    extend " Which is good for a trip, come to think of it."
 
     nn "Ha, fair point."
 

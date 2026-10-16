@@ -97,12 +97,14 @@ layeredimage youngash:
     # attribute arm1b default:
     #     when (neutral or neutral_talk or worried or worried_talk or happy or happy_talk) and salute
 
-# Luziim sprites: layered image (NOT YET DONE)
+# Luziim sprites: layered image
 layeredimage luziim:
+    attribute base1 default:
+        when (neutral or neutral_talk or worried or worried_talk or angry or angry_talk)
     attribute base2 default:
-        when (happy or happy_talk or stern or stern_talk or amused or amused_talk or thinking or thinking_talk)
+        when (happy or happy_talk or stern or stern_talk or amused or amused_talk or thinking or thinking_talk or laughing)
     group face auto:
-        attribute happy default
+        attribute neutral default
 
 # Nakoa sprites: layered image
 layeredimage nakoa:
@@ -382,8 +384,8 @@ label start:
     # jump testytest
     # jump hi_nan
     # jump chapter_0_b
-    # jump chapter_1
-    jump photoop
+    jump chapter_1
+    # jump photoop
     # jump chapter_1_b
     # jump chapter_2
     # jump nvl_monologue_test

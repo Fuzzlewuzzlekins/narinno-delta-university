@@ -414,8 +414,8 @@ label quickstart:
     t gesture_talk "Well, I was only planning on it being you,{nw=0.5}"
     # [Sprite: Tansei turns mid-sentence.]
     show tansei happy_talk
-    t "Well, I was only planning on it being you,{fast} but you two are welcome to come 
-    along! I’m happy to show everyone around, play tour guide for a few days."
+    extend " but you two are welcome to come along! I’m happy to show everyone around, 
+    play tour guide for a few days."
 
     show nakoa neutral 
     show tansei happy
@@ -440,8 +440,7 @@ label quickstart:
 
     nk friendly "Not really well known, but the cute hometown vibes? Love it.{nw=0.5}"
     show nakoa smug
-    nk "Not really well known, but the cute hometown vibes? Love it.{fast} I’m biased; deal 
-    with it."
+    extend " I’m biased; deal with it."
 
     nk friendly "Still proud of our food. If you ever see a Sforollan restaurant, you can’t go 
     wrong with the seafood casseroles."
@@ -610,8 +609,7 @@ label quickstart:
     nk angry_talk "Yeah, your native tongue with a thousand years of history’d better make my name 
     a word.{nw=0.5}"
     show nakoa stern
-    nk "Yeah, your native tongue with a thousand years of history’d better make my name 
-    a word.{fast} To respect me. Right now."
+    extend " To respect me. Right now."
 
     # [Sprite: Tansei and Emma are visibly amused.]
 
